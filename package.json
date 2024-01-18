@@ -1,4 +1,15 @@
 {
-  "name": "11ty-landing-page",
-  "packageManager": "yarn@4.0.2"
+  "name": "@redbrick/11ty-website",
+  "author": "Jed Hazaymeh <magma@redbrick.dcu.ie>",
+  "version": "0.0.1",
+  "private": "true",
+  "packageManager": "yarn@4.0.2",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "debug": "^4.3.4"
+  }
 }

@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "svelte-app": "http://localhost:9000/dist/bundle.js"
+  }
+}
