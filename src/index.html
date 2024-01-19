@@ -1,0 +1,16 @@
+---
+layout: root.njk
+---
+
+<div class="content">
+  <h1>Redbrick</h1>
+</div>
+
+<is-land on:interaction>
+  <button class="button">Click to hydrate</button>
+  <template data-island="replace">
+    <svelte-app></svelte-app>
+  </template>
+</is-land>
+
+<script type="systemjs-module" src="import:svelte-app"></script>
