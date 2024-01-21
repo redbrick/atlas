@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPassthroughCopy('import-map.json')
+  eleventyConfig.addPassthroughCopy('src/assets/favicon.ico')
 
   return {
     dir: {

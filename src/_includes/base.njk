@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>Redbrick</title>
+    <link rel="stylesheet" href="assets/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.min.js"></script>
+
+    <link rel="stylesheet" href="http://localhost:8000/fonts/myriad-pro/loader.css" />
+    {# Preload fonts instead of waiting until they are needed by CSS #}
+    <link rel="preload" href="http://localhost:8000/fonts/myriad-pro/regular/MyriadPro-Regular.ttf" as="font" crossorigin />
+    <link rel="preload" href="http://localhost:8000/fonts/myriad-pro/bold/MyriadPro-Bold.ttf" as="font" crossorigin />
+    <link rel="preload" href="http://localhost:8000/fonts/myriad-pro/semi-bold/MyriadPro-Semibold.ttf" as="font" crossorigin />
+    {# <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" /> #}
+    {# <script src="https://cdn.tailwindcss.com/3.4.1"></script> #}
+
+    <meta name="importmap-type" content="systemjs-importmap" />
+    <script type="systemjs-importmap" src="import-map.json"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/import-map-overrides@3.1.1/dist/import-map-overrides.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js"></script>
+  </head>
+  <body class="font-myriad">
+    <import-map-overrides-full
+      show-when-local-storage="devtools"
+      dev-libs
+    ></import-map-overrides-full>
+    <main>
+      {% include "layout/header.njk" %}
+      {{ content | safe }}
+      {% include "layout/footer.njk" %}
+    </main>
+  </body>
+</html>

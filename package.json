@@ -20,5 +20,8 @@
     "postcss": "^8.4.33",
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1"
+  },
+  "resolutions": {
+    "@redbrick/design-system": "portal:/home/magma/projects/redbrick/design-system"
   }
 }
