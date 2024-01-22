@@ -262,7 +262,7 @@ __metadata:
   resolution: "@redbrick/11ty-website@workspace:."
   dependencies:
     "@11ty/eleventy": "npm:^2.0.1"
-    "@redbrick/design-system": "npm:^0.0.2"
+    "@redbrick/design-system": "https://github.com/redbrick/design-system"
     debug: "npm:^4.3.4"
     npm-run-all: "npm:^4.1.5"
     postcss: "npm:^8.4.33"
@@ -271,14 +271,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redbrick/design-system@portal:/home/magma/projects/redbrick/design-system::locator=%40redbrick%2F11ty-website%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@redbrick/design-system@portal:/home/magma/projects/redbrick/design-system::locator=%40redbrick%2F11ty-website%40workspace%3A."
+"@redbrick/design-system@https://github.com/redbrick/design-system":
+  version: 0.0.3
+  resolution: "@redbrick/design-system@https://github.com/redbrick/design-system.git#commit=1dee512b6b1e9bce0b77029e91c9bd4fed25b93d"
   dependencies:
     daisyui: "npm:^4.6.0"
     tailwindcss: "npm:^3.4.1"
+  checksum: 7fec8ea0d7c254dd5d8ae6c81344d2bd78fb28a10672d3d5752af09bd4a3eaf80d3bd41a246345b0e8a2ac007fc14aed4d2c16234745759832cdd77a540c6bef
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@sindresorhus/slugify@npm:^1.1.2":
   version: 1.1.2
