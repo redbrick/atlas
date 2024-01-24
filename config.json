@@ -1,0 +1,13 @@
+{
+  "github": {
+    "repos": {
+      "open-governance": {
+        "sha": "8c0cf6f3bd150c7b05586dc1ebd5181e5dd368c4",
+        "defaultBranch": "master"
+      }
+    },
+    "urls": {
+      "raw": "https://raw.githubusercontent.com/redbrick"
+    }
+  }
+}
