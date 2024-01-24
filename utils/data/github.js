@@ -1,5 +1,4 @@
 const { Octokit } = require('@octokit/rest')
-const md = require('../overrides/markdown')
 const config = require('../../config.json')
 
 const excludedMd = ['README', 'LICENSE', 'CONTRIBUTING']
@@ -40,13 +39,13 @@ const getRepoMarkdown = async function (repo) {
       ].join('/')
 
       const content = await fetch(url).then((res) => res.text())
-      const noExtPath = doc.path.slice(0, -3)
+      const path = doc.path.slice(0, -3)
 
       return {
-        title: noExtPath.split('/').pop(),
-        path: noExtPath,
+        title: path.split('/').pop(),
+        path: path,
         url,
-        content: md.render(content),
+        content,
       }
     })
   )

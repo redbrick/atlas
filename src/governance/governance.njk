@@ -4,7 +4,7 @@ pagination:
   data: github.governance
   size: 1
   alias: document
-permalink: /governance/{{ document.path | slugify }}/
+permalink: /governance/{{ document.path | slugify }}.html
 ---
 
 <div class="grid grid-cols-4 gap-4 bg-base-100 min-h-screen">
@@ -19,12 +19,12 @@ permalink: /governance/{{ document.path | slugify }}/
         />
       </figure>
       <div class="prose min-w-full">
-        {{ document.content | safe }}
+        {{ document.content | markdown | safe }}
       </div>
     </article>
   </main>
   <aside class="sticky hidden md:block right-0 top-16 h-screen p-10 pt-6 overflow-auto">
     <header class="font-semibold pb-4">In this document</header> 
-    {{ document.content | toc | safe }}
+    {{ document.content | markdown | toc | safe }}
   </aside>
 </div>
