@@ -410,7 +410,6 @@ __metadata:
   resolution: "@redbrick/design-system@https://github.com/redbrick/design-system.git#commit=24c05b9713ea09ad23e3f320f99b58f986cd92c0"
   dependencies:
     "@tailwindcss/typography": "npm:^0.5.10"
-    "@tailwindcss/typography": "npm:^0.5.10"
     daisyui: "npm:^4.6.0"
     tailwindcss: "npm:^3.4.1"
   checksum: 23cfdb27c155f8e561dbf19ce3f4299f8846f0fb87ca918933485ed38bb236486db048f394ce8a5b36d39c1a0ffaf589eea38ba6a92ad68222288c07c7322a60

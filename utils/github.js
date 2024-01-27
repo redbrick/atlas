@@ -34,6 +34,12 @@ const parseMarkdown = (str) => {
         const externalLink = /https?:\/\/((?:[\w\d-]+\.)+[\w\d]{2,})/i
         if (externalLink.test(link)) return link // do not process external links
 
+        if (
+          link.startsWith('..') ||
+          (link.split('/').length == 1 && !link.startsWith('#'))
+        )
+          link = join('..', link)
+
         link = decodeURIComponent(link) // remove percent encoding
         const parsed = parse(link)
         link = join(parsed.dir, parsed.name) // remove extension
