@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pagination:
+  data: governance
+  size: 1
+  alias: document
+permalink: /{{ document.url }}.html
+eleventyComputed:
+  title: "{{ document.title }}"
+---
+
+<div class="grid grid-cols-4 gap-4 bg-base-100 min-h-screen">
+  <aside class="sticky hidden lg:block left-0 top-16 h-screen p-5 overflow-auto bg-base-100 border-r border-white/5">
+    <nav class="menu">
+      <li>
+        <header class="menu-title">Open Governance</header>
+        {% set navigation = governance | blobsToNavigation %}
+        {% for category, entries in navigation %}
+        <li>
+          <details open>
+            <summary>{{ category }}</summary>
+            <ul>
+              {% for entry in entries %}
+              <li>
+                <a {% if entry.url in page.url %} class="active"{% endif %} href="{{ entry.url }}">{{ entry.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+        {% endfor %}
+      </li>
+    </nav>
+  </aside>
+  <main class="col-span-4 md:col-span-3 lg:col-span-2">
+    <article class="p-10 pb-20">
+      <div class="prose min-w-full">
+        {{ document.content | safe }}
+      </div>
+    </article>
+  </main>
+  <aside class="sticky hidden md:block right-0 top-16 h-screen p-5 overflow-auto bg-base-100">
+    <nav class="menu">
+      <li>
+        <header class="menu-title">In this document</header>
+        <ul>
+          {{ document.content | toc | safe }}
+        </ul>
+      </li>
+    </nav>
+  </aside>
+</div>

@@ -20,8 +20,4 @@
   :target {
     @apply scroll-mt-20 snap-start;
   }
-
-  .toc {
-    @apply menu border-l-[3px] border-base-content/30 rounded mb-10;
-  }
 }

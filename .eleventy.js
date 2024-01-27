@@ -1,14 +1,16 @@
 const TocPlugin = require('eleventy-plugin-toc')
-const slugifyUrl = require('./utils/filters/slugify-url')
-const md = require('./utils/filters/markdown')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(TocPlugin, {
     tags: ['h2', 'h3', 'h4'],
   })
 
-  eleventyConfig.addFilter('slugifyUrl', slugifyUrl)
-  eleventyConfig.addFilter('markdown', md)
+  eleventyConfig.addFilter('blobsToNavigation', (list) =>
+    list.reduce((rv, x) => {
+      ;(rv[x['parent']] = rv[x['parent']] || []).push(x)
+      return rv
+    }, {})
+  )
 
   eleventyConfig.addPassthroughCopy('import-map.json')
   eleventyConfig.addPassthroughCopy('assets/favicon.ico')
