@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .anchor {
+    @apply scroll-pt-16 no-underline before:invisible before:inline-block before:content-['#'] before:w-[0.8em] before:-ml-[0.8em] before:text-base-content/30;
+  }
+
+  .anchor:hover {
+    @apply underline before:visible before:no-underline;
+  }
+
+  :target {
+    @apply scroll-mt-20 snap-start;
+  }
+}
