@@ -1,5 +1,5 @@
 const TocPlugin = require('eleventy-plugin-toc')
-const slugify = require('./utils/filters/slugify')
+const slugifyUrl = require('./utils/filters/slugify-url')
 const md = require('./utils/filters/markdown')
 
 module.exports = function (eleventyConfig) {
@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
     tags: ['h2', 'h3', 'h4'],
   })
 
-  eleventyConfig.addFilter('slugify', slugify)
+  eleventyConfig.addFilter('slugifyUrl', slugifyUrl)
   eleventyConfig.addFilter('markdown', md)
 
   eleventyConfig.addPassthroughCopy('import-map.json')
