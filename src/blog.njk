@@ -1,20 +1,20 @@
 ---
 layout: base.njk
 pagination:
-  data: governance
+  data: blog
   size: 1
-  alias: document
-permalink: /{{ document.url }}/
+  alias: post
+permalink: /{{ post.url }}/
 eleventyComputed:
-  title: "{{ document.title }}"
+  title: "{{ post.title }}"
 ---
 
 <div class="md:drawer-open grid grid-cols-4 gap-4 bg-base-100 min-h-screen">
   <aside class="sticky hidden md:block left-0 top-16 h-screen p-5 overflow-auto bg-base-100 border-r border-white/5">
     <nav class="menu">
       <li>
-        <header class="menu-title">Open Governance</header>
-        {% set navigation = governance | blobsToNavigation %}
+        <header class="menu-title">Blog</header>
+        {% set navigation = blog | blobsToNavigation %}
         {% for category, entries in navigation %}
         <li>
           <details open>
@@ -35,16 +35,16 @@ eleventyComputed:
   <main class="col-span-4 md:col-span-3 lg:col-span-2">
     <article class="p-10 pb-20">
       <div class="prose min-w-full">
-        {{ document.content | safe }}
+        {{ post.content | safe }}
       </div>
     </article>
   </main>
   <aside class="sticky hidden lg:block right-0 top-16 h-screen p-5 overflow-auto bg-base-100">
     <nav class="menu">
       <li>
-        <header class="menu-title">In this document</header>
+        <header class="menu-title">In this post</header>
         <ul>
-          {{ document.content | toc | safe }}
+          {{ post.content | toc | safe }}
         </ul>
       </li>
     </nav>
