@@ -1,3 +1,4 @@
+const eleventyFetch = require('@11ty/eleventy-fetch')
 const { Octokit } = require('@octokit/rest')
 const { parse, join } = require('path')
 const yaml = require('yaml')
@@ -8,7 +9,8 @@ const replaceLink = require('markdown-it-replace-link')
 const anchor = require('markdown-it-anchor')
 const slugifyUrl = require('./slugify-url')
 
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/redbrick'
+const GITHUB_RAW = 'https://raw.githubusercontent.com/redbrick'
+const GITHUB_API = 'https://api.github.com'
 
 const octokit = new Octokit()
 
@@ -58,44 +60,30 @@ const parseMarkdown = (str) => {
   }
 }
 
-const request = (endpoint, options) =>
-  octokit.request(endpoint, {
+const request = (url, options) =>
+  eleventyFetch(GITHUB_API + url, {
+    verbose: true,
+    duration: '1h',
+    type: 'json',
     ...options,
-    headers: {
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
   })
 
 const getTree = async function (
   repo,
   {
-    path = '',
     extension = null,
     recursive = true,
     exclude = [],
     includeFolders = false,
   } = {}
 ) {
-  const repoResponse = await request('GET /repos/redbrick/{repo}', {
-    repo,
-  })
+  const { default_branch } = await request(`/repos/redbrick/${repo}`)
 
-  const { default_branch } = repoResponse.data
-
-  const filesResponse = await octokit.request(
-    'GET /repos/redbrick/{repo}/git/trees/{branch}:{path}',
-    {
-      repo,
-      branch: default_branch,
-      path,
-      recursive,
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28',
-      },
-    }
+  const { tree } = await request(
+    `/repos/redbrick/${repo}/git/trees/${default_branch}?recursive=${recursive}`
   )
 
-  const files = filesResponse.data.tree.filter((item) => {
+  const files = tree.filter((item) => {
     if (item.type == 'blob') {
       if (extension && parse(item.path).ext != extension) {
         return false
@@ -114,7 +102,7 @@ const getTree = async function (
   return await Promise.all(
     files.map(async (file) => {
       const contentUrl = join(
-        GITHUB_RAW_URL,
+        GITHUB_RAW,
         repo,
         default_branch,
         file.path
@@ -142,14 +130,12 @@ const getTree = async function (
 const getMarkdown = async function (
   repo,
   {
-    path = '',
     recursive = true,
     exclude = ['README', 'LICENSE', 'CONTRIBUTING'],
     includeFolders = false,
   } = {}
 ) {
   const files = await getTree(repo, {
-    path,
     recursive,
     exclude,
     includeFolders,

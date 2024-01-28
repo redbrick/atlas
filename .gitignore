@@ -1,3 +1,6 @@
+# Eleventy fetch cache
+.cache/
+
 # Build output
 site/
 dist/

@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.0",
     "@octokit/rest": "^20.0.2",
     "@redbrick/design-system": "https://github.com/redbrick/design-system",
     "@types/markdown-it": "^13.0.7",
