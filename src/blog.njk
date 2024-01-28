@@ -1,5 +1,5 @@
 ---
-layout: base.njk
+layout: layout/base.njk
 pagination:
   data: blog
   size: 1
@@ -8,28 +8,12 @@ permalink: /{{ post.url }}/
 eleventyComputed:
   title: "{{ post.title }}"
 ---
+{% from "components/sidebar.njk" import sidebar %}
 
 <div class="md:drawer-open grid grid-cols-4 gap-4 bg-base-100 min-h-screen">
-  <aside class="sticky hidden md:block left-0 top-16 h-screen p-5 overflow-auto bg-base-100 border-r border-white/5">
+  <aside class="sticky hidden lg:block left-0 top-16 h-screen p-5 overflow-auto bg-base-100 border-r border-white/5">
     <nav class="menu">
-      <li>
-        <header class="menu-title">Blog</header>
-        {% set navigation = blog | blobsToNavigation %}
-        {% for category, entries in navigation %}
-        <li>
-          <details open>
-            <summary>{{ category }}</summary>
-            <ul>
-              {% for entry in entries %}
-              <li>
-                <a {% if entry.url in page.url %} class="active"{% endif %} href="{{ entry.url }}">{{ entry.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
-          </details>
-        </li>
-        {% endfor %}
-      </li>
+      {{ sidebar(header="Blog", data=blog, current=page.url) }}
     </nav>
   </aside>
   <main class="col-span-4 md:col-span-3 lg:col-span-2">
@@ -39,7 +23,7 @@ eleventyComputed:
       </div>
     </article>
   </main>
-  <aside class="sticky hidden lg:block right-0 top-16 h-screen p-5 overflow-auto bg-base-100">
+  <aside class="sticky hidden md:block right-0 top-16 h-screen p-5 overflow-auto bg-base-100">
     <nav class="menu">
       <li>
         <header class="menu-title">In this post</header>

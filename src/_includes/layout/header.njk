@@ -2,16 +2,9 @@
   <div class="navbar md:px-10">
     <div class="navbar-start">
       {# Burger menu #}
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-        </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          {% for page in navbar %}
-          <li><a href="{{ page.link }}">{{ page.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+      <label for="drawer" tabindex="0" role="button" class="btn btn-ghost drawer-button lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+      </label>
       {# Logo #}
       <a class="btn btn-ghost rounded-full px-1" href="/">
         <span class="sr-only">Home</span>
@@ -23,8 +16,8 @@
       {# Navigation #}
       <nav class="hidden lg:flex" aria-label="Global">
         <ul class="menu menu-horizontal px-1">
-          {% for page in navbar %}
-          <li><a href="{{ page.link }}">{{ page.name }}</a></li>
+          {% for link in navbar %}
+          <li><a href="{{ link.url }}">{{ link.name }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -32,7 +25,7 @@
     <div class="navbar-end gap-2">
       <is-land>
         <template data-island="replace">
-          {% include "partials/theme-picker.njk" %}
+          {% include "components/theme-picker.njk" %}
         </template>
       </is-land>
       <a class="btn btn-primary" href="https://dcuclubsandsocs.ie/society/redbrick" rel="noreferrer" target="_blank">

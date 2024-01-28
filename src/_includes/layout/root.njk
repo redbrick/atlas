@@ -14,8 +14,6 @@
     <link rel="preload" href="https://raw.githubusercontent.com/redbrick/design-system/main/assets/fonts/myriad-pro/regular/MyriadPro-Regular.ttf" as="font" crossorigin />
     <link rel="preload" href="https://raw.githubusercontent.com/redbrick/design-system/main/assets/fonts/myriad-pro/bold/MyriadPro-Bold.ttf" as="font" crossorigin />
     <link rel="preload" href="https://raw.githubusercontent.com/redbrick/design-system/main/assets/fonts/myriad-pro/semi-bold/MyriadPro-Semibold.ttf" as="font" crossorigin />
-    {# <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.0/dist/full.min.css" rel="stylesheet" type="text/css" /> #}
-    {# <script src="https://cdn.tailwindcss.com/3.4.1"></script> #}
 
     <meta name="importmap-type" content="systemjs-importmap" />
     <script type="systemjs-importmap" src="/import-map.json"></script>
@@ -30,8 +28,6 @@
       show-when-local-storage="devtools"
       dev-libs
     ></import-map-overrides-full>
-    {% include "layout/header.njk" %}
     {{ content | safe }}
-    {% include "layout/footer.njk" %}
   </body>
 </html>
