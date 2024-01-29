@@ -6,7 +6,7 @@
   {% for category, entries in navigation %}
   <li>
     <details open>
-      <summary>{{ category }}</summary>
+      <summary>{{ category | capitalize }}</summary>
       <ul>
         {% for entry in entries %}
         <li>
