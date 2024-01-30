@@ -280,11 +280,13 @@ __metadata:
     debug: "npm:^4.3.4"
     eleventy-plugin-toc: "npm:^1.1.5"
     front-matter: "npm:^4.0.2"
+    luxon: "npm:^3.4.4"
     markdown-it: "npm:^14.0.0"
     markdown-it-anchor: "npm:^8.6.7"
     markdown-it-replace-link: "npm:^1.2.1"
     npm-run-all: "npm:^4.1.5"
     postcss: "npm:^8.4.33"
+    reading-time: "npm:^1.5.0"
     rimraf: "npm:^5.0.5"
     slugify: "npm:^1.6.6"
     tailwindcss: "npm:^3.4.1"
@@ -2344,7 +2346,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"luxon@npm:^3.3.0":
+"luxon@npm:^3.3.0, luxon@npm:^3.4.4":
   version: 3.4.4
   resolution: "luxon@npm:3.4.4"
   checksum: 02e26a0b039c11fd5b75e1d734c8f0332c95510f6a514a9a0991023e43fb233884da02d7f966823ffb230632a733fc86d4a4b1e63c3fbe00058b8ee0f8c728af
@@ -3412,6 +3414,13 @@ __metadata:
   dependencies:
     picomatch: "npm:^2.2.1"
   checksum: 6fa848cf63d1b82ab4e985f4cf72bd55b7dcfd8e0a376905804e48c3634b7e749170940ba77b32804d5fe93b3cc521aa95a8d7e7d725f830da6d93f3669ce66b
+  languageName: node
+  linkType: hard
+
+"reading-time@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "reading-time@npm:1.5.0"
+  checksum: 0f730852fd4fb99e5f78c5b0cf36ab8c3fa15db96f87d9563843f6fd07a47864273ade539ebb184b785b728cde81a70283aa2d9b80cba5ca03b81868be03cabc
   languageName: node
   linkType: hard
 

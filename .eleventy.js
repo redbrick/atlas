@@ -1,3 +1,5 @@
+const { DateTime } = require('luxon')
+const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
 const proseFilter = require('./utils/prose')
 
@@ -7,6 +9,13 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addFilter('prose', proseFilter)
+  eleventyConfig.addFilter(
+    'readingTime',
+    (str) => readingTime(str).text
+  )
+  eleventyConfig.addFilter('readable', (date) =>
+    DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_FULL)
+  )
   eleventyConfig.addFilter('blobsToNavigation', (list) =>
     list.reduce((rv, x) => {
       ;(rv[x['parent']] = rv[x['parent']] || []).push(x)
