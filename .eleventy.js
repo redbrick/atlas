@@ -1,10 +1,12 @@
-const TocPlugin = require('eleventy-plugin-toc')
+const tocPlugin = require('eleventy-plugin-toc')
+const proseFilter = require('./utils/prose')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(TocPlugin, {
+  eleventyConfig.addPlugin(tocPlugin, {
     tags: ['h2', 'h3', 'h4'],
   })
 
+  eleventyConfig.addFilter('prose', proseFilter)
   eleventyConfig.addFilter('blobsToNavigation', (list) =>
     list.reduce((rv, x) => {
       ;(rv[x['parent']] = rv[x['parent']] || []).push(x)

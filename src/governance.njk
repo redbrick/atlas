@@ -19,7 +19,7 @@ eleventyComputed:
   <main class="col-span-4 md:col-span-3 lg:col-span-2">
     <article class="p-10 pb-20">
       <div class="prose min-w-full">
-        {{ document.content | safe }}
+        {{ document.content | prose | safe }}
       </div>
     </article>
   </main>
@@ -28,7 +28,7 @@ eleventyComputed:
       <li>
         <header class="menu-title">In this document</header>
         <ul>
-          {{ document.content | toc | safe }}
+          {{ document.content | prose | toc | safe }}
         </ul>
       </li>
     </nav>
