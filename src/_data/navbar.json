@@ -1,10 +1,10 @@
 [
   {
     "name": "Open Governance",
-    "url": "/open-governance/documents/constitution"
+    "url": "/open-governance/documents/constitution/"
   },
   {
     "name": "Blog",
-    "url": "/blog/posts/2020-05-30-admin-jones-and-the-redbrick-mail-stack"
+    "url": "/blog/posts/2024-01-31-redbrick-maintenance-with-nomad/"
   }
 ]

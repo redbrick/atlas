@@ -1,6 +1,6 @@
 const { getMarkdown } = require('../../utils/github')
 
-module.exports = async () =>
-  getMarkdown('blog', {
-    exclude: ['README', 'main-page'],
-  })
+module.exports = async () => {
+  const data = await getMarkdown('blog')
+  return data.reverse()
+}
