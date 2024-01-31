@@ -2,14 +2,12 @@ FROM node:18.19.0-alpine AS build
 
 RUN apk update && apk add git
 
-USER node
+COPY . /app/
+
 WORKDIR /app
-COPY ./package.json ./
-RUN yarn config set network-timeout 600000 -g
 
-RUN yarn && yarn cache clean
+RUN yarn
 
-COPY . .
 RUN yarn build
 
 FROM nginx:1.24.0-alpine AS production
