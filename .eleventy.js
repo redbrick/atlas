@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('prose', proseFilter)
   eleventyConfig.addFilter(
     'readingTime',
-    (str) => readingTime(str).text
+    (str) => readingTime(str, { wordsPerMinute: 250 }).text
   )
   eleventyConfig.addFilter('readable', (date) =>
     DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_FULL)

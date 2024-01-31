@@ -89,9 +89,7 @@ const getMarkdown = async function (
   })
 
   return files.map((file) => {
-    const { attributes, bodyBegin } = frontMatter(file.content, {
-      wordsPerMinute: 250,
-    })
+    const { attributes, bodyBegin } = frontMatter(file.content)
 
     const content = file.content
       .split('\n')
