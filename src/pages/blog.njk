@@ -35,7 +35,7 @@ eleventyComputed:
       </div>
       <div class="divider"></div>
       <div class="prose min-w-full">
-        {# {{ post.content | prose | safe }} #}
+        {{ post.content | prose | safe }}
       </div>
     </article>
   </main>
@@ -44,7 +44,7 @@ eleventyComputed:
       <li>
         <header class="menu-title">In this post</header>
         <ul>
-          {# {{ post.content | prose | toc | safe }} #}
+          {{ post.content | prose | toc | safe }}
         </ul>
       </li>
     </nav>

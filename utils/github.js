@@ -109,6 +109,5 @@ const getMarkdown = async function (
 }
 
 module.exports = {
-  getRepositoryInfo,
   getMarkdown,
 }
