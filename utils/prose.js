@@ -2,6 +2,7 @@ const path = require('path')
 const markdownIt = require('markdown-it')
 const replaceLink = require('markdown-it-replace-link')
 const anchor = require('markdown-it-anchor')
+const { getRepositoryInfo } = require('./github')
 const slugifyUrl = require('./slugify-url')
 
 const md = markdownIt({
@@ -22,9 +23,16 @@ md.use(anchor, {
 
 md.use(replaceLink, {
   processHTML: true,
-  replaceLink: function (link, _env, _token, _htmlToken) {
+  replaceLink: function (link, env, token, _htmlToken) {
     const externalLink = /https?:\/\/((?:[\w\d-]+\.)+[\w\d]{2,})/i
     if (externalLink.test(link)) return link // do not process external links
+
+    if (token.type == 'image') {
+      const repo = env.fileSlug
+      const { default_branch } = getRepositoryInfo(repo)
+      // assume that non-external image urls follow the standards set in the Markdown repos
+      return `https://raw.githubusercontent.com/redbrick/${repo}/${default_branch}/${link}`
+    }
 
     if (
       link.startsWith('..') ||
@@ -40,4 +48,6 @@ md.use(replaceLink, {
   },
 })
 
-module.exports = (str) => md.render(str)
+module.exports = function (str) {
+  return md.render(str, this.page)
+}

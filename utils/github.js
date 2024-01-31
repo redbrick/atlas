@@ -14,6 +14,10 @@ const request = (url, options) =>
     ...options,
   })
 
+const getRepositoryInfo = async function (repo) {
+  return request(`/repos/redbrick/${repo}`)
+}
+
 const getTree = async function (
   repo,
   {
@@ -23,7 +27,7 @@ const getTree = async function (
     includeFolders = false,
   } = {}
 ) {
-  const { default_branch } = await request(`/repos/redbrick/${repo}`)
+  const { default_branch } = await getRepositoryInfo(repo)
 
   const { tree } = await request(
     `/repos/redbrick/${repo}/git/trees/${default_branch}?recursive=${recursive}`
@@ -105,5 +109,6 @@ const getMarkdown = async function (
 }
 
 module.exports = {
+  getRepositoryInfo,
   getMarkdown,
 }
