@@ -1,0 +1,24 @@
+---
+layout: markdown.njk
+outline: In this article
+---
+
+<div class="inline-block pb-8">
+  {% for tag in tags %}
+  <span class="badge">#{{ tag }}</span>
+  {% endfor %}
+</div>
+<h1 class="text-3xl font-bold">{{ title }}</h1>
+<div class="inline-block py-2">
+  {% if author %}
+  <span class="font-mono badge badge-lg badge-ghost my-2 mr-2">@{{ author }}</span>
+  {% endif %}
+  {% if created %}
+  <span class="badge badge-lg badge-ghost">📆 {{ created | readable }}</span>
+  {% endif %}
+  <span class="badge badge-lg badge-ghost">🍿 {{ content | readingTime }}</span>
+</div>
+<div class="divider"></div>
+<div class="prose min-w-full">
+  {{ content | safe }}
+</div>
