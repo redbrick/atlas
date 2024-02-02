@@ -1,4 +1,4 @@
-const { getMarkdown } = require('../../utils/github')
+const { getMarkdown } = require('../../../utils/github')
 
 module.exports = async () => {
   const data = await getMarkdown('blog')

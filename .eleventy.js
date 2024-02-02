@@ -35,8 +35,13 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src/site',
+      input: 'src/site/content/',
       output: 'dist',
+      data: '../_data',
+      includes: '../_includes',
     },
+    templateFormats: ['njk', 'md', 'html'],
+    htmlTemplateEngine: 'njk',
+    markdownTemplateEngine: 'njk',
   }
 }
