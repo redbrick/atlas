@@ -4,6 +4,8 @@ const replaceLink = require('markdown-it-replace-link')
 const anchor = require('markdown-it-anchor')
 const slugifyUrl = require('./slugify-url')
 
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/redbrick/'
+
 const md = markdownIt({
   html: true,
   breaks: true,
@@ -28,8 +30,18 @@ md.use(replaceLink, {
 
     if (token.type == 'image') {
       const repo = env.fileSlug
+      const currentPath = path.join(
+        ...env.url.split('/').slice(2, -2)
+      )
+
       // assume that non-external image urls follow the standards set in the Markdown repos
-      return `https://raw.githubusercontent.com/redbrick/${repo}/master/${link}`
+      return path.join(
+        GITHUB_RAW_URL,
+        repo,
+        'master',
+        currentPath,
+        link
+      )
     }
 
     if (
