@@ -2,9 +2,7 @@
 .cache/
 
 # Build output
-site/
 dist/
-build/
 
 # Yarn
 .yarn/*

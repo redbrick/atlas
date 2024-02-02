@@ -24,7 +24,9 @@ module.exports = function (eleventyConfig) {
   )
 
   eleventyConfig.addPassthroughCopy('import-map.json')
-  eleventyConfig.addPassthroughCopy('assets/favicon.ico')
+  eleventyConfig.addPassthroughCopy({
+    'src/assets/favicon.ico': 'assets/favicon.ico',
+  })
 
   eleventyConfig.setNunjucksEnvironmentOptions({
     throwOnUndefined: true,
@@ -33,7 +35,7 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: 'src',
+      input: 'src/site',
       output: 'dist',
     },
   }
