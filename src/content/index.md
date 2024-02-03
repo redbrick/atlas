@@ -1,6 +1,5 @@
 ---
 layout: default.njk
-title: Redbrick
 ---
 
 <main>

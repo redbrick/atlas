@@ -33,6 +33,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@11ty/eleventy-navigation@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "@11ty/eleventy-navigation@npm:0.3.5"
+  dependencies:
+    dependency-graph: "npm:^0.11.0"
+  checksum: fa37091b510dbe17c135cce3ceab34243eafeb13e0b21b47f62409ef0d818bffd0e007d664f216e0fff216715856063d75a50453b9dca590100b43a87899e41d
+  languageName: node
+  linkType: hard
+
 "@11ty/eleventy-utils@npm:^1.0.1":
   version: 1.0.2
   resolution: "@11ty/eleventy-utils@npm:1.0.2"
@@ -278,9 +287,11 @@ __metadata:
   resolution: "@redbrick/11ty-website@workspace:."
   dependencies:
     "@11ty/eleventy": "npm:^2.0.1"
+    "@11ty/eleventy-navigation": "npm:^0.3.5"
     "@redbrick/design-system": "https://github.com/redbrick/design-system"
     "@types/markdown-it": "npm:^13.0.7"
     debug: "npm:^4.3.4"
+    eleventy-plugin-postcss: "npm:^1.0.4"
     eleventy-plugin-toc: "npm:^1.1.5"
     luxon: "npm:^3.4.4"
     markdown-it: "npm:^14.0.0"
@@ -1143,6 +1154,16 @@ __metadata:
   bin:
     ejs: bin/cli.js
   checksum: f0e249c79128810f5f6d5cbf347fc906d86bb9384263db0b2a9004aea649f2bc2d112736de5716c509c80afb4721c47281bd5b57c757d3b63f1bf5ac5f885893
+  languageName: node
+  linkType: hard
+
+"eleventy-plugin-postcss@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "eleventy-plugin-postcss@npm:1.0.4"
+  dependencies:
+    postcss: "npm:8.4.8"
+    postcss-load-config: "npm:3.1.3"
+  checksum: 6415e12565acc16f2127c6186740798ae021e2908eb598002a457a6eea5878f9e2f984a89436dc8167be60cdf8268511ca6a00da37a0b62848633f988e97c6e9
   languageName: node
   linkType: hard
 
@@ -2185,7 +2206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lilconfig@npm:^2.1.0":
+"lilconfig@npm:^2.0.4, lilconfig@npm:^2.1.0":
   version: 2.1.0
   resolution: "lilconfig@npm:2.1.0"
   checksum: 64645641aa8d274c99338e130554abd6a0190533c0d9eb2ce7ebfaf2e05c7d9961f3ffe2bfa39efd3b60c521ba3dd24fa236fe2775fc38501bf82bf49d4678b8
@@ -2642,7 +2663,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.7":
+"nanoid@npm:^3.3.1, nanoid@npm:^3.3.7":
   version: 3.3.7
   resolution: "nanoid@npm:3.3.7"
   bin:
@@ -3011,6 +3032,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-load-config@npm:3.1.3":
+  version: 3.1.3
+  resolution: "postcss-load-config@npm:3.1.3"
+  dependencies:
+    lilconfig: "npm:^2.0.4"
+    yaml: "npm:^1.10.2"
+  peerDependencies:
+    ts-node: ">=9.0.0"
+  peerDependenciesMeta:
+    ts-node:
+      optional: true
+  checksum: 7886326304dcc80628947e3313c1236ddab7734242fe4d1e85bc98f7a67a6b919e687a5c9b4a41ebcfecba4967fcb187f69b4b05eac8abd60d2de3b6652201d0
+  languageName: node
+  linkType: hard
+
 "postcss-load-config@npm:^4.0.1":
   version: 4.0.2
   resolution: "postcss-load-config@npm:4.0.2"
@@ -3064,6 +3100,17 @@ __metadata:
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: f4142a4f56565f77c1831168e04e3effd9ffcc5aebaf0f538eee4b2d465adfd4b85a44257bb48418202a63806a7da7fe9f56c330aebb3cac898e46b4cbf49161
+  languageName: node
+  linkType: hard
+
+"postcss@npm:8.4.8":
+  version: 8.4.8
+  resolution: "postcss@npm:8.4.8"
+  dependencies:
+    nanoid: "npm:^3.3.1"
+    picocolors: "npm:^1.0.0"
+    source-map-js: "npm:^1.0.2"
+  checksum: dcbe17f138f795829dfeb7f1a826be602dffdcd7921af38ad01af080b441345913f180b44be20c61fb6a8c536f48e7d13269ee19e33d86fc4d5055d1b47475af
   languageName: node
   linkType: hard
 
@@ -4210,6 +4257,13 @@ __metadata:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 2286b5e8dbfe22204ab66e2ef5cc9bbb1e55dfc873bbe0d568aa943eb255d131890dfd5bf243637273d31119b870f49c18fcde2c6ffbb7a7a092b870dc90625a
+  languageName: node
+  linkType: hard
+
+"yaml@npm:^1.10.2":
+  version: 1.10.2
+  resolution: "yaml@npm:1.10.2"
+  checksum: 5c28b9eb7adc46544f28d9a8d20c5b3cb1215a886609a2fd41f51628d8aaa5878ccd628b755dbcd29f6bb4921bd04ffbc6dcc370689bb96e594e2f9813d2605f
   languageName: node
   linkType: hard
 
