@@ -24,6 +24,8 @@ module.exports = function (eleventyConfig) {
 
   const repos = ['blog', 'open-governance']
 
+  eleventyConfig.setUseGitIgnore(false)
+
   eleventyConfig.addGlobalData('permalink', () => (data) => {
     const inputDepth = config.dir.input.split('/').length
     const filePath = data.page.inputPath

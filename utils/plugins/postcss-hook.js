@@ -1,5 +1,6 @@
 const path = require('path')
 const { readFile, writeFile } = require('fs/promises')
+const { mkdirp } = require('mkdirp')
 
 const postcss = require('postcss')
 const postcssrc = require('postcss-load-config')
@@ -30,6 +31,7 @@ module.exports = function (eleventyConfig, opts = {}) {
       })
       .then((result) => result)
 
+    await mkdirp(path.join(output, '..'))
     await writeFile(output, css, 'utf8')
   })
 

@@ -4,8 +4,11 @@
   "version": "0.0.2",
   "packageManager": "yarn@4.0.2",
   "scripts": {
-    "dev": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy"
+    "clean": "rimraf dist",
+    "eleventy:dev": "eleventy --serve",
+    "dev": "run-s clean eleventy:dev",
+    "eleventy": "eleventy",
+    "build": "NODE_ENV=production run-s clean eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -20,6 +23,7 @@
     "markdown-it": "^14.0.0",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-replace-link": "^1.2.1",
+    "mkdirp": "^3.0.1",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.33",
     "postcss-load-config": "^5.0.2",
