@@ -38,7 +38,9 @@ module.exports = function (
       baseDir: dir.input,
     })
 
-    if (opts.debug) debug.enable('simple-git')
+    opts.debug
+      ? debug.enable('simple-git')
+      : debug.disable('simple-git')
 
     await Promise.all(
       opts.repos.map(async (repo) => {
@@ -60,4 +62,15 @@ module.exports = function (
   if (opts.clean) {
     eleventyConfig.on('eleventy.after', ({ dir }) => cleanBuilds(dir))
   }
+
+  eleventyConfig.watchIgnores.add(
+    `${eleventyConfig.dir.input}/{${opts.repos.join(',')}}/**`
+  )
+
+  eleventyConfig.addPassthroughCopy(
+    path.join(
+      eleventyConfig.dir.input,
+      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
+    )
+  )
 }
