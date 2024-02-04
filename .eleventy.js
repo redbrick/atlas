@@ -60,11 +60,11 @@ module.exports = function (eleventyConfig) {
     repos: [
       {
         name: 'blog',
-        hidden: 'res',
+        hidden: ['res'],
       },
       {
         name: 'open-governance',
-        hidden: 'res',
+        hidden: ['res'],
       },
     ],
     clean: false,

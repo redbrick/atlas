@@ -27,11 +27,11 @@ module.exports = function (
       tags: name,
     })
   }
-  const buildMetaFile = (filepath) => {
+  const buildMetaFile = (filepath, hidden) => {
     const dir = path.parse(filepath)
-
     const json = JSON.stringify({
       title: dir.name,
+      hidden: hidden.includes(filepath),
     })
 
     return `---json\n${json}\n---`
@@ -87,11 +87,14 @@ module.exports = function (
     await Promise.all(
       opts.repos.map(async (repo) => {
         const root = path.join(dir.input, repo.name)
+        const hidden = repo.hidden.map((file) =>
+          path.join(root, file)
+        )
 
         const traverse = async function (dir) {
           writeFile(
             path.join(dir, 'index.md'),
-            buildMetaFile(dir),
+            buildMetaFile(dir, hidden),
             'utf8'
           )
 
