@@ -2,10 +2,10 @@ const path = require('path')
 const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
+const postcssHookPlugin = require('eleventy-plugin-postcss')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 
 const gitHookPlugin = require('./utils/plugins/git-hook')
-const postcssHookPlugin = require('./utils/plugins/postcss-hook')
 const markdown = require('./utils/parsers/markdown')
 const slugify = require('./utils/filters/slugify')
 
@@ -57,13 +57,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('import-map.json')
 
   eleventyConfig.addPlugin(gitHookPlugin, {
-    repos: [{ name: 'blog' }, { name: 'open-governance' }],
+    repos: [
+      {
+        name: 'blog',
+        hidden: 'res',
+      },
+      {
+        name: 'open-governance',
+        hidden: 'res',
+      },
+    ],
     clean: false,
   })
-  eleventyConfig.addPlugin(postcssHookPlugin, {
-    input: path.join(config.dir.input, 'assets/main.css'),
-    output: 'assets/main.css',
-  })
+  eleventyConfig.addPlugin(postcssHookPlugin)
+  //   input: path.join(config.dir.input, 'assets/main.css'),
+  //   output: 'assets/main.css',
+  // })
   eleventyConfig.addPlugin(navigationPlugin)
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ['h2', 'h3', 'h4'],
@@ -83,6 +92,9 @@ module.exports = function (eleventyConfig) {
       return rv
     }, {})
   )
+
+  eleventyConfig.addWatchTarget('postcss.config.js')
+  eleventyConfig.addWatchTarget('tailwind.config.js')
 
   eleventyConfig.setLibrary('md', markdown)
 

@@ -120,6 +120,12 @@ module.exports = function (
     eleventyConfig.on('eleventy.after', ({ dir }) => cleanBuilds(dir))
   }
 
+  opts.repos.forEach((repo) =>
+    eleventyConfig.watchIgnores.add(
+      path.join(eleventyConfig.dir.input, repo.name)
+    )
+  )
+
   eleventyConfig.addPassthroughCopy(
     path.join(
       eleventyConfig.dir.input,
