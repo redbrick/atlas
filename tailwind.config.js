@@ -1,7 +1,4 @@
 module.exports = {
   presets: [require('@redbrick/design-system/tailwind')],
-  content: [
-    './src/_includes/**/*.{html,md,js,liquid,njk}',
-    './utils/**/*.js',
-  ],
+  content: ['./src/**/*.{html,md,njk,js,css}', './utils/**/*.js'],
 }
