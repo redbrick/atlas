@@ -10,12 +10,12 @@
         <li><a href="{{ link.url }}">{{ link.name }}</a></li>
         {% endfor %}
       </li>
-      {% if "/open-governance/" in page.url %}
+      {% if page.url and "/open-governance/" in page.url %}
       <li>
         <header class="menu-title">Open Governance</header>
         {{ collections['open-governance'] | eleventyNavigation | eleventyNavigationToHtml | safe }}
       </li>
-      {% elif "/blog/" in page.url %}
+      {% elif page.url and "/blog/" in page.url %}
       <li>
         <header class="menu-title">Blog</header>
         {{ collections['blog'] | eleventyNavigation | eleventyNavigationToHtml | safe }}

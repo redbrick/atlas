@@ -15,16 +15,16 @@ module.exports = function (
 ) {
   const cleanBuilds = (dir) => {
     return rimraf(
-      opts.repos.map((repo) => path.join(dir.input, repo))
+      opts.repos.map((repo) => path.join(dir.input, repo.name))
     )
   }
-  const buildGitUrl = (repo) => {
-    return `git@github.com:redbrick/${repo}.git`
+  const buildGitUrl = (name) => {
+    return `git@github.com:redbrick/${name}.git`
   }
-  const buildDataFile = (repo) => {
+  const buildDataFile = (name) => {
     return JSON.stringify({
-      layout: 'layouts/' + repo,
-      tags: repo,
+      layout: 'layouts/' + name,
+      tags: name,
     })
   }
   const buildMetaFile = (filepath) => {
@@ -51,14 +51,18 @@ module.exports = function (
     await Promise.all(
       opts.repos.map(async (repo) => {
         // clone git repo into input dir
-        await git.clone(buildGitUrl(repo), [
+        await git.clone(buildGitUrl(repo.name), [
           '--single-branch',
           '--depth=1',
         ])
         // write directory data file into repo
         await writeFile(
-          path.join(dir.input, repo, repo + '.11tydata.json'),
-          buildDataFile(repo),
+          path.join(
+            dir.input,
+            repo.name,
+            `${repo.name}.11tydata.json`
+          ),
+          buildDataFile(repo.name),
           'utf8'
         )
       })
@@ -75,14 +79,14 @@ module.exports = function (
     ]
     await Promise.all(
       opts.repos.map((repo) =>
-        rimraf(clean.map((f) => path.join(dir.input, repo, f)))
+        rimraf(clean.map((f) => path.join(dir.input, repo.name, f)))
       )
     )
 
     // add meta-template to each folder, for navigation
     await Promise.all(
       opts.repos.map(async (repo) => {
-        const root = path.join(dir.input, repo)
+        const root = path.join(dir.input, repo.name)
 
         const traverse = async function (dir) {
           writeFile(
@@ -115,10 +119,6 @@ module.exports = function (
   if (opts.clean) {
     eleventyConfig.on('eleventy.after', ({ dir }) => cleanBuilds(dir))
   }
-
-  eleventyConfig.watchIgnores.add(
-    `${eleventyConfig.dir.input}/{${opts.repos.join(',')}}/**`
-  )
 
   eleventyConfig.addPassthroughCopy(
     path.join(

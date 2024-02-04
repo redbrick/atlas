@@ -22,8 +22,6 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
   }
 
-  const repos = ['blog', 'open-governance']
-
   eleventyConfig.setUseGitIgnore(false)
 
   eleventyConfig.addGlobalData('permalink', () => (data) => {
@@ -38,11 +36,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addGlobalData('eleventyComputed', () => {
     return {
+      permalink: (data) => (data.hidden ? false : data.permalink),
+      eleventyExcludeFromCollections: (data) => data.hidden,
       eleventyNavigation: {
         title: (data) => data.title,
-        key: (data) => data.page.url.replace(/\/+$/, ''),
+        key: (data) =>
+          data.page.url
+            ? data.page.url.replace(/\/+$/, '')
+            : undefined,
         parent: (data) => {
-          const parent = path.join(data.page.url, '..')
+          const parent = data.page.url
+            ? path.join(data.page.url, '..')
+            : undefined
           return parent != '/' ? parent : undefined
         },
       },
@@ -52,7 +57,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('import-map.json')
 
   eleventyConfig.addPlugin(gitHookPlugin, {
-    repos,
+    repos: [{ name: 'blog' }, { name: 'open-governance' }],
     clean: false,
   })
   eleventyConfig.addPlugin(postcssHookPlugin, {
