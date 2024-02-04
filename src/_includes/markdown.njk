@@ -7,11 +7,7 @@ outline: On this page
 
 <div class="md:drawer-open grid grid-cols-4 gap-4 bg-base-100 min-h-screen">
   <aside class="sticky hidden lg:block left-0 top-16 h-screen p-5 pb-16 overflow-auto bg-base-100 border-r border-white/5">
-    <ul>
-    {% for page in collections[collection] %}
-      <li>{{ page.data.eleventyComputed | dump | safe }}</li>
-    {% endfor %}
-    </ul>
+    {{ collections[collection] | eleventyNavigation | eleventyNavigationToHtml | safe }}
     {# <nav class="menu">
       {{ sidebar(header="Open Governance", data=governance, current=page.url) }}
     </nav> #}

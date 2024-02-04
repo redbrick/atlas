@@ -36,6 +36,16 @@ module.exports = function (eleventyConfig) {
     return `/${slugify(filePath)}.${data.page.outputFileExtension}`
   })
 
+  eleventyConfig.addGlobalData('eleventyComputed', () => {
+    return {
+      eleventyNavigation: {
+        title: (data) => data.title,
+        key: (data) => data.page.url,
+        // parent: (data) => path.join(data.page.url, '..'),
+      },
+    }
+  })
+
   eleventyConfig.addPassthroughCopy('import-map.json')
 
   eleventyConfig.addPlugin(gitHookPlugin, {
