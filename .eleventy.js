@@ -55,6 +55,13 @@ module.exports = function (eleventyConfig) {
   })
 
   eleventyConfig.addPassthroughCopy('import-map.json')
+  eleventyConfig.addPassthroughCopy(
+    path.join(
+      eleventyConfig.dir.input,
+      'assets',
+      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
+    )
+  )
 
   eleventyConfig.addPlugin(gitHookPlugin, {
     repos: [

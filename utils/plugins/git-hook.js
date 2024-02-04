@@ -132,7 +132,7 @@ module.exports = function (
   eleventyConfig.addPassthroughCopy(
     path.join(
       eleventyConfig.dir.input,
-      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
+      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp}'
     )
   )
 }
