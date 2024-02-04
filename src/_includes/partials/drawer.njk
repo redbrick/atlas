@@ -11,9 +11,15 @@
         {% endfor %}
       </li>
       {% if "/open-governance/" in page.url %}
-        {{ sidebar(header="Open Governance", data=governance, current=page.url) }}
+      <li>
+        <header class="menu-title">Open Governance</header>
+        {{ collections['open-governance'] | eleventyNavigation | eleventyNavigationToHtml | safe }}
+      </li>
       {% elif "/blog/" in page.url %}
-        {{ sidebar(header="Blog", data=blog, current=page.url) }}
+      <li>
+        <header class="menu-title">Blog</header>
+        {{ collections['blog'] | eleventyNavigation | eleventyNavigationToHtml | safe }}
+      </li>
       {% endif %}
     </nav>
   </aside>
