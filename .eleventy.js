@@ -40,8 +40,11 @@ module.exports = function (eleventyConfig) {
     return {
       eleventyNavigation: {
         title: (data) => data.title,
-        key: (data) => data.page.url,
-        // parent: (data) => path.join(data.page.url, '..'),
+        key: (data) => data.page.url.replace(/\/+$/, ''),
+        parent: (data) => {
+          const parent = path.join(data.page.url, '..')
+          return parent != '/' ? parent : undefined
+        },
       },
     }
   })

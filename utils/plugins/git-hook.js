@@ -1,9 +1,9 @@
 const path = require('path')
-const { writeFile } = require('fs/promises')
+const { writeFile, readdir, stat } = require('fs/promises')
+const { rimraf } = require('rimraf')
 
 const debug = require('debug')
 const simpleGit = require('simple-git')
-const { rimraf } = require('rimraf')
 
 module.exports = function (
   eleventyConfig,
@@ -27,8 +27,14 @@ module.exports = function (
       tags: repo,
     })
   }
-  const buildDataFilename = (dir, repo) => {
-    return path.join(dir.input, repo, repo + '.11tydata.json')
+  const buildMetaFile = (filepath) => {
+    const dir = path.parse(filepath)
+
+    const json = JSON.stringify({
+      title: dir.name,
+    })
+
+    return `---json\n${json}\n---`
   }
 
   eleventyConfig.on('eleventy.before', async ({ dir }) => {
@@ -51,10 +57,57 @@ module.exports = function (
         ])
         // write directory data file into repo
         await writeFile(
-          buildDataFilename(dir, repo),
+          path.join(dir.input, repo, repo + '.11tydata.json'),
           buildDataFile(repo),
           'utf8'
         )
+      })
+    )
+
+    // TODO: add git information to data cascade (tag, commits, etc)
+
+    // clean each cloned repo
+    const clean = [
+      '.obsidian',
+      '.git',
+      '.gitattributes',
+      '.gitignore',
+    ]
+    await Promise.all(
+      opts.repos.map((repo) =>
+        rimraf(clean.map((f) => path.join(dir.input, repo, f)))
+      )
+    )
+
+    // add meta-template to each folder, for navigation
+    await Promise.all(
+      opts.repos.map(async (repo) => {
+        const root = path.join(dir.input, repo)
+
+        const traverse = async function (dir) {
+          writeFile(
+            path.join(dir, 'index.md'),
+            buildMetaFile(dir),
+            'utf8'
+          )
+
+          dir = await readdir(dir)
+          await Promise.all(
+            dir.map(async (file) => {
+              let filePath = path.join(root, file)
+              let fileStat
+              try {
+                fileStat = await stat(filePath)
+              } catch {
+                return
+              }
+
+              if (fileStat.isDirectory()) await traverse(filePath)
+            })
+          )
+        }
+
+        await traverse(root)
       })
     )
   })
