@@ -12,7 +12,11 @@ module.exports = function (str, opts = {}) {
 
   // remove percent encoding
   str = decodeURIComponent(str)
-  // split url into file path, extension & anchor
+
+  // if link is an intra-document anchor, return slug
+  if (str.startsWith('#')) return '#' + slugify(str, options)
+
+  // split link into file path, extension & anchor
   const [base, ext, anchor] = splitExtension(str)
 
   str = base
@@ -26,7 +30,7 @@ module.exports = function (str, opts = {}) {
     .join('/')
 
   if (opts.includeExtension) str += ext
-  str += anchor ? '#' + slugify(anchor, options) : ''
+  if (anchor) str += '#' + slugify(anchor, options)
 
   return str
 }

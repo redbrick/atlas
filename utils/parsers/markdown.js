@@ -25,12 +25,8 @@ md.use(anchor, {
 md.use(replaceLink, {
   processHTML: true,
   replaceLink: function (link, _env, token, _htmlToken) {
-    // do not transform external links, same-page anchors or image links
-    const ignore = [
-      isExternalUrl(link),
-      link.startsWith('#'),
-      token.type == 'image',
-    ]
+    // do not transform external links or image links
+    const ignore = [isExternalUrl(link), token.type == 'image']
 
     return ignore.some((condition) => condition === true)
       ? link
