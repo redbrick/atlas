@@ -34,9 +34,6 @@ module.exports = function (eleventyConfig) {
     return `/${slugify(filePath)}.${data.page.outputFileExtension}`
   })
 
-  eleventyConfig.addWatchTarget('postcss.config.js')
-  eleventyConfig.addWatchTarget('tailwind.config.js')
-
   eleventyConfig.addPassthroughCopy('import-map.json')
 
   eleventyConfig.addPlugin(gitHookPlugin, {

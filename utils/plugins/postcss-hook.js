@@ -32,4 +32,8 @@ module.exports = function (eleventyConfig, opts = {}) {
 
     await writeFile(output, css, 'utf8')
   })
+
+  eleventyConfig.addWatchTarget('postcss.config.js')
+  eleventyConfig.addWatchTarget('tailwind.config.js')
+  eleventyConfig.addWatchTarget(opts.input)
 }
