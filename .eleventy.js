@@ -2,103 +2,54 @@ const path = require('path')
 const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
-const postcssHookPlugin = require('eleventy-plugin-postcss')
+const postcssPlugin = require('eleventy-plugin-postcss')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 
-const gitHookPlugin = require('./utils/plugins/git-hook')
+const gitBuildPlugin = require('./utils/plugins/git-build')
 const markdown = require('./utils/parsers/markdown')
 const slugify = require('./utils/filters/slugify')
 
+const pkg = require('./package.json')
+
 module.exports = function (eleventyConfig) {
-  const config = {
-    dir: {
-      input: 'src/content',
-      output: 'dist',
-      data: '../_data',
-      includes: '../_includes',
-    },
-    templateFormats: ['njk', 'md', 'html'],
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
-  }
-
   eleventyConfig.setUseGitIgnore(false)
-
-  eleventyConfig.addGlobalData('permalink', () => (data) => {
-    const inputDepth = config.dir.input.split('/').length
-    const filePath = data.page.inputPath
-      .split('/')
-      .slice(inputDepth + 1)
-      .join('/')
-
-    return `/${slugify(filePath)}.${data.page.outputFileExtension}`
-  })
-
-  eleventyConfig.addGlobalData('eleventyComputed', () => {
-    return {
-      permalink: (data) => (data.hidden ? false : data.permalink),
-      eleventyExcludeFromCollections: (data) => data.hidden,
-      eleventyNavigation: {
-        title: (data) => data.title,
-        key: (data) =>
-          data.page.url
-            ? data.page.url.replace(/\/+$/, '')
-            : undefined,
-        parent: (data) => {
-          const parent = data.page.url
-            ? path.join(data.page.url, '..')
-            : undefined
-          return parent != '/' ? parent : undefined
-        },
-      },
-    }
-  })
 
   eleventyConfig.addPassthroughCopy('import-map.json')
   eleventyConfig.addPassthroughCopy(
     path.join(
-      eleventyConfig.dir.input,
+      pkg.eleventy.dir.input,
       'assets',
       '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
     )
   )
 
-  eleventyConfig.addPlugin(gitHookPlugin, {
+  eleventyConfig.addPlugin(gitBuildPlugin, {
     repos: [
-      {
-        name: 'blog',
-        hidden: ['res'],
-      },
+      { name: 'blog' },
       {
         name: 'open-governance',
-        hidden: ['res'],
+        cloneOptions: {
+          '--branch': 'website-build',
+        },
       },
     ],
     clean: false,
   })
-  eleventyConfig.addPlugin(postcssHookPlugin)
-  //   input: path.join(config.dir.input, 'assets/main.css'),
-  //   output: 'assets/main.css',
-  // })
+  eleventyConfig.addPlugin(postcssPlugin)
   eleventyConfig.addPlugin(navigationPlugin)
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ['h2', 'h3', 'h4'],
   })
 
   eleventyConfig.addFilter('slugify', slugify)
-  eleventyConfig.addFilter(
-    'readingTime',
-    (str) => readingTime(str, { wordsPerMinute: 250 }).text
-  )
-  eleventyConfig.addFilter('readable', (date) =>
-    DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_FULL)
-  )
-  eleventyConfig.addFilter('blobsToNavigation', (list) =>
-    list.reduce((rv, x) => {
-      ;(rv[x['parent']] = rv[x['parent']] || []).push(x)
-      return rv
-    }, {})
-  )
+  eleventyConfig.addFilter('readable', (date) => {
+    return DateTime.fromJSDate(date).toLocaleString(
+      DateTime.DATE_FULL
+    )
+  })
+  eleventyConfig.addFilter('readingTime', (str) => {
+    return readingTime(str, { wordsPerMinute: 250 }).text
+  })
 
   eleventyConfig.addWatchTarget('postcss.config.js')
   eleventyConfig.addWatchTarget('tailwind.config.js')
@@ -110,5 +61,5 @@ module.exports = function (eleventyConfig) {
     autoescape: false,
   })
 
-  return config
+  return pkg.eleventy
 }

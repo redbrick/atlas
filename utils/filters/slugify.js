@@ -16,10 +16,9 @@ module.exports = function (str, opts = {}) {
   // if link is an intra-document anchor, return slug
   if (str.startsWith('#')) return '#' + slugify(str, options)
 
-  // split link into file path, extension & anchor
-  const [base, ext, anchor] = splitExtension(str)
+  const { filepath, ext, anchor } = splitExtension(str)
 
-  str = base
+  str = filepath
     .split('/')
     .map((segment) => {
       // do not process '.' or '..'

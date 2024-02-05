@@ -12,7 +12,7 @@ const splitExtension = (url) => {
     ? parsed.ext.split('#')
     : [parsed.ext, '']
 
-  return [filepath, ext, anchor]
+  return { filepath, ext, anchor }
 }
 
 module.exports = {
