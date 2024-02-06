@@ -1,12 +1,12 @@
 ---
-layout: layout/root.njk
+layout: base.njk
 ---
 <div class="drawer">
   <input id="drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
-    {% include "layout/header.njk" %}
+    {% include "partials/header.njk" %}
     {{ content | safe }}
-    {% include "layout/footer.njk" %}
+    {% include "partials/footer.njk" %}
   </div>
-  {% include "layout/drawer.njk" %}
+  {% include "partials/drawer.njk" %}
 </div>
