@@ -13,7 +13,7 @@ layout: base.njk
   ></import-map-overrides-full>
   <div class="drawer">
     <input id="drawer" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-content">
+    <div class="drawer-content min-h-100vh">
       {% include "partials/header.njk" %}
       {{ content | safe }}
       {% include "partials/footer.njk" %}
