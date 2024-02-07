@@ -9,5 +9,6 @@ module.exports = () => (data) => {
     .slice(inputDepth + 1)
     .join('/')
 
-  return `/${slugify(filePath)}.${data.page.outputFileExtension}`
+  // return `/${slugify(filePath)}.${data.page.outputFileExtension}`
+  return '/' + slugify(filePath)
 }

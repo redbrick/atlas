@@ -7,7 +7,7 @@ const options = {
   remove: /["]/g,
 }
 
-module.exports = function (str, opts = {}) {
+module.exports = function (str) {
   if (!str) return
 
   // remove percent encoding
@@ -28,7 +28,7 @@ module.exports = function (str, opts = {}) {
     })
     .join('/')
 
-  if (opts.includeExtension) str += ext
+  str += ext === '.md' ? '.html' : ext
   if (anchor) str += '#' + slugify(anchor, options)
 
   return str
