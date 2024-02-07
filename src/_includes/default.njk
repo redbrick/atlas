@@ -1,12 +1,23 @@
 ---
 layout: base.njk
 ---
-<div class="drawer">
-  <input id="drawer" type="checkbox" class="drawer-toggle" />
-  <div class="drawer-content">
-    {% include "partials/header.njk" %}
-    {{ content | safe }}
-    {% include "partials/footer.njk" %}
+<is-land>
+  <template data-island="replace">
+    {% include "partials/search-modal.njk" %}
+  </template>
+</is-land>
+<body class="font-myriad">
+  <import-map-overrides-full
+    show-when-local-storage="devtools"
+    dev-libs
+  ></import-map-overrides-full>
+  <div class="drawer">
+    <input id="drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      {% include "partials/header.njk" %}
+      {{ content | safe }}
+      {% include "partials/footer.njk" %}
+    </div>
+    {% include "partials/drawer.njk" %}
   </div>
-  {% include "partials/drawer.njk" %}
-</div>
+</body>

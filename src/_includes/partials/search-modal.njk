@@ -1,0 +1,51 @@
+<script type="module">
+  window.pagefind = await import("/_pagefind/pagefind.js")
+  window.pagefind.init()
+</script>
+
+<dialog id="searchModal" class="modal">
+  <div 
+    x-data="{
+      results: [],
+
+      async search(event) {
+        const search = await window.pagefind.debouncedSearch(event.target.value)
+        if (search === null) return
+
+        this.results = await Promise.all(
+          search.results.map((entry) => entry.data())
+        )
+      }
+    }"
+    class="flex flex-col modal-box p-0 border border-base-content/10 overflow-hidden"
+  >
+    <header class="z-1 relative navbar px-5 bg-base-100 border-b border-base-content/10">
+      <span>
+        <svg class="stroke-current text-base-content" width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </span>
+      <input @input="search" class="w-full input border-none focus:outline-none" placeholder="Search..." type="text" />
+      <form method="dialog">
+        <button class="kbd">Esc</button>
+      </form>
+    </header>
+    <div class="overflow-auto">
+      <nav class="menu">
+        <template x-if="results.length === 0">
+          <div class="m-auto p-10">No results found</div>
+        </template>
+        <template x-for="result in results" :key="result.url">
+          <li>
+            <a x-bind:href="result.url" class="flex flex-col items-start">
+              <h1 x-text="result.meta.title" class="text-md font-bold"></h1>
+              <p x-html="result.excerpt"></p>
+            </a>
+          </li>
+        </template>
+      </nav>
+    </div>
+    <footer class="z-1 px-5 h-10 bg-base-100 border-t border-base-content/10"></footer>
+  </div>
+  <form method="dialog" class="modal-backdrop backdrop-blur">
+    <button>Close</button>
+  </form>
+</dialog>

@@ -6,6 +6,7 @@ const postcssPlugin = require('eleventy-plugin-postcss')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 
 const gitBuildPlugin = require('./utils/plugins/git-build')
+const pagefindPlugin = require('./utils/plugins/pagefind')
 const markdown = require('./utils/parsers/markdown')
 const slugify = require('./utils/filters/slugify')
 
@@ -24,17 +25,10 @@ module.exports = function (eleventyConfig) {
   )
 
   eleventyConfig.addPlugin(gitBuildPlugin, {
-    repos: [
-      { name: 'blog' },
-      {
-        name: 'open-governance',
-        cloneOptions: {
-          '--branch': 'website-build',
-        },
-      },
-    ],
+    repos: [{ name: 'blog' }, { name: 'open-governance' }],
     clean: false,
   })
+  eleventyConfig.addPlugin(pagefindPlugin)
   eleventyConfig.addPlugin(postcssPlugin)
   eleventyConfig.addPlugin(navigationPlugin)
   eleventyConfig.addPlugin(tocPlugin, {

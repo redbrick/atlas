@@ -4,22 +4,28 @@ collection: blog
 outline: In this article
 ---
 
-<div class="inline-block pb-8">
+{% if author %}
+<div>
+  <div class="inline-block pb-6">
   {% for tag in tags %}
   <span class="badge">#{{ tag }}</span>
   {% endfor %}
 </div>
 <h1 class="text-3xl font-bold">{{ title }}</h1>
-<div class="inline-block py-2">
-  {% if author %}
-  <span class="font-mono badge badge-lg badge-ghost my-2 mr-2">@{{ author }}</span>
-  {% endif %}
+  <div class="inline-block py-4">
+    <span class="font-mono badge badge-lg badge-ghost">@{{ author }}</span>
   {% if created %}
-  <span class="badge badge-lg badge-ghost">📆 {{ created | readable }}</span>
+    <span data-pagefind-ignore class="badge badge-lg badge-ghost">
+      📆 {{ created | readable }}
+    </span>
   {% endif %}
-  <span class="badge badge-lg badge-ghost">🍿 {{ content | readingTime }}</span>
+    <span data-pagefind-ignore class="badge badge-lg badge-ghost">
+      🍿 {{ content | readingTime }}
+    </span>
 </div>
 <div class="divider"></div>
+</div>
+{% endif %}
 <div class="prose min-w-full">
   {{ content | safe }}
 </div>

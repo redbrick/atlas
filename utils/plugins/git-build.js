@@ -67,7 +67,7 @@ module.exports = function (
             `${repo.name}.11tydata.json`
           ),
           buildDataFile(repo.name),
-          'utf8'
+          'utf-8'
         )
       })
     )
@@ -114,7 +114,7 @@ module.exports = function (
       await writeFile(
         path.join(dirpath, path.parse(dirpath).name + '.md'),
         buildMetaFile(dirpath),
-        'utf8'
+        'utf-8'
       )
     }
 

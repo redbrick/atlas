@@ -10,7 +10,8 @@ title: Redbrick
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/main.css" />
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
 
     <link rel="stylesheet" href="https://raw.githubusercontent.com/redbrick/design-system/main/assets/fonts/myriad-pro/loader.css" />
     {# Preload fonts instead of waiting until they are needed by CSS #}
@@ -26,11 +27,5 @@ title: Redbrick
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js"></script>
   </head>
-  <body class="font-myriad">
-    <import-map-overrides-full
-      show-when-local-storage="devtools"
-      dev-libs
-    ></import-map-overrides-full>
-    {{ content | safe }}
-  </body>
+  {{ content | safe }}
 </html>
