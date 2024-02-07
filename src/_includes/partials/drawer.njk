@@ -1,5 +1,3 @@
-{% from "partials/sidebar.njk" import sidebar %}
-
 <div class="drawer-side overflow-none">
   <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
   <aside class="px-5 py-16 h-screen w-80 max-w-screen overflow-auto bg-base-100 bg-opacity-90 backdrop-blur border-r border-white/5 shadow-md"> 
@@ -11,15 +9,11 @@
         {% endfor %}
       </li>
       {% if page.url and "/open-governance/" in page.url %}
-      <li>
-        <header class="menu-title">Open Governance</header>
-        {{ collections['open-governance'] | eleventyNavigation | eleventyNavigationToHtml | safe }}
-      </li>
+      <header class="menu-title">Open Governance</header>
+      {{ collections['open-governance'] | eleventyNavigation | renderTree | safe }}
       {% elif page.url and "/blog/" in page.url %}
-      <li>
-        <header class="menu-title">Blog</header>
-        {{ collections['blog'] | eleventyNavigation | eleventyNavigationToHtml | safe }}
-      </li>
+      <header class="menu-title">Blog</header>
+      {{ collections['blog'] | eleventyNavigation | renderTree | safe }}
       {% endif %}
     </nav>
   </aside>

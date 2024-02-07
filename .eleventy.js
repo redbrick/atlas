@@ -3,10 +3,11 @@ const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
 const postcssPlugin = require('eleventy-plugin-postcss')
-const navigationPlugin = require('@11ty/eleventy-navigation')
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 
 const gitBuildPlugin = require('./utils/plugins/git-build')
 const pagefindPlugin = require('./utils/plugins/pagefind')
+const navigationRenderPlugin = require('./utils/plugins/navigation-render')
 const markdown = require('./utils/parsers/markdown')
 const slugify = require('./utils/filters/slugify')
 
@@ -30,7 +31,8 @@ module.exports = function (eleventyConfig) {
   })
   eleventyConfig.addPlugin(pagefindPlugin)
   eleventyConfig.addPlugin(postcssPlugin)
-  eleventyConfig.addPlugin(navigationPlugin)
+  eleventyConfig.addPlugin(eleventyNavigationPlugin)
+  eleventyConfig.addPlugin(navigationRenderPlugin)
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ['h2', 'h3', 'h4'],
   })
