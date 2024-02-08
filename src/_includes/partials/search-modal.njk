@@ -1,6 +1,6 @@
 <script type="module">
-  window.pagefind = await import("/_pagefind/pagefind.js")
-  window.pagefind.init()
+  window.pf = await import("/_pagefind/pagefind.js")
+  pf.init()
 </script>
 
 <dialog id="searchModal" class="modal">
@@ -9,9 +9,10 @@
       results: [],
 
       async search(event) {
-        const search = await window.pagefind.debouncedSearch(event.target.value)
+        const search = await pf.debouncedSearch(event.target.value, {}, 500)
         if (search === null) return
 
+        this.results = []
         this.results = await Promise.all(
           search.results.map((entry) => entry.data())
         )
