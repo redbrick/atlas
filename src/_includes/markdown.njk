@@ -15,13 +15,7 @@ outline: On this page
     </article>
   </main>
   <aside class="sticky hidden md:block right-0 top-16 h-screen p-5 overflow-auto bg-base-100">
-    <nav class="menu">
-      <li>
-        <header class="menu-title">{{ outline }}</header>
-        <ul>
-          {{ content | toc | safe }}
-        </ul>
-      </li>
-    </nav>
+    <header class="menu-title">{{ outline }}</header>
+    {{ content | toc | safe }}
   </aside>
 </div>

@@ -35,6 +35,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(navigationRenderPlugin)
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ['h2', 'h3', 'h4'],
+    wrapperClass: 'menu',
+    ul: true,
   })
 
   eleventyConfig.addFilter('slugify', slugify)
