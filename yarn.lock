@@ -325,6 +325,7 @@ __metadata:
     "@11ty/eleventy-navigation": "npm:^0.3.5"
     "@redbrick/design-system": "https://github.com/redbrick/design-system"
     "@types/markdown-it": "npm:^13.0.7"
+    "@xpd/tailwind-3dtransforms": "npm:^1.0.3"
     autoprefixer: "npm:^10.4.17"
     debug: "npm:^4.3.4"
     eleventy-plugin-postcss: "npm:^1.0.4"
@@ -421,6 +422,13 @@ __metadata:
   version: 3.0.5
   resolution: "@types/minimatch@npm:3.0.5"
   checksum: 10c0/a1a19ba342d6f39b569510f621ae4bbe972dc9378d15e9a5e47904c440ee60744f5b09225bc73be1c6490e3a9c938eee69eb53debf55ce1f15761201aa965f97
+  languageName: node
+  linkType: hard
+
+"@xpd/tailwind-3dtransforms@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@xpd/tailwind-3dtransforms@npm:1.0.3"
+  checksum: 10c0/15971d463df5d8d902f7396fd6874aa94122e198f7c47d64149d2ed0d0cd2c65451e5b76b7055dd530795701dbee20a1158af0e6bd6471e42b13a6d28157e7a1
   languageName: node
   linkType: hard
 

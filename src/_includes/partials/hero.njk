@@ -1,13 +1,11 @@
-<section class="relative -z-50 hero min-h-screen bg-base-200">
-  <img class="absolute inset-0 -z-10" src="/assets/img/spotlight-bg.webp" alt="" />
-  <div class="absolute inset-0 -z-20  bg-base-content [mask-image:url(/assets/svg/grid-bg.svg)]"></div>
-  <div class="hero-content w-screen lg:justify-end flex-col lg:flex-row-reverse text-center lg:text-start lg:gap-20">
+<section class="relative hero min-h-screen">
+  <div class="hero-content z-0 w-screen lg:justify-end flex-col lg:flex-row-reverse text-center lg:text-start lg:gap-20">
     <div class="max-w-xl lg:max-w-2xl">
       <h1 class="text-3xl sm:text-5xl font-bold">
         Home of Open Source.
         <strong class="text-primary sm:block">Become a Member.</strong>
       </h1>
-      <p class="mt-4 sm:text-xl/relaxed">
+      <p class="mt-4 sm:text-lg/relaxed">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
         numquam ea!
       </p>
@@ -21,4 +19,8 @@
       </div>
     </div>
   </div>
+  <img class="absolute inset-0 -z-10" src="/assets/img/spotlight-bg.webp" alt="" />
+  {% include "partials/hero-cards.njk" %}
+  <div class="absolute inset-0 -z-30 bg-base-content [mask-image:url(/assets/svg/grid-bg.svg)]"></div>
+  <div class="absolute inset-0 -z-50 bg-base-200"></div>
 </section>

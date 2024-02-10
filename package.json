@@ -33,6 +33,7 @@
     "@11ty/eleventy-navigation": "^0.3.5",
     "@redbrick/design-system": "https://github.com/redbrick/design-system",
     "@types/markdown-it": "^13.0.7",
+    "@xpd/tailwind-3dtransforms": "^1.0.3",
     "autoprefixer": "^10.4.17",
     "debug": "^4.3.4",
     "eleventy-plugin-postcss": "^1.0.4",
