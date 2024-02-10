@@ -1,7 +1,7 @@
 <section class="relative hero min-h-screen">
-  <div class="hero-content z-0 w-screen lg:justify-end flex-col lg:flex-row-reverse text-center lg:text-start lg:gap-20">
-    <div class="max-w-xl lg:max-w-2xl">
-      <h1 class="text-3xl sm:text-5xl font-bold">
+  <div class="hero-content z-0 px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row">
+    <div class="max-w-md lg:max-w-xl text-center md:text-start">
+      <h1 class="text-3xl lg:text-5xl font-bold">
         Home of Open Source.
         <strong class="text-primary sm:block">Become a Member.</strong>
       </h1>
@@ -10,17 +10,17 @@
         numquam ea!
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
-        <a class="btn btn-primary w-full sm:w-36" href="https://dcuclubsandsocs.ie/society/redbrick" rel="noreferrer" target="_blank">
+        <a class="btn btn-primary w-full md:w-36" href="https://dcuclubsandsocs.ie/society/redbrick" rel="noreferrer" target="_blank">
           Signup
         </a>
-        <a class="btn btn-neutral w-full sm:w-36" href="https://discord.redbrick.dcu.ie" rel="noreferrer" target="_blank">
+        <a class="btn btn-neutral w-full md:w-36" href="https://discord.redbrick.dcu.ie" rel="noreferrer" target="_blank">
           Discord
         </a>
       </div>
     </div>
+    {% include "partials/hero-cards.njk" %}
   </div>
   <img class="absolute inset-0 -z-10" src="/assets/img/spotlight-bg.webp" alt="" />
-  {% include "partials/hero-cards.njk" %}
   <div class="absolute inset-0 -z-30 bg-base-content [mask-image:url(/assets/svg/grid-bg.svg)]"></div>
   <div class="absolute inset-0 -z-50 bg-base-200"></div>
 </section>
