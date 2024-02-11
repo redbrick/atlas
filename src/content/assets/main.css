@@ -25,11 +25,11 @@
 
   /* Perspective cards */
 
-  .hero-card {
-    @apply absolute rounded-2xl border border-slate-700/50 shadow-2xl shadow-slate-950/50 transform rotate-x-[5deg] -rotate-y-[15deg];
+  .hero-img {
+    @apply absolute bg-transparent rounded-md shadow-2xl shadow-slate-950/50 transform -rotate-x-[10deg] -rotate-y-[20deg];
   }
 
-  .code-card {
-    @apply hero-card rotate-x-[20deg] rotate-z-[5deg] hover:rotate-3d-[0] mockup-code max-w-sm lg:max-w-lg text-sm lg:text-lg;
+  .hero-card {
+    @apply hero-img rounded-2xl border border-slate-700/50;
   }
 }

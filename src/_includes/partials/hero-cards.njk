@@ -1,22 +1,49 @@
-<div class="relative -z-20 perspective-1000 w-full md:w-1/2 aspect-square border border-red-500 border-dashed">
+<div class="relative -z-20 perspective-1000 w-full md:w-1/2 aspect-square">
   <img
-    class="hero-card bottom-[55%] left-[20%] h-[35%]"
-    src="https://lh3.googleusercontent.com/d/1QOuHdffYBvIq_OMEULQyjllpZv-pQsS4"
-    alt="Mail broke"
+    class="hero-card bottom-[62%] left-[12%] h-[32%]"
+    src="/assets/img/newsletter-snap.webp"
+    alt="Baxter, Browner and Magma"
+    data-hero-card
   />
   <img
-    class="hero-card bottom-[10%] left-[35%] h-[35%]"
-    src="https://lh3.googleusercontent.com/d/1QOuHdffYBvIq_OMEULQyjllpZv-pQsS4"
-    alt="Mail broke"
+    class="hero-img bottom-[66%] left-[35%] h-[10%]"
+    src="https://media.discordapp.net/stickers/1170064614973788270.png"
+    alt="Distro bopping"
+    data-hero-card
   />
   <img
-    class="hero-card bottom-[50%] left-[55%] h-[35%]"
-    src="https://lh3.googleusercontent.com/d/1QOuHdffYBvIq_OMEULQyjllpZv-pQsS4"
+    class="hero-card bottom-[20%] left-[10%] h-[25%]"
+    src="/assets/img/sistem-banner.webp"
+    alt="SISTEM"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[12%] left-[52%] h-[20%]"
+    src="/assets/img/sistem-mag1c.webp"
+    alt="SISTEM Crew"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[46%] left-[62%] h-[35%]"
+    src="/assets/img/mail-broke.webp"
     alt="Mail broke"
+    data-hero-card
+  />
+  <img
+    class="hero-img bottom-[73%] left-[59%] h-[10%]"
+    src="https://media.discordapp.net/stickers/965265868772741180.webp"
+    alt="Resign Sticker"
+    data-hero-card
+  />
+  <img
+    class="absolute shadow-2xl bottom-[45%] left-[40%] h-[20%]"
+    src="https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg"
+    alt="Redbrick Logo"
+    data-hero-card
   />
 </div>
 <script>
-  gsap.fromTo(".hero-card", {
+  gsap.fromTo("[data-hero-card]", {
     opacity: 0,
     scale: 0,
     y: 100
@@ -26,6 +53,6 @@
     y: 0,
     ease: "elastic.out(1,1)",
     duration: 1.25,
-    stagger: 0.3
+    stagger: 0.2
   })
 </script>
