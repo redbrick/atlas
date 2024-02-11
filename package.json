@@ -15,10 +15,11 @@
   },
   "eleventy": {
     "dir": {
-      "input": "src/content",
+      "input": "src/site",
       "output": "dist",
       "data": "../_data",
-      "includes": "../_includes"
+      "includes": "../_includes",
+      "layouts": "../_layouts"
     },
     "templateFormats": [
       "njk",

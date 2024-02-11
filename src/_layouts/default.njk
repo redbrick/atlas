@@ -3,7 +3,7 @@ layout: base.njk
 ---
 <is-land>
   <template data-island="replace">
-    {% include "partials/search-modal.njk" %}
+    {% include "global/search-modal.njk" %}
   </template>
 </is-land>
 <body class="font-myriad">
@@ -14,12 +14,12 @@ layout: base.njk
   <div class="drawer">
     <input id="drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
-      {% include "partials/header.njk" %}
+      {% include "global/header.njk" %}
       <div class="min-h-screen">
         {{ content | safe }}
       </div>
-      {% include "partials/footer.njk" %}
+      {% include "global/footer.njk" %}
     </div>
-    {% include "partials/drawer.njk" %}
+    {% include "global/drawer.njk" %}
   </div>
 </body>

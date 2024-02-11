@@ -25,7 +25,7 @@ module.exports = function (
   }
   const buildDataFile = (repoName) => {
     return JSON.stringify({
-      layout: 'layouts/' + repoName,
+      layout: 'markdown/' + repoName,
       tags: repoName,
     })
   }
@@ -53,12 +53,10 @@ module.exports = function (
     await Promise.all(
       opts.repos.map(async (repo) => {
         // merge default clone options with provided options
-        const cloneOptions = {
-          '--depth': 1,
-          ...repo.cloneOptions,
-        }
+        const options = { '--depth': 1 }
+        if (repo.branch) options['--branch'] = repo.branch
         // clone git repo into input dir
-        await git.clone(buildGitUrl(repo.name), cloneOptions)
+        await git.clone(buildGitUrl(repo.name), options)
         // write directory data file into repo
         await writeFile(
           path.join(
@@ -89,13 +87,13 @@ module.exports = function (
       })
     )
 
-    const traverseAndPopulate = async function (dirpath) {
+    const traverseAndPopulate = async function (dirPath) {
       let indexExists = false
-      dir = await readdir(dirpath)
+      const dirFiles = await readdir(dirPath)
 
       await Promise.all(
-        dir.map(async (file) => {
-          const filePath = path.join(dirpath, file)
+        dirFiles.map(async (file) => {
+          const filePath = path.join(dirPath, file)
           const fileStat = await stat(filePath)
 
           if (fileStat.isFile()) {
@@ -112,8 +110,8 @@ module.exports = function (
       if (indexExists) return
 
       await writeFile(
-        path.join(dirpath, path.parse(dirpath).name + '.md'),
-        buildMetaFile(dirpath),
+        path.join(dirPath, path.parse(dirPath).name + '.md'),
+        buildMetaFile(dirPath),
         'utf-8'
       )
     }
