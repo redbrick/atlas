@@ -3,6 +3,5 @@ layout: default.njk
 ---
 
 <main>
-  {% include "home/hero.njk" %}
-  {% include "home/services.njk" %}
+  {% include "home/sections/hero.njk" %}
 </main>
