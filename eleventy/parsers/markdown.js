@@ -2,7 +2,7 @@ const markdownIt = require('markdown-it')
 const replaceLink = require('markdown-it-replace-link')
 const anchor = require('markdown-it-anchor')
 
-const { isExternalUrl } = require('../urls')
+const { isExternalUrl } = require('../utils/urls')
 const slugify = require('../filters/slugify')
 
 const md = markdownIt({

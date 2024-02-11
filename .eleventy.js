@@ -5,11 +5,11 @@ const tocPlugin = require('eleventy-plugin-toc')
 const postcssPlugin = require('eleventy-plugin-postcss')
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 
-const gitBuildPlugin = require('./utils/plugins/git-build')
-const pagefindPlugin = require('./utils/plugins/pagefind')
-const navigationRenderPlugin = require('./utils/plugins/navigation-render')
-const markdown = require('./utils/parsers/markdown')
-const slugify = require('./utils/filters/slugify')
+const gitBuildPlugin = require('./eleventy/plugins/git-build')
+const pagefindPlugin = require('./eleventy/plugins/pagefind')
+const navigationRenderPlugin = require('./eleventy/plugins/navigation-render')
+const markdown = require('./eleventy/parsers/markdown')
+const slugify = require('./eleventy/filters/slugify')
 
 const pkg = require('./package.json')
 

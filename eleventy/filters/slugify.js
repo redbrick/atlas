@@ -1,5 +1,5 @@
 const slugify = require('slugify')
-const { splitExtension } = require('../urls')
+const { splitExtension } = require('../utils/urls')
 
 const options = {
   lower: true,
