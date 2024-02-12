@@ -11,8 +11,8 @@ title: Redbrick
     <link rel="stylesheet" href="/assets/main.css" />
     <title>{{ title }}</title>
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="https://raw.githubusercontent.com/redbrick/design-system/main/assets/fonts/myriad-pro/loader.css" />
     {# Preload fonts instead of waiting until they are needed by CSS #}
@@ -28,6 +28,7 @@ title: Redbrick
 
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js"></script>
   </head>
   {{ content | safe }}
 </html>

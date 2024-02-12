@@ -5,7 +5,6 @@
 @layer base {
   body {
     scroll-behavior: smooth;
-    overflow-x: hidden;
   }
 }
 
@@ -24,13 +23,13 @@
     @apply scroll-mt-20 snap-start;
   }
 
-  /* Perspective cards */
-
-  .hero-img {
-    @apply absolute bg-transparent rounded-md shadow-2xl shadow-slate-950/50 transform -rotate-x-[10deg] -rotate-y-[20deg];
-  }
+  /* Home */
 
   .hero-card {
-    @apply hero-img rounded-2xl border border-slate-700/50;
+    @apply absolute shadow-xl shadow-slate-800/30 rounded-lg transform -rotate-x-[10deg] -rotate-y-[20deg];
+  }
+
+  .gallery-card {
+    @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
   }
 }

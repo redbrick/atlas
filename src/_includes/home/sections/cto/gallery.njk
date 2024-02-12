@@ -1,0 +1,24 @@
+<div class="hero-overlay bg-black bg-opacity-40"></div>
+<div data-zoom class="-z-10 grid grid-cols-12 grid-rows-12 gap-3 size-full">
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-mag1c.jpg)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+</div>
+<script>
+  gsap.from("[data-zoom]", {
+    scale: 3.5,
+    scrollTrigger: {
+      trigger: "[data-zoom-trigger]",
+      pin: "[data-zoom-trigger]",
+      start: "top top",
+      end: () => innerHeight * 3.5,
+      scrub: 0.5,
+    },
+  })
+</script>

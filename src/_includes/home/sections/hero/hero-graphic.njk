@@ -6,31 +6,31 @@
     data-hero-card
   />
   <img
-    class="hero-img bottom-[66%] left-[35%] h-[10%]"
+    class="hero-card bottom-[66%] left-[35%] h-[10%]"
     src="https://media.discordapp.net/stickers/1170064614973788270.png"
     alt="Distro bopping"
     data-hero-card
   />
   <img
-    class="hero-card bottom-[20%] left-[10%] h-[25%]"
+    class="hero-card bottom-[18%] left-[14%] h-[26%]"
     src="/assets/img/sistem-banner.webp"
     alt="SISTEM"
     data-hero-card
   />
   <img
-    class="hero-card bottom-[12%] left-[52%] h-[20%]"
+    class="hero-card bottom-[12%] left-[58%] h-[22%]"
     src="/assets/img/sistem-mag1c.webp"
     alt="SISTEM Crew"
     data-hero-card
   />
   <img
-    class="hero-card bottom-[46%] left-[62%] h-[35%]"
+    class="hero-card bottom-[48%] left-[64%] h-[35%]"
     src="/assets/img/mail-broke.webp"
     alt="Mail broke"
     data-hero-card
   />
   <img
-    class="hero-img bottom-[73%] left-[59%] h-[10%]"
+    class="absolute bottom-[75%] left-[60%] h-[10%]"
     src="https://media.discordapp.net/stickers/965265868772741180.webp"
     alt="Resign Sticker"
     data-hero-card
@@ -43,14 +43,10 @@
   />
 </div>
 <script>
-  gsap.fromTo("[data-hero-card]", {
+  gsap.from("[data-hero-card]", {
     opacity: 0,
     scale: 0,
-    y: 100
-  }, {
-    opacity: 1,
-    scale: 1,
-    y: 0,
+    y: 50,
     delay: 0.5,
     ease: "elastic(1,1)",
     duration: 1.25,
