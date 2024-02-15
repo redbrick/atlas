@@ -1,18 +1,23 @@
-<section
-  class="bg-base-300 bg-opacity-50 py-20"
-  style="clip-path: polygon(0% 0%, 100% 2%, 100% 100%, 0% 100%);"
->
+<section class="bg-base-100">
   <div class="max-w-5xl p-5 md:p-10 mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-10">
       {% for member in sections.committee -%}
       <div class="flex flex-col items-center col-span-1">
         <h2 data-committee-title="{{ member.position }}" class="font-mono font-bold md:text-lg h-10">{{ member.position}}</h2>
-        <div data-committee-card class="relative size-full max-w-60 max-h-60 rounded-t-xl shadow-lg shadow-slate-900/20 overflow-hidden">
-          <img class="size-full object-cover object-center" src="{{ member.image }}" alt="{{ member.name }}" />
-          <div class="z-10 absolute bottom-0 size-full bg-black opacity-75 glass -skew-y-6 translate-y-[80%]"></div>
-          <h3 class="z-20 absolute bottom-0 w-full p-2 text-right text-white md:text-lg">
-            {{ member.name }}
-          </h3>
+        <div class="indicator overflow-visible">
+          <span data-committee-stagger class="badge badge-primary lg:badge-lg px-2 indicator-item indicator-start -translate-x-[10%] -translate-y-1/4 shadow">
+            <small class="font-mono text-white text-xs lg:text-sm">
+              @{{ member.username }}
+            </small>
+          </span>
+          <div data-committee-stagger class="relative rounded-xl shadow-xl shadow-slate-900/30 overflow-hidden">
+            <img class="-z-10 aspect-square size-60 max-w-[40vw] object-cover object-center" src="{{ member.image }}" alt="{{ member.name }}" />
+            <div class="absolute bottom-0 w-full p-2 bg-base-300 bg-opacity-75">
+              <p class="text-center md:text-lg">
+                {{ member.name }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       {%- endfor %}
@@ -22,33 +27,33 @@
 <script>
   gsap.registerPlugin(ScrollTrigger)
   gsap.registerPlugin(TextPlugin)
-  gsap.set("[data-committee-card]", {
-    scale: 0.75,
+  gsap.set("[data-committee-stagger]", {
+    scale: 0.9,
     opacity: 0,
   })
-  ScrollTrigger.batch("[data-committee-card]", {
+  gsap.set("[data-committee-title]", {
+    text: "",
+  })
+  ScrollTrigger.batch("[data-committee-stagger]", {
     once: true,
     onEnter: (elements) => {
       gsap.to(elements, {
         scale: 1,
         opacity: 1,
-        stagger: 0.3,
-        duration: 0.5,
+        stagger: 0.2,
+        duration: 0.3,
         ease: "power2.inOut",
       })
     },
   })
-  gsap.set("[data-committee-title]", {
-    text: "",
-  })
   ScrollTrigger.batch("[data-committee-title]", {
     once: true,
-    onEnter: (elements) => elements.forEach((element => {
+    onEnter: (elements) => elements.forEach((element, i) => {
       gsap.to(element, {
         text: element.dataset.committeeTitle,
         duration: 0.75,
-        delay: 0.25,
+        delay: 0.25 + (i * 0.2),
       })
-    })),
+    }),
   })
 </script>
