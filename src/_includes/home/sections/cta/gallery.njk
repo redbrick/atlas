@@ -11,22 +11,25 @@
   <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
 </div>
 <script>
-  const element = document.querySelector("[data-zoom]")
-  const trigger = document.querySelector("[data-zoom-trigger]")
-  const scale = 3.5
-  gsap.from(element, {
-    scale,
-    scrollTrigger: {
-      trigger,
-      pin: trigger,
-      start: "top top",
-      end: () => {
-        const bodyRect = document.body.getBoundingClientRect()
-        const elemRect = element.getBoundingClientRect()
-        const offset = elemRect.top - bodyRect.top
-        return offset + element.offsetHeight * (scale + 1)
+  const device = userAgent.getDevice()
+  if (!device.type) { // is a desktop device
+    const element = document.querySelector("[data-zoom]")
+    const trigger = document.querySelector("[data-zoom-trigger]")
+    const scale = 3.5
+    gsap.from(element, {
+      scale,
+      scrollTrigger: {
+        trigger,
+        pin: trigger,
+        start: "top top",
+        end: () => {
+          const bodyRect = document.body.getBoundingClientRect()
+          const elemRect = element.getBoundingClientRect()
+          const offset = elemRect.top - bodyRect.top
+          return offset + element.offsetHeight * (scale + 1)
+        },
+        scrub: 0.5,
       },
-      scrub: 0.5,
-    },
-  })
+    })
+  }
 </script>

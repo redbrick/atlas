@@ -25,35 +25,38 @@
   </div>
 </section>
 <script>
-  gsap.registerPlugin(ScrollTrigger)
-  gsap.registerPlugin(TextPlugin)
-  gsap.set("[data-committee-stagger]", {
-    scale: 0.9,
-    opacity: 0,
-  })
-  gsap.set("[data-committee-title]", {
-    text: "",
-  })
-  ScrollTrigger.batch("[data-committee-stagger]", {
-    once: true,
-    onEnter: (elements) => {
-      gsap.to(elements, {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.3,
-        ease: "power2.inOut",
-      })
-    },
-  })
-  ScrollTrigger.batch("[data-committee-title]", {
-    once: true,
-    onEnter: (elements) => elements.forEach((element, i) => {
-      gsap.to(element, {
-        text: element.dataset.committeeTitle,
-        duration: 0.75,
-        delay: 0.25 + (i * 0.2),
-      })
-    }),
-  })
+  const device = userAgent.getDevice()
+  if (!device.type) { // is a desktop device
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(TextPlugin)
+    gsap.set("[data-committee-stagger]", {
+      scale: 0.9,
+      opacity: 0,
+    })
+    gsap.set("[data-committee-title]", {
+      text: "",
+    })
+    ScrollTrigger.batch("[data-committee-stagger]", {
+      once: true,
+      onEnter: (elements) => {
+        gsap.to(elements, {
+          scale: 1,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.3,
+          ease: "power2.inOut",
+        })
+      },
+    })
+    ScrollTrigger.batch("[data-committee-title]", {
+      once: true,
+      onEnter: (elements) => elements.forEach((element, i) => {
+        gsap.to(element, {
+          text: element.dataset.committeeTitle,
+          duration: 0.75,
+          delay: 0.25 + (i * 0.2),
+        })
+      }),
+    })
+  }
 </script>
