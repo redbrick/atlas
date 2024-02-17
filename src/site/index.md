@@ -22,10 +22,10 @@ sections:
       position: 📢 PRO
       username: payne
       image: https://redbrick.dcu.ie/images/committee/philip.jpg
-    - name: Jed Hazaymeh
-      position: 👾 Webmaster
-      username: magma
-      image: https://redbrick.dcu.ie/images/committee/jed.png
+    - name: Ishita Gupta
+      position: 🎨 GDO
+      username: ishita
+      image: https://redbrick.dcu.ie/images/committee/ishita.jpg
     - name: Dominic Connor
       position: 🚀 SysAdmin
       username: wizzdom
@@ -38,10 +38,10 @@ sections:
       position: 🍼 SysAdmin
       username: hypnoant
       image: https://cdn.discordapp.com/attachments/899430328878379048/1206032602369228820/image.png?ex=65da8863&is=65c81363&hm=bd5b6206db20935f8fc2163d3d6a8c6f1d2620f32b4b9b2e7734ccf071b5923f&
-    - name: Ishita Gupta
-      position: 🎨 GDO
-      username: ishita
-      image: https://redbrick.dcu.ie/images/committee/ishita.jpg
+    - name: Jed Hazaymeh
+      position: 👾 Webmaster
+      username: magma
+      image: https://redbrick.dcu.ie/images/committee/jed.png
     - name: Ayden Jahola
       position: 🙌 Helpdesk
       username: ayden
