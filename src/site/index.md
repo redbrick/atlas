@@ -3,7 +3,7 @@ layout: default.njk
 sections:
   hero:
     title:
-      secondary: Home of Open Source.
+      secondary: DCU's Networking Society.
       primary: Become a Member.
     description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!
     buttons:
