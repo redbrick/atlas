@@ -1,19 +1,19 @@
 <section data-zoom-trigger class="relative hero h-screen overflow-hidden">
   <div class="hero-content text-center">
-    <div class="max-w-md">
+    <div class="max-w-xl">
       <h1 class="text-white text-shadow text-3xl lg:text-5xl font-bold mb-2 lg:mb-4">
-        Don't Miss Out
+        {{ sections.cta.title }}
       </h1>
       <p class="text-white text-shadow sm:text-lg/relaxed mb-8">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        {{ sections.cta.body }}
       </p>
       <button
         class="btn btn-primary shadow-lg w-full sm:w-36"
-        href="https://dcuclubsandsocs.ie/society/redbrick"
+        href="{{ sections.cta.button.link }}"
         rel="noreferrer"
         target="_blank"
       >
-        Signup
+        {{ sections.cta.button.text }}
       </button>
     </div>
   </div>
