@@ -1,0 +1,35 @@
+<div class="hero-overlay bg-black bg-opacity-60"></div>
+<div data-zoom class="-z-10 grid grid-cols-12 grid-rows-12 gap-3 size-full">
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-mag1c.jpg)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/newsletter-snap.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+  <div class="gallery-card row-span-4 col-span-4 bg-[url(/assets/img/sistem-banner.webp)]"></div>
+</div>
+<script>
+  if (!userAgent.getDevice().type) { // is a desktop device
+    const element = document.querySelector("[data-zoom]")
+    const trigger = document.querySelector("[data-zoom-trigger]")
+    const scale = 3.5
+    gsap.from(element, {
+      scale,
+      scrollTrigger: {
+        trigger,
+        pin: trigger,
+        anticipatePin: 1,
+        start: "top top",
+        end: () => {
+          const bodyRect = document.body.getBoundingClientRect()
+          const elemRect = element.getBoundingClientRect()
+          const offset = elemRect.top - bodyRect.top
+          return offset + element.offsetHeight * (scale + 1)
+        },
+        scrub: 0.5,
+      },
+    })
+  }
+</script>

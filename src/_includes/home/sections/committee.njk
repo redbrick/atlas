@@ -1,0 +1,60 @@
+<section class="bg-base-100">
+  <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll">
+    {% for member in sections.committee -%}
+    <div data-cmt-trigger class="flex flex-col items-center">
+      <h2 data-cmt-title="{{ member.position }}" class="font-mono font-bold text-sm md:text-md h-10 whitespace-nowrap">
+        {{ member.position}}
+      </h2>
+      <div data-cmt-card class="indicator overflow-visible">
+        <span class="badge badge-primary lg:badge-lg px-2 indicator-item indicator-start -translate-x-[10%] -translate-y-1/4 shadow">
+          <small class="font-mono text-white text-xs lg:text-sm">
+            @{{ member.username }}
+          </small>
+        </span>
+        <div class="relative rounded-xl border border-base-content/20 shadow-xl shadow-slate-950/20 overflow-hidden">
+          <img class="-z-10 aspect-[0.75] w-40 max-w-[35vw] object-cover object-center" src="{{ member.image }}" alt="{{ member.name }}" />
+          <div class="absolute bottom-0 w-full p-2 bg-base-200 bg-opacity-75 backdrop-blur-sm">
+            <p class="text-center md:text-lg">
+              {{ member.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+<script>
+  if (!userAgent.getDevice().type) { // is a desktop device
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(TextPlugin)
+    gsap.set("[data-cmt-card]", {
+      scale: 0.9,
+      opacity: 0,
+    })
+    gsap.set("[data-cmt-title]", {
+      text: "",
+    })
+    ScrollTrigger.batch("[data-cmt-trigger]", {
+      once: true,
+      end: "bottom bottom",
+      onEnter: (batch) => batch.forEach((element, i) => {
+        const stagger = 0.3
+        const cardElement = element.querySelector("[data-cmt-card]")
+        const titleElement = element.querySelector("[data-cmt-title]")
+        gsap.to(cardElement, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.inOut",
+          delay: i * stagger,
+        })
+        gsap.to(titleElement, {
+          text: titleElement.dataset.cmtTitle,
+          duration: 0.75,
+          delay: 0.25 + (i * stagger),
+        })
+      }),
+    })
+  }
+</script>

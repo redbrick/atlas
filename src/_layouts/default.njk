@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+<is-land>
+  <template data-island="replace">
+    {% include "global/search-modal.njk" %}
+  </template>
+</is-land>
+<body class="font-myriad">
+  <import-map-overrides-full
+    show-when-local-storage="devtools"
+    dev-libs
+  ></import-map-overrides-full>
+  <div class="drawer">
+    <input id="drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      {% include "global/header.njk" %}
+      <div class="min-h-screen">
+        {{ content | safe }}
+      </div>
+      {% include "global/footer.njk" %}
+    </div>
+    {% include "global/drawer.njk" %}
+  </div>
+</body>

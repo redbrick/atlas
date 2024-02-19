@@ -1,0 +1,55 @@
+<div class="relative -z-20 perspective-1000 w-full md:w-1/2 aspect-square">
+  <img
+    class="hero-card bottom-[62%] left-[12%] h-[32%]"
+    src="/assets/img/newsletter-snap.webp"
+    alt="Baxter, Browner and Magma"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[66%] left-[35%] h-[10%]"
+    src="https://media.discordapp.net/stickers/1170064614973788270.png"
+    alt="Distro bopping"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[18%] left-[14%] h-[26%]"
+    src="/assets/img/sistem-banner.webp"
+    alt="SISTEM"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[12%] left-[58%] h-[22%]"
+    src="/assets/img/sistem-mag1c.webp"
+    alt="SISTEM Crew"
+    data-hero-card
+  />
+  <img
+    class="hero-card bottom-[48%] left-[64%] h-[35%]"
+    src="/assets/img/mail-broke.webp"
+    alt="Mail broke"
+    data-hero-card
+  />
+  <img
+    class="absolute bottom-[75%] left-[60%] h-[10%]"
+    src="https://media.discordapp.net/stickers/965265868772741180.webp"
+    alt="Resign Sticker"
+    data-hero-card
+  />
+  <img
+    class="absolute bottom-[45%] left-[38%] h-[20%]"
+    src="https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg"
+    alt="Redbrick Logo"
+    data-hero-card
+  />
+</div>
+<script>
+  gsap.from("[data-hero-card]", {
+    opacity: 0,
+    scale: 0,
+    y: 50,
+    delay: 0.5,
+    ease: "elastic(1,1)",
+    duration: 1.25,
+    stagger: 0.2
+  })
+</script>

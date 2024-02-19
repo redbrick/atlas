@@ -1,4 +1,4 @@
-const slugify = require('../../utils/filters/slugify')
+const slugify = require('../../eleventy/filters/slugify')
 
 const pkg = require('../../package.json')
 

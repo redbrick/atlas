@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Prose heading anchors */
+
+  .anchor {
+    @apply scroll-pt-16 no-underline before:invisible before:inline-block before:content-['#'] before:w-[0.8em] before:-ml-[0.8em] before:text-base-content/30;
+  }
+
+  .anchor:hover {
+    @apply underline before:visible before:no-underline;
+  }
+
+  :target {
+    @apply scroll-mt-20 snap-start;
+  }
+
+  /* Home */
+
+  .hero-card {
+    @apply absolute shadow-xl shadow-slate-800/30 rounded-lg transform -rotate-x-[10deg] -rotate-y-[20deg];
+  }
+
+  .gallery-card {
+    @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
+  }
+}
