@@ -21,7 +21,7 @@ module.exports = function (
     )
   }
   const buildGitUrl = (repoName) => {
-    return `git@github.com:redbrick/${repoName}.git`
+    return `https://github.com/redbrick/${repoName}`
   }
   const buildDataFile = (repoName) => {
     return JSON.stringify({
