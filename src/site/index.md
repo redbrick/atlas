@@ -1,6 +1,18 @@
 ---
 layout: default.njk
 sections:
+  hero:
+    title:
+      secondary: Home of Open Source.
+      primary: Become a Member.
+    description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!
+    buttons:
+      primary:
+        text: Signup 
+        link: https://dcuclubsandsocs.ie/society/redbrick
+      secondary:
+        text: Discord
+        link: https://discord.redbrick.dcu.ie
   committee:
     - name: James Hackett
       position: 🪑 Chair

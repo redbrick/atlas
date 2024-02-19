@@ -5,19 +5,18 @@
   <div class="hero-content px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row">
     <div class="max-w-md lg:max-w-xl text-center md:text-start">
       <h1 class="text-3xl lg:text-5xl font-bold">
-        Home of Open Source.
-        <strong class="text-primary sm:block">Become a Member.</strong>
+        {{ sections.hero.title.secondary }}
+        <strong class="text-primary sm:block">{{ sections.hero.title.primary }}</strong>
       </h1>
       <p class="mt-4 sm:text-lg/relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-        numquam ea!
+        {{ sections.hero.description }}
       </p>
       <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-        <a class="btn btn-primary w-full sm:w-36" href="https://dcuclubsandsocs.ie/society/redbrick" rel="noreferrer" target="_blank">
-          Signup
+        <a class="btn btn-primary w-full sm:w-36" href="{{ sections.hero.buttons.primary.link }}" rel="noreferrer" target="_blank">
+          {{ sections.hero.buttons.primary.text }}
         </a>
-        <a class="btn btn-neutral w-full sm:w-36" href="https://discord.redbrick.dcu.ie" rel="noreferrer" target="_blank">
-          Discord
+        <a class="btn btn-neutral w-full sm:w-36" href="{{ sections.hero.buttons.secondary.link }}" rel="noreferrer" target="_blank">
+          {{ sections.hero.buttons.secondary.text }}
         </a>
       </div>
     </div>
