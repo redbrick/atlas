@@ -5,7 +5,7 @@ sections:
     title:
       secondary: DCU's Networking Society.
       primary: Become a Member.
-    body: Redbrick was formed from a battered 386 PC (dubbed Nurse), bits of borrowed memory, and a group of friends working together. We’re open to everyone regardless of computing level and always looking for people who want to come and learn!
+    body: Redbrick was formed from a battered 386 PC (dubbed Nurse) and bits of borrowed memory - these days we spend our time running tech events for our members and deploying services. We’re open to everyone, regardless of computing level, who want to come and learn!
     buttons:
       primary:
         text: Signup 
