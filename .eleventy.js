@@ -1,4 +1,5 @@
 const path = require('path')
+const yaml = require('js-yaml')
 const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
@@ -16,6 +17,10 @@ const pkg = require('./package.json')
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false)
 
+  eleventyConfig.addDataExtension('yml, yaml', (contents) =>
+    yaml.load(contents)
+  )
+
   eleventyConfig.addPassthroughCopy('import-map.json')
   eleventyConfig.addPassthroughCopy(
     path.join(
@@ -26,7 +31,10 @@ module.exports = function (eleventyConfig) {
   )
 
   eleventyConfig.addPlugin(gitBuildPlugin, {
-    repos: [{ name: 'blog' }, { name: 'open-governance' }],
+    repos: [
+      { name: 'blog', branch: 'patch-tags' },
+      { name: 'open-governance' },
+    ],
     clean: false,
   })
   eleventyConfig.addPlugin(pagefindPlugin)

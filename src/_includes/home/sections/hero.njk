@@ -5,18 +5,18 @@
   <div class="hero-content px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row">
     <div class="max-w-md lg:max-w-2xl text-center md:text-start">
       <h1 class="text-3xl lg:text-5xl font-bold">
-        {{ sections.hero.title.secondary }}
-        <strong class="text-primary sm:block">{{ sections.hero.title.primary }}</strong>
+        {{ site.home.hero.title.secondary }}
+        <strong class="text-primary sm:block">{{ site.home.hero.title.primary }}</strong>
       </h1>
       <p class="mt-4 text-md/relaxed">
-        {{ sections.hero.body }}
+        {{ site.home.hero.body }}
       </p>
       <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-        <a class="btn btn-primary w-full sm:w-36" href="{{ sections.hero.buttons.primary.link }}" rel="noreferrer" target="_blank">
-          {{ sections.hero.buttons.primary.text }}
+        <a class="btn btn-primary w-full sm:w-36" href="{{ site.home.hero.buttons.primary.link }}" rel="noreferrer" target="_blank">
+          {{ site.home.hero.buttons.primary.text }}
         </a>
-        <a class="btn btn-neutral w-full sm:w-36" href="{{ sections.hero.buttons.secondary.link }}" rel="noreferrer" target="_blank">
-          {{ sections.hero.buttons.secondary.text }}
+        <a class="btn btn-neutral w-full sm:w-36" href="{{ site.home.hero.buttons.secondary.link }}" rel="noreferrer" target="_blank">
+          {{ site.home.hero.buttons.secondary.text }}
         </a>
       </div>
     </div>

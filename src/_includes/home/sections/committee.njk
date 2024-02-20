@@ -1,6 +1,6 @@
 <section class="bg-base-100">
   <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll">
-    {% for member in sections.committee -%}
+    {% for member in site.home.committee -%}
     <div data-cmt-trigger class="flex flex-col items-center">
       <h2 data-cmt-title="{{ member.position }}" class="font-mono font-bold text-sm md:text-md h-10 whitespace-nowrap">
         {{ member.position}}
@@ -39,7 +39,7 @@
       once: true,
       end: "bottom bottom",
       onEnter: (batch) => batch.forEach((element, i) => {
-        const stagger = 0.3
+        const stagger = 0.2
         const cardElement = element.querySelector("[data-cmt-card]")
         const titleElement = element.querySelector("[data-cmt-title]")
         gsap.to(cardElement, {

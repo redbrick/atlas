@@ -17,8 +17,8 @@
       {# Navigation #}
       <nav class="hidden lg:flex" aria-label="Global">
         <ul class="menu menu-horizontal px-1">
-          {% for link in navbar %}
-          <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+          {% for entry in site.navigation.global %}
+          <li><a href="{{ entry.link }}">{{ entry.text }}</a></li>
           {% endfor %}
         </ul>
       </nav>
