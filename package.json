@@ -1,7 +1,7 @@
 {
-  "name": "@redbrick/11ty-website",
+  "name": "@redbrick/atlas",
   "author": "Jed Hazaymeh <magma@redbrick.dcu.ie>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packageManager": "yarn@4.1.0",
   "engines": {
     "node": "^18.17 || ^20"
