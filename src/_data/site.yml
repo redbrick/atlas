@@ -15,6 +15,13 @@ navigation:
       tag: conferences
     - text: Newsletters
       tag: newsletter
+  buttons:
+    primary:
+      text: Signup
+      link: https://join.redbrick.dcu.ie
+    secondary:
+      text: Discord
+      link: https://discord.redbrick.dcu.ie
 drawer: navigation
 home:
   hero:
@@ -25,7 +32,7 @@ home:
     buttons:
       primary:
         text: Signup
-        link: https://dcuclubsandsocs.ie/society/redbrick
+        link: https://join.redbrick.dcu.ie
       secondary:
         text: Discord
         link: https://discord.redbrick.dcu.ie
@@ -34,7 +41,7 @@ home:
     body: Redbrick hosts events for everything tech related - from computer programming tutorials to workshops with multinational tech companies.
     button:
       text: Signup
-      link: https://dcuclubsandsocs.ie/society/redbrick
+      link: https://join.redbrick.dcu.ie
   committee:
     - name: James Hackett
       position: 🪑 Chair
