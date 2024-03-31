@@ -1,3 +1,9 @@
+images:
+  brick: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/nixos-brick.png
+  emote: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/join-emote.png
+society:
+  name: Redbrick
+  tagline: DCU's NixOS Society.
 navigation:
   global:
     - text: Open Governance
@@ -26,7 +32,7 @@ drawer: navigation
 home:
   hero:
     title:
-      secondary: DCU's Networking Society.
+      secondary: DCU's NixOS Society.
       primary: Become a Member.
     body: Redbrick was formed from a battered 386 PC (dubbed Nurse) and bits of borrowed memory - these days we spend our time running tech events for our members and deploying services. We’re open to everyone, regardless of computing level, who want to come and learn!
     buttons:

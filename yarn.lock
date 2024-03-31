@@ -317,9 +317,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redbrick/11ty-website@workspace:.":
+"@redbrick/atlas@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@redbrick/11ty-website@workspace:."
+  resolution: "@redbrick/atlas@workspace:."
   dependencies:
     "@11ty/eleventy": "npm:^2.0.1"
     "@11ty/eleventy-navigation": "npm:^0.3.5"
@@ -349,16 +349,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redbrick/design-system@https://github.com/redbrick/design-system":
-  version: 0.0.4
-  resolution: "@redbrick/design-system@https://github.com/redbrick/design-system.git#commit=24c05b9713ea09ad23e3f320f99b58f986cd92c0"
+"@redbrick/design-system@portal:/home/nova/Projects/design-system::locator=%40redbrick%2Fatlas%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@redbrick/design-system@portal:/home/nova/Projects/design-system::locator=%40redbrick%2Fatlas%40workspace%3A."
   dependencies:
     "@tailwindcss/typography": "npm:^0.5.10"
     daisyui: "npm:^4.6.0"
     tailwindcss: "npm:^3.4.1"
-  checksum: 10c0/23cfdb27c155f8e561dbf19ce3f4299f8846f0fb87ca918933485ed38bb236486db048f394ce8a5b36d39c1a0ffaf589eea38ba6a92ad68222288c07c7322a60
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "@sindresorhus/slugify@npm:^1.1.2":
   version: 1.1.2
