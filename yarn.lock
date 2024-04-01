@@ -349,15 +349,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@redbrick/design-system@portal:/home/nova/Projects/design-system::locator=%40redbrick%2Fatlas%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@redbrick/design-system@portal:/home/nova/Projects/design-system::locator=%40redbrick%2Fatlas%40workspace%3A."
+"@redbrick/design-system@https://github.com/redbrick/design-system":
+  version: 0.0.4
+  resolution: "@redbrick/design-system@https://github.com/redbrick/design-system.git#commit=1eea70500d2f8cce631905695cf45919cc6173bd"
   dependencies:
     "@tailwindcss/typography": "npm:^0.5.10"
     daisyui: "npm:^4.6.0"
     tailwindcss: "npm:^3.4.1"
+  checksum: 10c0/b34557996680bb6d33fb12791d301c94d2b56fee286075dcf7646e84a1b4da0cab4fb93d0c2fa38792dde4030531e2e5928777decc406d92638dff26e380225b
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@sindresorhus/slugify@npm:^1.1.2":
   version: 1.1.2
