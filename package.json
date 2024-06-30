@@ -1,8 +1,8 @@
 {
-  "name": "@redbrick/atlas",
-  "author": "Jed Hazaymeh <magma@redbrick.dcu.ie>",
+  "name": "@cs-soc-tudublin/plume",
+  "author": "Ruán Murgatroyd",
   "version": "0.1.1",
-  "packageManager": "yarn@4.1.0",
+  "packageManag0r": "yarn@4.1.0",
   "engines": {
     "node": "^18.17 || ^20"
   },

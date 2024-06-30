@@ -33,7 +33,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(gitBuildPlugin, {
     repos: [
       { name: 'blog' },
-      { name: 'open-governance' },
     ],
     clean: false,
   })

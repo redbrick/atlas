@@ -7,7 +7,7 @@ society:
 navigation:
   global:
     - text: Blog
-      link: /blog/posts/2024-01-31-redbrick-maintenance-with-nomad.html
+      link: /blog/posts/stealing-from-redbrick.html
   blog:
     - text: Events
       tag: events
@@ -93,7 +93,7 @@ home:
       image: /assets/img/committee/hypnoant.png
     - name: Ruán Murgatroyd
       position: 🚀 SysAdmin
-      username: irishtnt
+      username: rjm
       image: /assets/img/committee/ruan.webp
 footer:
   credit: Created from Redbrick's Atlas System
