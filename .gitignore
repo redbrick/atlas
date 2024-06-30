@@ -20,6 +20,9 @@ src/site/open-governance/
 # In that case, don't forget to run `yarn config set enableGlobalCache false`!
 # Documentation here: https://yarnpkg.com/features/caching#zero-installs
 
+# Bun stuff
+bun.lockb
+
 #!.yarn/cache
 .pnp.*
 
