@@ -54,23 +54,23 @@ home:
     - name: David Corcoran
       position: 🪑 Vice-Chair
       username: rcayn
-      image: /assets/img/committee/pluto.jpg
+      image: /assets/img/committee/david.webp
     - name: Bohdan Yeriemienko
       position: 💌 Secretary
       username: bog8998
-      image: /assets/img/committee/cheese.png
+      image: /assets/img/committee/bohdan.webp
     - name: Adrian Capacite
       position: 💸 Treasurer
       username: nairdah
-      image: /assets/img/committee/calcifer.png
+      image: /assets/img/committee/adrian.webp
     - name: Nikita Aksenov
       position: 📢 PRO
-      image: /assets/img/committee/payne.png
+      image: /assets/img/committee/nikita.webp
       username: nawinds
     - name: Juliet Mullarney
       position: 👩‍⚕️ HSO
       username: juuliet4715
-      image: /assets/img/committee/payne.png
+      image: /assets/img/committee/juliet.webp
     - name: Ana
       position: 📅 Technical Events Officer
       username: ana_rchy
@@ -78,11 +78,11 @@ home:
     - name: Ethan Crosbie
       position: 📅 Social Events Officer
       username: ethan_everel
-      image: /assets/img/committee/stefania.jpg
+      image: /assets/img/committee/ethan.webp
     - name: Derv O'Flynn
       position: 🚀 SysAdmin
-      username: kit_fisto
-      image: /assets/img/committee/cathalog.jpg
+      username: BigCheeseDerv
+      image: /assets/img/committee/derv.webp
     - name: MJ
       position: 🚀 SysAdmin
       username: DroolingFeralHog
@@ -90,7 +90,7 @@ home:
     - name: Jacey Janczak
       position: 🚀 SysAdmin
       username: sokomuso
-      image: /assets/img/committee/hypnoant.png
+      image: /assets/img/committee/jacey.webp
     - name: Ruán Murgatroyd
       position: 🚀 SysAdmin
       username: rjm
