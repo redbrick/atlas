@@ -3,7 +3,7 @@ name: Deploy main to Huey-Dewey-Louie
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy:
