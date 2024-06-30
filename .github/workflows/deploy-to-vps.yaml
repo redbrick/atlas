@@ -1,0 +1,35 @@
+name: Deploy main to Huey-Dewey-Louie
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Build and Deploy with Docker Compose
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
+          cd /src/Website
+          
+          git reset --hard HEAD
+          git pull origin master
+
+          touch .env
+          chmod 644 .env
+          echo "EXPOSED_PORT=${{secrets.EXPOSED_PORT}}" > .env
+          
+          docker compose up -d --build
+
+          docker image prune -f
+        EOF
