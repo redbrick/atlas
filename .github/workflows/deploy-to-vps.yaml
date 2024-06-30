@@ -23,7 +23,7 @@ jobs:
           cd /src/Website
           
           git reset --hard HEAD
-          git pull origin master
+          git pull origin main
 
           touch .env
           chmod 644 .env
