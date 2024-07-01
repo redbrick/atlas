@@ -77,8 +77,8 @@ home:
       image: /assets/img/committee/ana.gif
     - name: Ethan Crosbie
       position: 📅 Social Events Officer
-      username: ???
-      image: /assets/img/committee/unknown.webp
+      username: ethan
+      image: /assets/img/committee/ethan.webp
     - name: Derv O'Flynn
       position: 🚀 SysAdmin
       username: BigCheeseDerv
