@@ -49,18 +49,18 @@ home:
       text: Signup
       link: https://join.redbrick.dcu.ie
   committee:
-    - name: James Hackett
-      position: 🪑 Chair
-      username: distro
-      image: /assets/img/committee/distro.jpg
-    - name: Shane Whelan
-      position: 🪑 Vice-Chair
-      username: pluto
-      image: /assets/img/committee/pluto.jpg
     - name: Jake Farrell
-      position: 💌 Secretary
+      position: 🪑 Chair
       username: cheese
       image: /assets/img/committee/cheese.png
+    - name: Ishita Gupta
+      position: 🪑 Vice-Chair
+      username: ishitag
+      image: /assets/img/committee/ishitag.jpg
+    - name: Daniel Mc Entee
+      position: 💌 Secretary
+      username: kronos
+      image: /assets/img/committee/kronos.png
     - name: Malavika Shanker
       position: 💸 Treasurer
       username: calcifer
@@ -69,50 +69,50 @@ home:
       position: 📢 PRO
       username: payne
       image: /assets/img/committee/payne.png
-    - name: Ishita Gupta
+    - name: Georgijs Pitkevics
       position: 🎨 GDO
-      username: ishitag
-      image: /assets/img/committee/ishitag.jpg
+      username: zx
+      image: /assets/img/committee/zx.jpg
     - name: Dominic Connor
       position: 🚀 SysAdmin
       username: wizzdom
       image: /assets/img/committee/wizzdom.png
-    - name: Cathal O'Grady
+    - name: Ayden Jahola
       position: 🚀 SysAdmin
-      username: cathalog
-      image: /assets/img/committee/cathalog.jpg
+      username: ayden
+      image: /assets/img/committee/ayden.jpg
     - name: Gavin Holahan
-      position: 🍼 SysAdmin
+      position: 🚀 SysAdmin
       username: hypnoant
       image: /assets/img/committee/hypnoant.png
-    - name: Jed Hazaymeh
+    - name: Jonathan Groult
       position: 👾 Webmaster
-      username: magma
-      image: /assets/img/committee/magma.png
-    - name: Ayden Jahola
+      username: nova
+      image: /assets/img/committee/nova.png
+    - name: Pavel Ivanov
       position: 🙌 Helpdesk
-      username: ayden
-      image: /assets/img/committee/ayden.png
-    - name: Francis Baxter
+      username: regaus
+      image: /assets/img/committee/regaus.jpg
+    - name: Konstantin O'Donnell
       position: 🙌 Helpdesk
-      username: fbaxter
-      image: /assets/img/committee/fbaxter.png
-    - name: Robert Healy
+      username: xoreax
+      image: /assets/img/committee/xoreax.jpg
+    - name: Shane Whelan
       position: 📅 Events Officer
-      username: orb
-      image: /assets/img/committee/orb.png
-    - name: Stefania Ogun
+      username: pluto
+      image: /assets/img/committee/pluto.jpg
+    - name: Samuel Jones
       position: 📅 Events Officer
-      username: stefania
-      image: /assets/img/committee/stefania.jpg
-    - name: Callum Browne
+      username: ichiro
+      image: /assets/img/committee/ichiro.jpg
+    - name: Claudia Gray
       position: 💎 Ordinary Member
-      username: browner
-      image: /assets/img/committee/browner.png
-    - name: Daniel McEntee
+      username: claudiaa
+      image: /assets/img/committee/claudiaa.png
+    - name: Henri Simmons-Hayden
       position: 💎 Ordinary Member
-      username: kronos
-      image: /assets/img/committee/kronos.png
+      username: henri117
+      image: /assets/img/committee/henri117.jpg
     - name: Dennis Custiuc
       position: 🥇 First Year Rep.
       username: swooshy
