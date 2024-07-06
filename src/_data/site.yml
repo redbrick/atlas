@@ -21,7 +21,7 @@ navigation:
       tag: newsletter
   buttons:
     primary:
-      text: Sign Up!p
+      text: Sign Up!
       link: https://join.cspp.ie
     secondary:
       text: Discord
@@ -44,7 +44,7 @@ home:
     title: Don't Miss Out!
     body: CS++ runs events of all kinds, provides discounted tickets to conferences, and helps you academically.
     button:
-      text: Signup
+      text: Sign Up Today!
       link: https://join.cspp.ie/
   committee:
     - name: Faith Omotayo
