@@ -21,7 +21,7 @@ navigation:
       tag: newsletter
   buttons:
     primary:
-      text: Signup
+      text: Sign Up!p
       link: https://join.cspp.ie
     secondary:
       text: Discord
@@ -35,14 +35,14 @@ home:
     body: CS++ was restarted in 2022 with a goal to aid its members - today, we help our members with their coursework, and give them access to invaluable experiences and skills!
     buttons:
       primary:
-        text: Signup
+        text: Sign Up!
         link: https://join.cspp.ie
       secondary:
         text: Discord
         link: https://discord.cspp.ie
   cta:
     title: Don't Miss Out!
-    body: CS++ runs events of all kinds, provides discounted tickets, and helps you academically.
+    body: CS++ runs events of all kinds, provides discounted tickets to conferences, and helps you academically.
     button:
       text: Signup
       link: https://join.cspp.ie/
