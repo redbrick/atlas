@@ -72,11 +72,11 @@ home:
       username: juliet
       image: /assets/img/committee/juliet.webp
     - name: Ana
-      position: 📅 Technical Events Officer
+      position: 💻 Tech Events Officer
       username: ana_rchy
       image: /assets/img/committee/ana.gif
     - name: Ethan Crosbie
-      position: 📅 Social Events Officer
+      position: 🥳 Social Events Officer
       username: ethan
       image: /assets/img/committee/ethan.webp
     - name: Derv O'Flynn
