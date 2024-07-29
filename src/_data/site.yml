@@ -52,68 +52,68 @@ home:
     - name: Jake Farrell
       position: 🪑 Chair
       username: cheese
-      image: /assets/img/committee/cheese.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/cheese.png
     - name: Ishita Gupta
       position: 🪑 Vice-Chair
       username: ishitag
-      image: /assets/img/committee/ishitag.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ishitag.jpg
     - name: Daniel Mc Entee
       position: 💌 Secretary
       username: kronos
-      image: /assets/img/committee/kronos.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/kronos.png
     - name: Malavika Shanker
       position: 💸 Treasurer
       username: calcifer
-      image: /assets/img/committee/calcifer.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/calcifer.png
     - name: Philip Leonard
       position: 📢 PRO
       username: payne
-      image: /assets/img/committee/payne.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/payne.png
     - name: Georgijs Pitkevics
       position: 🎨 GDO
       username: zx
-      image: /assets/img/committee/zx.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/zx.jpg
     - name: Dominic Connor
       position: 🚀 SysAdmin
       username: wizzdom
-      image: /assets/img/committee/wizzdom.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/wizzdom.png
     - name: Ayden Jahola
       position: 🚀 SysAdmin
       username: ayden
-      image: /assets/img/committee/ayden.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ayden.jpg
     - name: Gavin Holahan
       position: 🚀 SysAdmin
       username: hypnoant
-      image: /assets/img/committee/hypnoant.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/hypnoant.png
     - name: Jonathan Groult
       position: 👾 Webmaster
       username: nova
-      image: /assets/img/committee/nova.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/nova.jpg
     - name: Pavel Ivanov
       position: 🙌 Helpdesk
       username: regaus
-      image: /assets/img/committee/regaus.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/regaus.jpg
     - name: Konstantin O'Donnell
       position: 🙌 Helpdesk
       username: xoreax
-      image: /assets/img/committee/xoreax.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/xoreax.jpg
     - name: Shane Whelan
       position: 📅 Events Officer
       username: pluto
-      image: /assets/img/committee/pluto.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/pluto.jpg
     - name: Samuel Jones
       position: 📅 Events Officer
       username: ichiro
-      image: /assets/img/committee/ichiro.jpg
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ichiro.jpg
     - name: Claudia Gray
       position: 💎 Ordinary Member
       username: claudiaa
-      image: /assets/img/committee/claudiaa.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/claudiaa.png
     - name: Henri Simmons-Hayden
       position: 💎 Ordinary Member
       username: henri117
-      image: /assets/img/committee/henri117.jpg
-    - name: Dennis Custiuc
-      position: 🥇 First Year Rep.
-      username: swooshy
-      image: /assets/img/committee/swooshy.png
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/henri117.jpg
+    # - name: Dennis Custiuc
+    #   position: 🥇 First Year Rep.
+    #   username: swooshy
+    #   image: /assets/img/committee/swooshy.png
