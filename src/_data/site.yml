@@ -38,7 +38,8 @@ home:
         text: Sign Up!
         link: https://join.cspp.ie
       secondary:
-        text: Discord
+        link: https://instagram.com/tudublincsplusplus
+      tertiary:
         link: https://discord.cspp.ie
   cta:
     title: Don't Miss Out!
