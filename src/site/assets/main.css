@@ -34,3 +34,13 @@
     @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
   }
 }
+
+.cmt-card .cmt-name{
+  transition: 0.5s ease-in;
+}
+
+.cmt-card:hover .cmt-name{
+  padding-bottom: 2rem;
+  text-decoration: underline;
+  transition: 0.5s ease-out;
+}
