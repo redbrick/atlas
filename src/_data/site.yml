@@ -1,6 +1,7 @@
 images:
   brick: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg
   emote: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/resign-emote.png
+  logo: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/logo.png
 society:
   name: Redbrick
   tagline: DCU's Networking Society.
