@@ -48,6 +48,16 @@ home:
     button:
       text: Signup
       link: https://join.redbrick.dcu.ie
+    gallery:
+      r1c1: https://cdn.redbrick.dcu.ie/atlas/static/img/tagging-24.jpg
+      r1c2: https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
+      r1c3: https://cdn.redbrick.dcu.ie/atlas/static/img/hacker.jpg
+      r2c1: https://cdn.redbrick.dcu.ie/atlas/static/img/browner-explains.jpg
+      r2c2: https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
+      r2c3: https://cdn.redbrick.dcu.ie/atlas/static/img/working.jpg
+      r3c1: https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
+      r3c2: https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
+      r3c3: https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
   committee:
     - name: Jake Farrell
       position: 🪑 Chair
