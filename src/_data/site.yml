@@ -52,133 +52,49 @@ home:
       position: 🪑 Chair
       username: chillingwithmani
       image: /assets/img/committee/faith.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: David Corcoran
       position: 🪑 Vice-Chair
       username: Arcane
       image: /assets/img/committee/david.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Bohdan Yeriemienko
       position: 💌 Secretary
       username: bog
       image: /assets/img/committee/bohdan.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Adrian Mae
       position: 💸 Treasurer
       username: thatikeashark
       image: /assets/img/committee/adrian.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Nikita Aksenov
       position: 📢 PRO
       image: /assets/img/committee/nikita.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
       username: nawinds
     - name: Juliet Mullarney
       position: 👩‍⚕️ HSO
       username: juliet
       image: /assets/img/committee/juliet.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Ana
       position: 💻 Tech Events Officer
       username: ana_rchy
       image: /assets/img/committee/ana.gif
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Ethan Crosbie
       position: 🥳 Social Events Officer
       username: ethan
       image: /assets/img/committee/ethan.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Derv O'Flynn
       position: 🚀 SysAdmin
       username: BigCheeseDerv
       image: /assets/img/committee/derv.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: MJ
       position: 🚀 SysAdmin
       username: DroolingFeralHog
       image: /assets/img/committee/mj.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Jacey
       position: 🚀 SysAdmin
       username: sokomuso
       image: /assets/img/committee/jacey.webp
-      bio:
-        line1: none
-        line2: none
-        line3: none
-        line4: none
-      linkedin: none
-      github: none
     - name: Ruán Murgatroyd
       position: 🚀 SysAdmin
       username: rjm
-      image: /assets/img/committee/ruan.webp
-      bio:
-        line1: Hello!
-        line2: I'm Ruán, a sysadmin for CS++. I'm in 3rd year studying Computer Science (International).
-        line3: I started in CS++ in 2022, became chair in 2023, and transitioned to sysadmin in 2024 to focus on the technical stack.
-        line4: I've developed BitHunt, WebFelt, and am the Webmaster for CS++.<br>I love programming, system administration and learning how things work!<br>You can find me on LinkedIn and GitHub above, or chat to me on campus!
-      linkedin: https://www.linkedin.com/in/ruan-murgatroyd/
-      github: https://github.com/RJMurg/
+      image: /assets/img/committee/ruan.webps://github.com/RJMurg/
 footer:
   credit: Created from Redbrick's Atlas System
