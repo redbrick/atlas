@@ -1,7 +1,5 @@
 const path = require('path')
 
-// const { splitExtension } = require('../../utils/urls')
-
 module.exports = () => {
   const getUrl = (data) => {
     const url = data.page.url
