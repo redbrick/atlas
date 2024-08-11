@@ -2,7 +2,7 @@ FROM node:18.19.0-alpine AS build
 
 RUN apk update && apk --no-cache add git
 
-COPY . /app/1
+COPY . /app/
 
 WORKDIR /app
 
