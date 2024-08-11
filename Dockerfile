@@ -1,12 +1,12 @@
 FROM node:18.19.0-alpine AS build
 
-RUN apk update && apk add git
+RUN apk update && apk --no-cache add git
 
-COPY . /app/
+COPY . /app/1
 
 WORKDIR /app
 
-RUN yarn
+RUN yarn --ignore-scripts
 
 RUN yarn build
 
