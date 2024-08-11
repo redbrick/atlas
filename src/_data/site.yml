@@ -7,7 +7,7 @@ society:
 navigation:
   global:
     - text: Blog
-      link: /blog/posts/writing-clerk.html
+      link: /blog/posts/using-sonarqube.html
   blog:
     - text: Events
       tag: events
