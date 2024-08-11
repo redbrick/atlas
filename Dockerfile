@@ -6,7 +6,7 @@ COPY . /app/1
 
 WORKDIR /app
 
-RUN yarn --ignore-scripts
+RUN yarn
 
 RUN yarn build
 
