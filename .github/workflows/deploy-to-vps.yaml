@@ -1,10 +1,6 @@
 name: Deploy main to Huey-Dewey-Louie
 
 on:
-  workflow_run:
-    workflows: ["SonarQube"]
-    types:
-      - completed
   push:
     branches:
       - main
