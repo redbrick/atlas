@@ -2,7 +2,7 @@
   <h1 class="text-white text-shadow text-xl lh:text-3xl font-bold mb-2 lg:mb-4">
     {{site.society.name}} is proudly sponsored by:
   </h1>
-  <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll">
+  <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll flex flex-col items-center">
     {% for sponsor in site.home.sponsors -%}
     <div data-cmt-trigger class="flex flex-col items-center">
       <h2 data-cmt-title="{{ sponsor.tier }}" class="font-mono font-bold text-sm md:text-md h-10 whitespace-nowrap">
