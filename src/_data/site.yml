@@ -96,5 +96,10 @@ home:
       position: 🚀 SysAdmin
       username: rjm
       image: /assets/img/committee/ruan.webp
+  sponsors:
+    - name: RTC
+      tier: secondary
+      image: /assets/img/sponsors/rtc.svg
+
 footer:
   credit: Created from Redbrick's Atlas System
