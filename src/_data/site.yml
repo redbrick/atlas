@@ -96,5 +96,10 @@ home:
       position: 🚀 SysAdmin
       username: rjm
       image: /assets/img/committee/ruan.webp
+  sponsors:
+    - name: Rewriting the Code
+      image: /assets/img/sponsors/rtc.webp
+      link: https://rewritingthecode.org/
+
 footer:
   credit: Created from Redbrick's Atlas System

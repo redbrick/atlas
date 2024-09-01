@@ -5,6 +5,8 @@ const isExternalUrl = (url) =>
 
 const isAbsoluteUrl = (url) => /^[a-zA-Z][a-zA-Z\d+\-.]*?:/.test(url)
 
+const isMailtoUrl = (url) => /^mailto:/i.test(url)
+
 const splitExtension = (url) => {
   const parsed = path.parse(url)
   const filepath = path.join(parsed.dir, parsed.name)
@@ -18,5 +20,6 @@ const splitExtension = (url) => {
 module.exports = {
   isExternalUrl,
   isAbsoluteUrl,
+  isMailtoUrl,
   splitExtension,
 }

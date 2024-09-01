@@ -2,7 +2,7 @@ const markdownIt = require('markdown-it')
 const replaceLink = require('markdown-it-replace-link')
 const anchor = require('markdown-it-anchor')
 
-const { isExternalUrl } = require('../utils/urls')
+const { isExternalUrl, isMailtoUrl } = require('../utils/urls')
 const slugify = require('../filters/slugify')
 
 const md = markdownIt({
@@ -25,8 +25,8 @@ md.use(anchor, {
 md.use(replaceLink, {
   processHTML: true,
   replaceLink: function (link, _env, token, _htmlToken) {
-    // do not transform external links or image links
-    const ignore = [isExternalUrl(link), token.type == 'image']
+    // do not transform external links, image links or mailto links
+    const ignore = [isExternalUrl(link), token.type == 'image', isMailtoUrl(link)]
 
     return ignore.some((condition) => condition === true)
       ? link
