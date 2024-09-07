@@ -1,7 +1,6 @@
 images:
   roundel: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/cspp.svg
-  png: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/roundel.png
-  emote: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/resign-emote.png
+  embed: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/roundel.png
 society:
   name: CS++
   tagline: TU Dublin's Computer Science Society.
