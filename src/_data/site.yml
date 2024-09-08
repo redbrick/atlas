@@ -37,10 +37,13 @@ home:
       primary:
         text: Sign Up!
         link: https://join.cspp.ie
+        aria: Link to the Clubs and Socs portal to join the society!
       secondary:
         link: https://instagram.com/tudublincsplusplus
+        aria: Link to our Instagram page!
       tertiary:
         link: https://discord.cspp.ie
+        aria: Link to our Discord server!
   cta:
     title: Don't Miss Out!
     body: CS++ runs events of all kinds, provides discounted tickets to conferences, and helps you academically.
