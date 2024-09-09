@@ -22,14 +22,14 @@ title: CS++
 
     <script defer data-domain="cspp.ie" src="https://plausible.io/js/script.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.37/src/ua-parser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.37/src/ua-parser.min.js" defer></script>
     <script>
       window.userAgent = new UAParser()
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
 
     <link rel="stylesheet" href="https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/fonts/montserrat/loader.css" />
     {# Preload fonts instead of waiting until they are needed by CSS #}
@@ -39,13 +39,13 @@ title: CS++
 
     <meta name="importmap-type" content="systemjs-importmap" />
     <script type="systemjs-importmap" src="/import-map.json"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/import-map-overrides@3.1.1/dist/import-map-overrides.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/import-map-overrides@3.1.1/dist/import-map-overrides.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@11ty/is-land@4.0.0/is-land.min.js" defer></script>
   </head>
   {{ content | safe }}
 </html>
