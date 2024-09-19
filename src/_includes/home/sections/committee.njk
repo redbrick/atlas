@@ -1,5 +1,10 @@
 <section class="bg-base-100">
-  <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll">
+  <div class="px-5 pt-5 md:px-10 md:pt-10">
+    <h1 class="text-3xl font-bold">
+      Meet the Committee!
+    </h1>
+  </div>
+  <div class="flex p-5 md:p-10 !pt-5 space-x-5 md:space-x-10 overflow-x-scroll">
     {% for member in site.home.committee -%}
     <div data-cmt-trigger class="flex flex-col items-center">
       <h2 data-cmt-title="{{ member.position }}" class="font-mono font-bold text-sm md:text-md h-10 whitespace-nowrap">
