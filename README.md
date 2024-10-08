@@ -1,4 +1,5 @@
 # CS++'s Website
+![Deployment](https://img.shields.io/github/actions/workflow/status/cs-soc-tudublin/plume/deploy-to-vps.yaml)
 
 Plume is CS++'s website, written in 11ty.
 It is forked from Redbrick's amazing [Atlas](https://github.com/redbrick/atlas) site.
