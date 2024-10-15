@@ -99,6 +99,10 @@ home:
       position: 🚀 SysAdmin
       username: rjm
       image: /assets/img/committee/ruan.webp
+  sponsorSection:
+    enquiryStart: Want to be part of something great?
+    enquiryEnd: Get in touch!
+    enquiryLink: mailto:comp@societies.tudublin.ie?subject=Sponsorship Inquiry
   sponsors:
     - name: Rewriting the Code
       image: /assets/img/sponsors/rtc.webp
