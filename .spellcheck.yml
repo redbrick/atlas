@@ -2,7 +2,10 @@ matrix:
 - name: Plume Content
   aspell:
     lang: en
-    d: en_IE
+    d: en_GB
   dictionary:
     wordlists:
       - "wordlist.txt"
+  sources:
+    - "src/**/*.yml"
+    - "src/**/*.yaml"
