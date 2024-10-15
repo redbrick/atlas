@@ -15,4 +15,4 @@ jobs:
     - uses: rojopolis/spellcheck-github-actions@0.43.0
       name: Spellcheck
       with:
-        config_path: "spellcheckConfig.yml"
+        config_path: ".spellcheck.yml"
