@@ -15,7 +15,7 @@
                 <span class="ml-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" class="fill-gray-500 inline-block">
                   <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
-                  </svg> 
+                  </svg>
                 </span>
                 </p>
             </div>
@@ -26,8 +26,8 @@
     {%- endfor %}
   </div>
   <h1 class="text-white text-shadow text-xl lg:text-xl italic mb-2 lg:mb-4 text-center">
-    Want to be part of something great?
-    <a href="mailto:comp@socs.dit.ie?subject=Sponsorship Inquiry" class="text-primary hover:text-accent transition-all">Get in touch!</a>
+    {{ site.home.sponsorSection.enqiryStart }}
+    <a href="{{site.home.sponsorSection.enquiryLink }}" class="text-primary hover:text-accent transition-all">{{ site.home.sponsorSection.enqiryEnd }}</a>
   </h1>
 </section>
 <script>
