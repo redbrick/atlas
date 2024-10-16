@@ -106,7 +106,7 @@ home:
   sponsors:
     - name: Accenture
       image: /assets/img/sponsors/accenture.png
-      link: https://www.accenture.com/ie-en
+      link: https://accenture.com/ie-en
       tier: Primary Sponsor
       weight: bold
       colour: primary
