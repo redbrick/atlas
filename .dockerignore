@@ -11,3 +11,12 @@ yarn-error.log*
 .gitattributes
 .dockerignore
 .editorconfig
+.gitattributes
+wordlist.txt
+Dockerfile
+docker-compose.yml
+bun.lockb
+.spellcheck.yml
+README.md
+lock
+sonar-project.properties
