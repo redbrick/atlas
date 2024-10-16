@@ -104,9 +104,18 @@ home:
     enquiryEnd: Get in touch!
     enquiryLink: mailto:comp@societies.tudublin.ie?subject=Sponsorship Inquiry
   sponsors:
+    - name: Accenture
+      image: /assets/img/sponsors/accenture.png
+      link: https://www.accenture.com/ie-en
+      tier: Primary Sponsor
+      weight: bold
+      colour: primary
     - name: Rewriting the Code
       image: /assets/img/sponsors/rtc.webp
       link: https://rewritingthecode.org/
+      tier: General Sponsor
+      weight: normal
+      colour: normal
 
 footer:
   credit: Powered by Redbrick's Atlas System

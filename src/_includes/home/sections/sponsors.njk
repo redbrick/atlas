@@ -2,17 +2,18 @@
   <h1 class="text-white text-shadow text-xl lg:text-3xl font-bold mb-2 lg:mb-4 text-center">
     {{site.society.name}} is proudly sponsored by:
   </h1>
-  <div class="flex p-5 md:p-10 space-x-5 md:space-x-10 overflow-x-scroll flex flex-col items-center">
+  <div class="flex p-5 space-x-5 md:space-x-10 overflow-x-scroll flex flex-row justify-center">
     {% for sponsor in site.home.sponsors -%}
-    <div data-sponsor-trigger class="flex flex-col items-center">
-      <div data-sponsor-card class="indicator overflow-visible">
-        <div class="relative overflow-hidden">
+    <div data-sponsor-trigger class="flex flex-col items-center justify-center text-{{sponsor.colour}} font-{{sponsor.weight}}">
+      <div data-sponsor-card class="overflow-visible w-50 max-w-[40vw] h-max">
+        <div class="relative rounded-xl border border-base-content/20 shadow-xl shadow-slate-950/20 overflow-hidden p-5">
           <a href="{{ sponsor.link }}" class="flex flex-col items-center">
+            <p class="text-lg md:text-xl">{{ sponsor.tier }}</p>
             <img class="w-40 object-cover object-center" src="{{ sponsor.image }}" alt="{{ sponsor.name }} Logo" />
-            <div class="bottom-0 w-full p-2 sponsor-name">
-                <p class="text-center md:text-lg flex hover:text-primary transition-all">
+            <div class="bottom-0 p-2 sponsor-name">
+                <p class="text-center text-lg md:text-xl flex hover:text-primary transition-all">
                 {{ sponsor.name }}
-                <span class="ml-1">
+                <span class="ml-5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" class="fill-gray-500 inline-block">
                   <path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/>
                   </svg>
@@ -26,41 +27,6 @@
     {%- endfor %}
   </div>
   <h1 class="text-white text-shadow text-xl lg:text-xl italic mb-2 lg:mb-4 text-center">
-    {{ site.home.sponsorSection.enqiryStart }}
-    <a href="{{site.home.sponsorSection.enquiryLink }}" class="text-primary hover:text-accent transition-all">{{ site.home.sponsorSection.enqiryEnd }}</a>
+    {{ site.home.sponsorSection.enquiryStart }}
+    <a href="{{site.home.sponsorSection.enquiryLink }}" class="text-primary hover:text-accent transition-all">{{ site.home.sponsorSection.enquiryEnd }}</a>
   </h1>
-</section>
-<script>
-  if (!userAgent.getDevice().type) { // is a desktop device
-    gsap.registerPlugin(ScrollTrigger)
-    gsap.registerPlugin(TextPlugin)
-    gsap.set("[data-sponsor-card]", {
-      scale: 0.9,
-      opacity: 0,
-    })
-    gsap.set("[data-sponsor-title]", {
-      text: "",
-    })
-    ScrollTrigger.batch("[data-sponsor-trigger]", {
-      once: true,
-      end: "bottom bottom",
-      onEnter: (batch) => batch.forEach((element, i) => {
-        const stagger = 0.2
-        const cardElement = element.querySelector("[data-sponsor-card]")
-        const titleElement = element.querySelector("[data-sponsor-title]")
-        gsap.to(cardElement, {
-          scale: 1,
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.inOut",
-          delay: i * stagger,
-        })
-        gsap.to(titleElement, {
-          text: titleElement.dataset.sponsorTitle,
-          duration: 0.75,
-          delay: 0.25 + (i * stagger),
-        })
-      }),
-    })
-  }
-</script>
