@@ -12,7 +12,7 @@ Crosbie
 CS++
 cspp
 cta
-Dami
+dami
 Damisola
 Damisola_74125
 david
