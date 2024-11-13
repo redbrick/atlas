@@ -112,10 +112,10 @@ home:
       position: 📅 Events Officer
       username: pluto
       image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/pluto.jpg
-    - name: Samuel Jones
+    - name: Edvard Tome
       position: 📅 Events Officer
-      username: ichiro
-      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ichiro.jpg
+      username: tome
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/tome.jpg
     - name: Claudia Gray
       position: 💎 Ordinary Member
       username: claudiaa
@@ -124,7 +124,7 @@ home:
       position: 💎 Ordinary Member
       username: henri117
       image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/henri117.jpg
-    # - name: Dennis Custiuc
-    #   position: 🥇 First Year Rep.
-    #   username: swooshy
-    #   image: /assets/img/committee/swooshy.png
+    - name: Kamil
+      position: 🥇 First Year Rep.
+      username: jstkamil
+      image: https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
