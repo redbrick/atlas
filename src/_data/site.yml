@@ -11,8 +11,6 @@ navigation:
       link: /open-governance/readme.html
     - text: Blog
       link: /blog/readme.html
-    - text: Links
-      link: /links.html
   blog:
     - text: Events
       tag: events
