@@ -67,10 +67,10 @@ home:
       position: 💸 Treasurer
       username: maeyonaise.jar
       image: /assets/img/committee/mae.webp
-    - name: Nikita Aksenov
+    - name: Sayo Owolabi
       position: 📢 PRO
-      image: /assets/img/committee/nikita.webp
-      username: nawinds
+      username: kejiayan
+      image: /assets/img/committee/sayo.webp
     - name: Juliet Mullarney
       position: 👩‍⚕️ HSO
       username: juliet
@@ -99,6 +99,18 @@ home:
       position: 🚀 SysAdmin
       username: rjm
       image: /assets/img/committee/ruan.webp
+    - name: Eman Abdelatti
+      position: 🗓️ Events Rep
+      username: Emmy24
+      image: /assets/img/committee/eman.webp
+    - name: Lívia Guimarães
+      position: 👼 First Year Rep
+      username: livguimaraes
+      image: /assets/img/committee/liv.webp
+    - name: Damisola Talabi
+      position: 😅 Second Year Rep
+      username: Damisola_74125
+      image: /assets/img/committee/dami.webp
   sponsorSection:
     enquiryStart: Want to be part of something great?
     enquiryEnd: Get in touch!
