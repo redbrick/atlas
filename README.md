@@ -5,6 +5,7 @@
 Plume is CS++'s website, written in 11ty.
 It is forked from Redbrick's amazing [Atlas](https://github.com/redbrick/atlas) site.
 
+
 ## Adding Content
 
 Plume is designed to be more-or-less static.
@@ -33,6 +34,8 @@ Should you need to change the structure, follow the file structure of the reposi
 ## Development
 
 To develop Plume, please ensure you have [Node.JS](https://nodejs.org/), [Yarn](https://yarnpkg.com/), and [Docker](https://www.docker.com/) installed.
+
+_Plume uses a specific version of Node. You can use [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to easily switch between Node versions._
 
 1. Clone the repository
 
