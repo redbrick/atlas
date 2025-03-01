@@ -160,3 +160,5 @@ home:
       position: 🥇 First Year Rep.
       username: jstkamil
       image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
+  events:
+    api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
