@@ -5,6 +5,8 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 on:
+  repository_dispatch:
+    types: [rebuild]
   push:
     branches: [ "main" ]
 
