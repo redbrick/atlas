@@ -34,8 +34,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          # Remove all forward slashes from GITHUB_REF_NAME
-          ENVIRONMENT_SLUG="${GITHUB_REF_NAME//\//}"
+          # Remove invalid characters from ENVIRONMENT_SLUG
+          ENVIRONMENT_SLUG=$(echo "$GITHUB_REF_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]//g' | sed 's/^-*//; s/-*$//')
           levant deploy \
           -var git_sha="${GITHUB_SHA}" \
           -var environment_slug="${ENVIRONMENT_SLUG}" \

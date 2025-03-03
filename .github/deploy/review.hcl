@@ -27,7 +27,7 @@ job "atlas-review-[[.environment_slug]]" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.atlas-[[.environment_slug]].rule=Host(`review-[[.git_sha]].redbrick.dcu.ie`)",
+        "traefik.http.routers.atlas-[[.environment_slug]].rule=Host(`review-[[.environment_slug]].redbrick.dcu.ie`)",
         "traefik.http.routers.atlas-[[.environment_slug]].entrypoints=web,websecure",
         "traefik.http.routers.atlas-[[.environment_slug]].tls.certresolver=lets-encrypt",
       ]
