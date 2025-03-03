@@ -6,7 +6,11 @@ env:
 
 on:
   repository_dispatch:
-    types: [rebuild]
+    types:
+      - rebuild
+      - blog-rebuild
+      - open-governance-rebuild
+      - design-system-rebuild
   push:
     branches: [ "main" ]
 
