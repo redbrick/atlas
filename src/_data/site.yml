@@ -47,6 +47,26 @@ home:
       secondary:
         text: Discord
         link: https://discord.redbrick.dcu.ie
+    graphic:
+      image1:
+        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
+        alt: Baxter, Browner and Magma
+      image2:
+        image: https://media.discordapp.net/stickers/1170064614973788270.png
+        alt: Distro Bopping
+      image3:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-banner.webp
+        alt: SISTEM
+      image4:
+        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
+        alt: SISTEM crew
+      image5:
+        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/mail-broke.webp
+        alt: Mail Broke
+      image6:
+        alt: Discord emote
+      image7:
+        alt: Redbrick logo
   cta:
     title: Don't Miss Out
     body: Redbrick hosts events for everything tech related - from computer programming tutorials to workshops with multinational tech companies.
@@ -54,15 +74,15 @@ home:
       text: Signup
       link: https://join.redbrick.dcu.ie
     gallery:
-      r1c1: https://cdn.redbrick.dcu.ie/atlas/static/img/tagging-24.jpg
-      r1c2: https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
-      r1c3: https://cdn.redbrick.dcu.ie/atlas/static/img/hacker.jpg
-      r2c1: https://cdn.redbrick.dcu.ie/atlas/static/img/browner-explains.jpg
-      r2c2: https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
-      r2c3: https://cdn.redbrick.dcu.ie/atlas/static/img/working.jpg
-      r3c1: https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
-      r3c2: https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
-      r3c3: https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
+      r1c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/tagging-24.jpg
+      r1c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
+      r1c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hacker.jpg
+      r2c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/browner-explains.jpg
+      r2c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
+      r2c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/working.jpg
+      r3c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
+      r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
+      r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
   committee:
     - name: Jake Farrell
       position: 🪑 Chair
