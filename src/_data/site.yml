@@ -8,13 +8,13 @@ society:
 navigation:
   global:
     - text: Blog
-      link: /blog/readme.html
+      link: /blog/
     - text: Open Governance
-      link: /open-governance/readme.html
+      link: /open-governance/
     - text: Tech Docs
       link: https://docs.redbrick.dcu.ie
     - text: Links
-      link: /links.html
+      link: /links
   blog:
     - text: Events
       tag: events
