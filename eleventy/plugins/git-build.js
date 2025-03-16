@@ -78,6 +78,7 @@ module.exports = function (
       '.git',
       '.gitattributes',
       '.gitignore',
+      '.github',
     ]
     await Promise.all(
       opts.repos.map(async (repo) => {
