@@ -1,5 +1,5 @@
 {% set themes = [
-  "light", "dark", "synthwave", "nix-light", "nix-dark"
+  "light", "dark", "synthwave", "black", "nix-light", "nix-dark"
 ] %}
 
 <div title="Change theme" class="dropdown dropdown-bottom">
@@ -10,7 +10,7 @@
   <div tabindex="0" class="dropdown-content z-[1] mt-4 w-56 md:w-64 bg-base-200 rounded-box border border-white/5 shadow-2xl">
     <div class="grid grid-cols-1 gap-3 p-3">
       {% for theme in themes %}
-      <button data-set-theme="{{ theme }}" class="outline-base-content text-start outline-offset-4">
+      <button data-set-theme="{{ theme }}" aria-label="Change Theme" class="outline-base-content text-start outline-offset-4">
         <span data-theme="{{ theme }}" class="bg-base-100 rounded-btn text-base-content block w-full cursor-pointer">
           <span class="grid grid-cols-5 grid-rows-3">
             <span class="col-span-5 row-span-3 row-start-1 flex items-center gap-2 px-4 py-3">
