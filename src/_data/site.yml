@@ -19,6 +19,8 @@ navigation:
       link: /open-governance/
     - text: Tech Docs
       link: https://docs.redbrick.dcu.ie
+    - text: Wiki
+      link: https://wiki.redbrick.dcu.ie
     - text: Links
       link: /links
   blog:
