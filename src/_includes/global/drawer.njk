@@ -1,13 +1,13 @@
 <div class="drawer-side z-20">
   <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-  <aside class="px-5 py-16 h-screen w-80 max-w-screen overflow-auto bg-base-100 bg-opacity-90 backdrop-blur border-r border-white/5 shadow-md"> 
+  <aside class="px-5 py-16 h-screen w-80 max-w-screen overflow-auto bg-base-100 bg-opacity-90 backdrop-blur border-r border-white/5 shadow-md">
     <nav tabindex="0" class="menu">
-      <li>
+      <ul>
         <header class="menu-title">Redbrick</header>
         {% for entry in site.navigation.global %}
         <li><a href="{{ entry.link }}">{{ entry.text }}</a></li>
         {% endfor %}
-      </li>
+      </ul>
       {% if page.url and "/open-governance/" in page.url %}
       <header class="menu-title">Open Governance</header>
       {{ collections['open-governance'] | eleventyNavigation | renderTree | safe }}
