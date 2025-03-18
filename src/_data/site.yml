@@ -55,6 +55,9 @@ home:
       secondary:
         text: Discord
         link: https://discord.redbrick.dcu.ie
+      tertiary:
+        text: Learn More!
+        link: "#about"
     graphic:
       image1:
         image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
