@@ -42,6 +42,7 @@ navigation:
       text: Discord
       link: https://discord.redbrick.dcu.ie
 drawer: navigation
+
 home:
   hero:
     title:
@@ -78,6 +79,7 @@ home:
         alt: Discord emote
       image7:
         alt: Redbrick logo
+
   cta:
     title: Don't Miss Out
     body: Redbrick hosts events for everything tech related - from computer programming tutorials to workshops with multinational tech companies.
@@ -94,6 +96,7 @@ home:
       r3c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
       r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
       r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
+
   committee:
     - name: Jake Farrell
       position: 🪑 Chair
@@ -163,6 +166,10 @@ home:
       position: 🥇 First Year Rep.
       username: jstkamil
       image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
+
+  about:
+    heading: About Us!
+
   events:
     api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
     graphic:
