@@ -162,3 +162,16 @@ home:
       image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
   events:
     api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
+    graphic:
+      image1:
+        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
+        alt: Baxter, Browner and Magma
+      image2:
+        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
+        alt: SISTEM crew
+      image3:
+        src: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-banner.webp
+        alt: SISTEM
+      image4:
+        src: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/mail-broke.webp
+        alt: Mail Broke
