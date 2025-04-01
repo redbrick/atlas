@@ -1,9 +1,9 @@
 images:
-  roundel: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/cspp.svg
-  embed: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/roundel.png
+  roundel: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/minus.png
+  embed: https://raw.githubusercontent.com/cs-soc-tudublin/IdentityFlip/master/assets/logos/minus.png
 society:
-  name: CS++
-  tagline: TU Dublin's Computer Science Society.
+  name: CS--
+  tagline: TU Dublin's EVIL Computer Science Society.
 navigation:
   global:
     - text: Blog
@@ -30,9 +30,9 @@ drawer: navigation
 home:
   hero:
     title:
-      secondary: TU Dublin's Computer Science Society.
+      secondary: TU Dublin's EVIL Computer Science Society.
       primary: Join us today!
-    body: CS++ was restarted in 2022 with a goal to aid its members - today, we help our members with their coursework, and give them access to invaluable experiences and skills!
+    body: CS-- took control of CS++ on the 1st of April 2025 - today, we take over the world!
     buttons:
       primary:
         text: Sign Up!
@@ -46,73 +46,73 @@ home:
         aria: Link to our Discord server!
   cta:
     title: Don't Miss Out!
-    body: CS++ runs events of all kinds, provides discounted tickets to conferences, and helps you academically.
+    body: CS-- runs events of all kinds, provides discounted tickets to conferences, and helps you take over the world.
     button:
       text: Sign Up Today!
       link: https://join.cspp.ie/
   committee:
     - name: Faith Omotayo
-      position: 🪑 Chair
+      position: 🪑 Dictator
       username: chillingwithmani
       image: /assets/img/committee/faith.webp
     - name: David Corcoran
-      position: 🪑 Vice-Chair
+      position: 🪑 Vice-Dictator
       username: Arcane
       image: /assets/img/committee/david.webp
     - name: Bohdan Yeriemienko
-      position: 💌 Secretary
+      position: 💌 Minion
       username: bohdan
       image: /assets/img/committee/bohdan.webp
     - name: Mae Capacite
-      position: 💸 Treasurer
+      position: 💸 Embezzler
       username: maeyonaise.jar
       image: /assets/img/committee/mae.webp
     - name: Sayo Owolabi
-      position: 📢 PRO
+      position: 📢 Propagandist
       username: kejiayan
       image: /assets/img/committee/sayo.webp
     - name: Juliet Mullarney
-      position: 👩‍⚕️ HSO
+      position: 👩‍⚕️ Danger Office
       username: juliet
       image: /assets/img/committee/juliet.webp
     - name: Ana
-      position: 💻 Tech Events Officer
+      position: 💻 Trinity Takeover Officer
       username: ana_rchy
       image: /assets/img/committee/ana.gif
     - name: Ethan Crosbie
-      position: 🥳 Social Events Officer
+      position: 🥳 Brainwashing Session Officer
       username: ethan
       image: /assets/img/committee/ethan.webp
     - name: Derv O'Flynn
-      position: 🚀 SysAdmin
+      position: 🚀 Hacker
       username: BigCheeseDerv
       image: /assets/img/committee/derv.webp
     - name: MJ
-      position: 🚀 SysAdmin
+      position: 🚀 Hacker
       username: DroolingFeralHog
       image: /assets/img/committee/mj.webp
     - name: Jacey
-      position: 🚀 SysAdmin
+      position: 🚀 Hacker
       username: sokomuso
       image: /assets/img/committee/jacey.webp
     - name: Ruán Murgatroyd
-      position: 🚀 SysAdmin
+      position: 🚀 Hacker
       username: rjm
       image: /assets/img/committee/ruan.webp
     - name: Eman Abdelatti
-      position: 🗓️ Events Rep
+      position: 🗓️ Evil Events Rep
       username: Emmy24
       image: /assets/img/committee/eman.webp
     - name: Lívia Guimarães
-      position: 👼 First Year Rep
+      position: 👼 Brainwasher
       username: livguimaraes
       image: /assets/img/committee/liv.webp
     - name: Damisola Talabi
-      position: 😅 Second Year Rep
+      position: 😅 Second Year Brainwasher
       username: Damisola_74125
       image: /assets/img/committee/dami.webp
   sponsorSection:
-    enquiryStart: Want to be part of something great?
+    enquiryStart: Want to be part of something EVIL?
     enquiryEnd: Get in touch!
     enquiryLink: mailto:comp@societies.tudublin.ie?subject=Sponsorship Inquiry
   sponsors:
