@@ -42,6 +42,7 @@ navigation:
       text: Discord
       link: https://discord.redbrick.dcu.ie
 drawer: navigation
+
 home:
   hero:
     title:
@@ -55,6 +56,9 @@ home:
       secondary:
         text: Discord
         link: https://discord.redbrick.dcu.ie
+      tertiary:
+        text: Learn More!
+        link: "#about"
     graphic:
       image1:
         image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
@@ -75,6 +79,7 @@ home:
         alt: Discord emote
       image7:
         alt: Redbrick logo
+
   cta:
     title: Don't Miss Out
     body: Redbrick hosts events for everything tech related - from computer programming tutorials to workshops with multinational tech companies.
@@ -91,6 +96,7 @@ home:
       r3c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
       r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
       r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
+
   committee:
     - name: Jake Farrell
       position: 🪑 Chair
@@ -160,3 +166,22 @@ home:
       position: 🥇 First Year Rep.
       username: jstkamil
       image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
+
+  about:
+    heading: About Us!
+
+  events:
+    api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
+    graphic:
+      image1:
+        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
+        alt: Baxter, Browner and Magma
+      image2:
+        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
+        alt: SISTEM crew
+      image3:
+        src: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-banner.webp
+        alt: SISTEM
+      image4:
+        src: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/mail-broke.webp
+        alt: Mail Broke

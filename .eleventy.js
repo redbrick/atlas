@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require('fs')
 const yaml = require('js-yaml')
 const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
@@ -29,6 +30,25 @@ module.exports = function (eleventyConfig) {
       '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
     )
   )
+
+  function includeMarkdown(filePath) {
+    filePath = String(filePath)
+    const fullPath = path.resolve(process.cwd(), filePath)
+    let mdContent
+    try {
+      mdContent = fs.readFileSync(fullPath, "utf8")
+    } catch (err) {
+      console.error(`Error reading file at: ${fullPath}`, err)
+      return `<p>Error reading file at: ${fullPath}</p>`
+    }
+    return markdown.render(mdContent)
+  }
+
+  // Register as a shortcode for content files
+  eleventyConfig.addShortcode("includeMarkdown", includeMarkdown)
+  // Also register as a Nunjucks global so includes have access to it
+  eleventyConfig.addNunjucksGlobal("includeMarkdown", includeMarkdown)
+
 
   eleventyConfig.addPlugin(gitBuildPlugin, {
     repos: [
