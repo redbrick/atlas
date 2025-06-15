@@ -40,7 +40,6 @@ dami
 dan
 david
 eman
-eman
 enquiryEnd
 enquiryLink
 enquiryStart
@@ -53,7 +52,6 @@ ie
 img
 instagram
 jacey
-jacey
 juliet
 kejiayan
 liv
@@ -61,7 +59,6 @@ livguimaraes
 mae
 maeyonaise
 mailto
-mj
 mj
 nawinds
 nikita
@@ -80,5 +77,6 @@ sponsorSection
 svg
 tudublin
 tudublincsplusplus
+tyler
 webp
 www
