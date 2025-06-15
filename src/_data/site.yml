@@ -83,6 +83,10 @@ home:
       position: 🥳 Social Events Officer
       username: ethan
       image: /assets/img/committee/ethan.webp
+    - name: Daniel Smyth
+      position: 🚀 SysAdmin
+      username: rockerkemm
+      image: /assets/img/committee/dan.webp
     - name: Derv O'Flynn
       position: 🚀 SysAdmin
       username: BigCheeseDerv
@@ -91,10 +95,6 @@ home:
       position: 🚀 SysAdmin
       username: DroolingFeralHog
       image: /assets/img/committee/mj.webp
-    - name: Jacey
-      position: 🚀 SysAdmin
-      username: sokomuso
-      image: /assets/img/committee/jacey.webp
     - name: Ruán Murgatroyd
       position: 🚀 SysAdmin
       username: rjm
