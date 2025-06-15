@@ -1,6 +1,6 @@
 Abdelatti
 Aksenov
-BigCheeseDerv
+BigCheese
 Brady
 CS++
 Capacite
@@ -9,6 +9,7 @@ Crosbie
 Damisola
 Damisola_74125
 Daniel
+D
 DroolingFeralHog
 Guimarães
 HSO
