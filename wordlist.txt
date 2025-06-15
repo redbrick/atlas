@@ -20,7 +20,6 @@ O'Flynn
 Omotayo
 Owolabi
 Redbrick's
-Rockerkemm
 Ruán
 Sayo
 Smyth
@@ -34,11 +33,11 @@ Yeriemienko
 accenture
 ana
 bohdan
-bohdan
 chillingwithmani
 cspp
 cta
 dami
+dan
 david
 eman
 eman
@@ -71,6 +70,7 @@ rchy
 relyT
 rewritingthecode
 rjm
+rockerkemm
 rtc
 ruan
 sayo
