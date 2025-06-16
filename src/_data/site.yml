@@ -83,22 +83,26 @@ home:
       position: 🥳 Social Events Officer
       username: ethan
       image: /assets/img/committee/ethan.webp
-    - name: Derv O'Flynn
+    - name: Daniel Smyth
       position: 🚀 SysAdmin
-      username: BigCheeseDerv
+      username: rockerkemm
+      image: /assets/img/committee/dan.webp
+    - name: D O'Flynn
+      position: 🚀 SysAdmin
+      username: BigCheese
       image: /assets/img/committee/derv.webp
     - name: MJ
       position: 🚀 SysAdmin
       username: DroolingFeralHog
       image: /assets/img/committee/mj.webp
-    - name: Jacey
-      position: 🚀 SysAdmin
-      username: sokomuso
-      image: /assets/img/committee/jacey.webp
     - name: Ruán Murgatroyd
       position: 🚀 SysAdmin
       username: rjm
       image: /assets/img/committee/ruan.webp
+    - name: Tyler Bradley
+      position: 🚀 SysAdmin
+      username: relyT
+      image: /assets/img/committee/tyler.webp
     - name: Eman Abdelatti
       position: 🗓️ Events Rep
       username: Emmy24
