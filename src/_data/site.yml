@@ -51,38 +51,38 @@ home:
       text: Sign Up Today!
       link: https://join.cspp.ie/
   committee:
-    - name: Faith Omotayo
+    - name: Lívia Guimarães
       position: 🪑 Chair
-      username: chillingwithmani
-      image: /assets/img/committee/faith.webp
-    - name: David Corcoran
+      username: livguimaraes
+      image: /assets/img/committee/liv.webp
+    - name: Faith Omotayo
       position: 🪑 Vice-Chair
-      username: Arcane
-      image: /assets/img/committee/david.webp
-    - name: Bohdan Yeriemienko
+      username: faithomotayo
+      image: /assets/img/committee/faith.webp
+    - name: Anmool Shah
       position: 💌 Secretary
+      username: anmool
+      image: /assets/img/committee/anmool.webp
+    - name: It could be you!
+      position: 💸 Treasurer
+      username: joinUs
+      image: /assets/img/committee/unknown.webp
+    - name: Parva Shah
+      position: 📢 PRO
+      username: ???
+      image: /assets/img/committee/unknown.webp
+    - name: Eman Abdelatti
+      position: 👩‍⚕️ HSO
+      username: Emmy24
+      image: /assets/img/committee/eman.webp
+    - name: It could be you!
+      position: 💻 Tech Events Officer
+      username: joinUs
+      image: /assets/img/committee/unknown.webp
+    - name: Bohdan Yeriemienko
+      position: 🥳 Social Events Officer
       username: bohdan
       image: /assets/img/committee/bohdan.webp
-    - name: Mae Capacite
-      position: 💸 Treasurer
-      username: maeyonaise.jar
-      image: /assets/img/committee/mae.webp
-    - name: Sayo Owolabi
-      position: 📢 PRO
-      username: kejiayan
-      image: /assets/img/committee/sayo.webp
-    - name: Juliet Mullarney
-      position: 👩‍⚕️ HSO
-      username: juliet
-      image: /assets/img/committee/juliet.webp
-    - name: Ana
-      position: 💻 Tech Events Officer
-      username: ana_rchy
-      image: /assets/img/committee/ana.gif
-    - name: Ethan Crosbie
-      position: 🥳 Social Events Officer
-      username: ethan
-      image: /assets/img/committee/ethan.webp
     - name: Daniel Smyth
       position: 🚀 SysAdmin
       username: rockerkemm
@@ -103,18 +103,18 @@ home:
       position: 🚀 SysAdmin
       username: relyT
       image: /assets/img/committee/tyler.webp
-    - name: Eman Abdelatti
+    - name: It could be you!
       position: 🗓️ Events Rep
-      username: Emmy24
-      image: /assets/img/committee/eman.webp
-    - name: Lívia Guimarães
+      username: joinUs
+      image: /assets/img/committee/unknown.webp
+    - name: It could be you!
       position: 👼 First Year Rep
-      username: livguimaraes
-      image: /assets/img/committee/liv.webp
-    - name: Damisola Talabi
+      username: joinUs
+      image: /assets/img/committee/unknown.webp
+    - name: It could be you!
       position: 😅 Second Year Rep
-      username: Damisola_74125
-      image: /assets/img/committee/dami.webp
+      username: joinUs
+      image: /assets/img/committee/unknown.webp
   sponsorSection:
     enquiryStart: Want to be part of something great?
     enquiryEnd: Get in touch!
