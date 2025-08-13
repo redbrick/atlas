@@ -5,19 +5,22 @@
     </h1>
   </div>
   <div class="flex p-5 md:p-10 !pt-5 space-x-5 md:space-x-10 overflow-x-scroll">
-    {% for member in site.home.committee -%}
+    {% for member in site.home.committee.members -%}
     <div data-cmt-trigger class="flex flex-col items-center">
       <h2 data-cmt-title="{{ member.position }}" class="font-mono font-bold text-sm md:text-md h-10 whitespace-nowrap">
         {{ member.position}}
       </h2>
       <div data-cmt-card class="indicator overflow-visible">
-        <span class="badge badge-primary lg:badge-lg px-2 indicator-item indicator-start -translate-x-[10%] -translate-y-1/4 shadow">
+        <span
+          class="badge badge-primary lg:badge-lg px-2 indicator-item indicator-start -translate-x-[10%] -translate-y-1/4 shadow">
           <small class="font-mono text-white text-xs lg:text-sm">
             @{{ member.username }}
           </small>
         </span>
         <div class="relative rounded-xl border border-base-content/20 shadow-xl shadow-slate-950/20 overflow-hidden">
-          <img class="-z-10 aspect-[0.75] w-40 max-w-[35vw] object-cover object-center" src="{{ member.image }}" alt="{{ member.name }}" />
+          <img class="-z-10 aspect-[0.75] w-40 max-w-[35vw] object-cover object-center"
+            src="{{ site.home.committee.imageURL }}{{ site.home.committee.year }}/{{ member.username }}.png"
+            alt="{{ member.name }}" />
           <div class="absolute bottom-0 w-full p-2 bg-base-200 bg-opacity-75 backdrop-blur-sm">
             <p class="text-center md:text-lg">
               {{ member.name }}
