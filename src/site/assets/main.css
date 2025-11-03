@@ -33,3 +33,14 @@
     @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
   }
 }
+
+/* reset some black theme defaults */
+[data-theme="black"] {
+  --rounded-box: 1rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
+  --tab-radius: 0.5rem;
+}

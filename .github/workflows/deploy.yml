@@ -1,0 +1,99 @@
+name: Deploy to Redbrick
+
+on:
+  push:
+  pull_request:
+    types: [closed]
+  repository_dispatch:
+    types:
+      - rebuild
+      - blog-rebuild
+      - open-governance-rebuild
+      - design-system-rebuild
+
+jobs:
+  build:
+    name: build
+    uses: './.github/workflows/build.yml'
+    if: github.event_name != 'pull_request'
+
+  deploy_review:
+    needs:
+      - build
+
+    runs-on: [self-hosted, deployment-runner]
+    container:
+      image: hashicorp/levant:0.3
+      options: --user root
+    if: github.ref != 'refs/heads/main' && github.event_name == 'push'
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set environment slug
+        id: set-slug
+        run: |
+          # Remove invalid characters from ENVIRONMENT_SLUG
+          ENVIRONMENT_SLUG=$(echo "$GITHUB_REF_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9-]//g' | sed 's/^-*//; s/-*$//')
+          echo "Using environment slug: $ENVIRONMENT_SLUG"
+          echo "ENVIRONMENT_SLUG=$ENVIRONMENT_SLUG" >> $GITHUB_ENV
+
+      - name: Deploy review job
+        run: |
+          levant deploy \
+          -var git_sha="${GITHUB_SHA}" \
+          -var environment_slug="${ENVIRONMENT_SLUG}" \
+          -address "http://nomad.service.consul:4646" \
+          ./.github/deploy/review.hcl
+
+      - name: Comment the review URL
+        uses: actions/github-script@v6
+        env:
+          ENVIRONMENT_SLUG: ${{ env.ENVIRONMENT_SLUG }}
+        with:
+          script: |
+            const branchName = process.env.GITHUB_REF_NAME.replace(/^refs\/heads\//, '');
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branchName}`
+            });
+            if (pulls.length > 0) {
+              const prNumber = pulls[0].number;
+              const url = `https://review-${process.env.ENVIRONMENT_SLUG}.redbrick.dcu.ie`;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: `Review deployment available at: ${url}`
+              });
+            } else {
+              console.log(`No pull request found for branch ${branchName}`);
+            }
+
+  stop_review:
+    runs-on: [self-hosted, deployment-runner]
+    container:
+      image: multani/nomad
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 60
+    steps:
+      - run: nomad status -address=http://nomad.service.consul:4646
+      - run: nomad job stop -address=http://nomad.service.consul:4646 -purge atlas-review-${GITHUB_HEAD_REF}
+
+  deploy_prod:
+    needs:
+      - build
+    runs-on: [self-hosted, deployment-runner]
+    container:
+      image: hashicorp/levant:0.3
+      options: --user root
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          levant deploy \
+          -var git_sha="${GITHUB_SHA}" \
+          -address "http://nomad.service.consul:4646" \
+          ./.github/deploy/production.hcl

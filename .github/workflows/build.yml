@@ -5,8 +5,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_call:
 
 jobs:
   build:
