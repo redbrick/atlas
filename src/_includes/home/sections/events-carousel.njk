@@ -53,7 +53,6 @@
 
       const events = [...activitiesData, ...eventsData];
       console.log('Combined events:', events);
-
       const sectionHTML = `
         <section class="bg-base-100">
           <div class="px-5 pt-5 md:px-10 md:pt-10">
@@ -73,7 +72,7 @@
                     </small>
                   </span>
                   <div class="relative rounded-xl border border-base-content/20 shadow-xl shadow-slate-950/20 overflow-hidden">
-<img class="-z-10 aspect-[0.75] w-60 object-cover object-center" src="${event.image || '{{ site.images.brick }}'}" alt="${event.name}" />
+<img class="-z-10 aspect-[0.75] w-60 object-cover object-center" src="${event.image || '{{ site.images.brick.src }}'}" alt="${event.name}" />
           <div class="absolute bottom-0 w-full p-2 bg-base-200 bg-opacity-75 backdrop-blur-sm">
             <p class="text-center md:text-lg">
               ${event.location}
