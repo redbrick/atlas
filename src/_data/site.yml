@@ -59,6 +59,8 @@ home:
       tertiary:
         text: Learn More!
         link: "#about"
+    events:
+      api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
     graphic:
       image1:
         image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
@@ -98,90 +100,59 @@ home:
       r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
 
   committee:
-    - name: Jake Farrell
-      position: 🪑 Chair
-      username: cheese
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/cheese.png
-    - name: Ishita Gupta
-      position: 🪑 Vice-Chair
-      username: ishitag
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ishitag.jpg
-    - name: Daniel Mc Entee
-      position: 💌 Secretary
-      username: kronos
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/kronos.png
-    - name: Malavika Shanker
-      position: 💸 Treasurer
-      username: calcifer
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/calcifer.png
-    - name: Philip Leonard
-      position: 📢 PRO
-      username: payne
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/payne.png
-    - name: Georgijs Pitkevics
-      position: 🎨 GDO
-      username: zx
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/zx.jpg
-    - name: Dominic Connor
-      position: 🚀 SysAdmin
-      username: wizzdom
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/wizzdom.png
-    - name: Ayden Jahola
-      position: 🚀 SysAdmin
-      username: ayden
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/ayden.jpg
-    - name: Gavin Holahan
-      position: 🚀 SysAdmin
-      username: hypnoant
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/hypnoant.png
-    - name: Jonathan Groult
-      position: 👾 Webmaster
-      username: nova
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/nova.jpg
-    - name: Pavel Ivanov
-      position: 🙌 Helpdesk
-      username: regaus
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/regaus.jpg
-    - name: Konstantin O'Donnell
-      position: 🙌 Helpdesk
-      username: xoreax
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/xoreax.jpg
-    - name: Shane Whelan
-      position: 📅 Events Officer
-      username: pluto
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/pluto.jpg
-    - name: Edvard Tome
-      position: 📅 Events Officer
-      username: tome
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/tome.jpg
-    - name: Claudia Gray
-      position: 💎 Ordinary Member
-      username: claudiaa
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/claudiaa.png
-    - name: Henri Simmons-Hayden
-      position: 💎 Ordinary Member
-      username: henri117
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/henri117.jpg
-    - name: Kamil
-      position: 🥇 First Year Rep.
-      username: jstkamil
-      image: https://img.redbrick.dcu.ie/150x275,sc/https://cdn.redbrick.dcu.ie/atlas/cmt24-25/jstkamil.jpg
-
+    imageURL: https://img.redbrick.dcu.ie/150x275,fit/https://cdn.redbrick.dcu.ie/atlas/
+    year: cmt25-26
+    members:
+     - name: Dominic Connor
+       position: 🪑 Chair
+       username: wizzdom
+     - name: Shane Whelan
+       position: 🪑 Vice-Chair
+       username: pluto
+     - name: Daniel Mc Entee
+       position: 💌 Secretary
+       username: kronos
+     - name: Jonathan Groult
+       position: 💸 Treasurer
+       username: nova
+     - name: Leila Alilich
+       position: 📢 PRO
+       username: snow13
+     - name: Kamil Kasza
+       position: 🎨 GDO
+       username: jstkamil
+     - name: Ayden Jahola
+       position: 🚀 SysAdmin
+       username: ayden
+     - name: Gavin Holahan
+       position: 🚀 SysAdmin
+       username: hypnoant
+     - name: Conor Sludds
+       position: 🚀 SysAdmin
+       username: cj2364
+     - name: Jed Hazaymeh
+       position: 👾 Webmaster
+       username: magma
+     - name: Pavel Ivanov
+       position: 🙌 Helpdesk
+       username: regaus
+     - name: Milan Tamang
+       position: 🙌 Helpdesk
+       username: milan
+     - name: Edvard Tome
+       position: 📅 Events Officer
+       username: tome
+     - name: Adam Wilkinson
+       position: 📅 Events Officer
+       username: wilko
+     - name: Michal Wasiak
+       position: 💎 Ordinary Member
+       username: mehow
+     - name: Eva Thunder
+       position: 💎 Ordinary Member
+       username: 3va
+     # - name: Kamil
+     #   position: 🥇 First Year Rep.
+     #   username: jstkamil
   about:
     heading: About Us!
-
-  events:
-    api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
-    graphic:
-      image1:
-        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
-        alt: Baxter, Browner and Magma
-      image2:
-        src: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
-        alt: SISTEM crew
-      image3:
-        src: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-banner.webp
-        alt: SISTEM
-      image4:
-        src: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/mail-broke.webp
-        alt: Mail Broke
