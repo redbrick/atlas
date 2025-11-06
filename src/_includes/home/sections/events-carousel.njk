@@ -30,8 +30,8 @@
 
 <script>
   (async function () {
-    const activities_api = '{{ site.home.events.api }}/activities';
-    const events_api = '{{ site.home.events.api }}/events';
+    const activities_api = '{{ site.home.hero.events.api }}/activities';
+    const events_api = '{{ site.home.hero.events.api }}/events';
 
     try {
       const [activitiesResponse, eventsResponse] = await Promise.all([
