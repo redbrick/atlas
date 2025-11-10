@@ -18,17 +18,17 @@ on reindeer and mead in a Viking restaurant (all while being quite drunk).
 
 
 Redbrick isn't just about events though; we are lucky enough to own our own servers on which we host the
-services used daily by our members: IRC *(Internet Relay Chat - our most popular service, as it's great for
+services used daily by our members: Redbrick Discord Server *(our most popular service, as it's great for
 putting off assignments until the last minute, waffling about whatever's on your mind and meeting new
 people)*,webspace *(host your own website with massive amounts of storage space)*, forums/message
-boards, the photo gallery and your own `@redbrick.dcu.ie` e-mail address. We also have our own [**wiki site**](https://wiki.redbrick.dcu.ie),
+boards, the photo gallery and your own `@redbrick.dcu.ie` e-mail address (soonTM). We also have our own [**wiki site**](https://wiki.redbrick.dcu.ie),
 where all members can create/edit/~~vandalise~~ pages on whatever you feel like. You can access all of these
 services from any computer connected to the Internet.
 
 
 Networking societies are to be found all over the country, and Redbrick - as part of the Intersocs network - is
-often found mingling with other nerds from Trinity, DIT, NUI Maynooth and University of Limerick, both at
-Intersocs events and in the IRC channel.
+often found mingling with other nerds from Trinity, NUI Maynooth and University of Limerick, both at
+Intersocs events and in the Discord channels.
 
 
 So, if you want to make new friends, talk about anything that's on your mind, or just get twisted because you
