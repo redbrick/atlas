@@ -109,15 +109,15 @@ home:
      - name: Shane Whelan
        position: 🪑 Vice-Chair
        username: pluto
-     - name: Daniel Mc Entee
+     - name: Aoife Guanzon
        position: 💌 Secretary
-       username: kronos
+       username: aoife
      - name: Jonathan Groult
        position: 💸 Treasurer
        username: nova
-     - name: Leila Alilich
+     - name: Harry Greenwood
        position: 📢 PRO
-       username: snow13
+       username: mad
      - name: Kamil Kasza
        position: 🎨 GDO
        username: jstkamil
@@ -151,8 +151,8 @@ home:
      - name: Eva Thunder
        position: 💎 Ordinary Member
        username: 3va
-     # - name: Kamil
-     #   position: 🥇 First Year Rep.
-     #   username: jstkamil
+     - name: Pearse Cope
+       position: 🥇 First Year Rep.
+       username: pearse
   about:
     heading: About Us!
