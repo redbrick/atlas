@@ -1,8 +1,4 @@
 <section class="relative hero min-h-50%">
-  <!-- <div -->
-  <!--   class="absolute inset-0 -z-40 bg-base-content [mask-image:url(https://cdn.redbrick.dcu.ie/atlas/static/svg/grid-bg.svg)]"> -->
-  <!-- </div> -->
-  <!-- <div class="absolute inset-0 -z-50 bg-base-200"></div> -->
   <div class="hero-content px-5 py-5 lg:py-10 w-full flex-col md:flex-row" id="events">
     <div class="max-w-md lg:max-w-2xl text-center md:text-start">
       <h1 class="text-3xl lg:text-5xl font-bold">
@@ -26,9 +22,10 @@
         src="{{ site.home.hero.graphic.image4.image }}"
         alt="{{ site.home.hero.graphic.image4.alt }}" data-events-card />
     </div>
-    {% include "home/sections/events-carousel.njk" %}
   </div>
 </section>
+{% include "home/sections/events-carousel.njk" %}
+
 <script>
   gsap.from("[data-events-card]", {
     opacity: 0,
