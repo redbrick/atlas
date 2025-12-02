@@ -25,6 +25,21 @@
 
       const events = [...activitiesData, ...eventsData];
       console.log('Combined events:', events);
+
+      if (events.length === 0) {
+        document.getElementById('events-carousel').innerHTML = `
+        <section class="bg-base-100">
+          <div class="px-5 pt-5 md:px-10 md:pt-10">
+            <h1 class="text-3xl font-bold">Upcoming Events:</h1>
+          </div>
+          <div class="flex p-5 md:p-10 !pt-5">
+            <p>No upcoming events at the moment. Please check back later!</p>
+          </div>
+        </section>
+        `
+        return;
+      }
+
       const sectionHTML = `
         <section class="bg-base-100">
           <div class="px-5 pt-5 md:px-10 md:pt-10">
