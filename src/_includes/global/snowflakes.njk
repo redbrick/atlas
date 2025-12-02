@@ -1,17 +1,23 @@
-<div class="fixed inset-0 -z-10 pointer-events-none h-screen">
+<div class="fixed inset-0 -z-10 pointer-events-none h-screen overflow-hidden">
+  {% set leftVw = [1,5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50,53,56,59,62,65,68,71,74,77,80,83,86,89,92,95,98] %}
+  {% set durations = [20, 25, 30, 35, 40] %}
+  {% set startOffsets = [0,-0.25,-0.5,-0.75,-1,-1.25,-1.5,-1.75,-2,-2.5,-3,-3.5,-4,-4.5,-5,-6,-7,-8,-9,-10,-12,-14,-16,-18,-20,-22,-24,-26,-28,-30] %}
+  {% set sizes = ['2rem','2.5rem','3rem','3.5rem','4rem'] %}
+  {% set snowflakes = ['❄', '*', '✦', '✧', '✺'] %}
+
   {% for i in range(1, 50) %}
     <div
-      class="absolute text-white opacity-75 animate-fall"
+      class="absolute text-white opacity-75 will-change-transform animate-fall-soft-blink"
       style="
-        top: {{ (i * 2) % 100 }}%;
-        left: {{ (i * 7) % 100 }}%;
-        font-size: {{ (i % 3) + 1 }}rem;
-        animation-duration: {{ (i % 3) + 3 }}s;
-        animation-delay: {{ (i % 5) }}s;
+        top: 0;
+        left: calc({{ leftVw | random }}vw);
+        font-size: {{ sizes | random }};
+        animation-duration: {{ durations | random }}s;
+        animation-delay: {{ startOffsets | random }}s;
+        animation-timing-function: linear;
       "
     >
-      {% set snowflakes = ['❄', '*', '✦', '✧', '✺'] %}
-      {{ snowflakes[i % snowflakes.length] }}
+      {{ snowflakes | random }}
     </div>
   {% endfor %}
 </div>
