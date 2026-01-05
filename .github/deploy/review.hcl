@@ -29,7 +29,7 @@ job "atlas-review-[[.environment_slug]]" {
         "traefik.enable=true",
         "traefik.http.routers.atlas-[[.environment_slug]].rule=Host(`review-[[.environment_slug]].redbrick.dcu.ie`)",
         "traefik.http.routers.atlas-[[.environment_slug]].entrypoints=web,websecure",
-        "traefik.http.routers.atlas-[[.environment_slug]].tls.certresolver=lets-encrypt",
+        "traefik.http.routers.atlas-[[.environment_slug]].tls.certresolver=rb",
       ]
     }
 
