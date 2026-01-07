@@ -27,7 +27,7 @@ job "atlas" {
 
       tags = [
         "traefik.enable=true",
-        "traefik.http.routers.nginx-atlas.rule=Host(`redbrick.dcu.ie`) || Host(`www.redbrick.dcu.ie`) || Host(`www.rb.dcu.ie`) || Host(`rb.dcu.ie`) || Host(`redbrick.ie`) || Host(`www.redbrick.ie`)",
+        "traefik.http.routers.nginx-atlas.rule=(Host(`redbrick.dcu.ie`) || Host(`www.redbrick.dcu.ie`) || Host(`www.rb.dcu.ie`) || Host(`rb.dcu.ie`) || Host(`redbrick.ie`) || Host(`www.redbrick.ie`)) && !PathPrefix(`/~`)",
         "traefik.http.routers.nginx-atlas.entrypoints=web,websecure",
         "traefik.http.routers.nginx-atlas.tls.certresolver=rb",
       ]
