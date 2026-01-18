@@ -5,5 +5,17 @@ outline: In this document
 ---
 
 <div class="prose min-w-full">
+  {% if created and modified %}
+    <div class="inline-block py-4">
+    <span data-pagefind-ignore class="badge badge-lg badge-ghost">
+      <span class="font-bold">🔨 Created:</span>
+      <span class="font-normal ml-1">{{ created | readable }}</span>
+    </span>
+    <span data-pagefind-ignore class="badge badge-lg badge-ghost">
+      <span class="font-bold">✏️ Last Edited:</span>
+      <span class="font-normal ml-1">{{ modified | readable }}</span>
+    </span>
+    </div>
+  {% endif %}
   {{ content | safe }}
 </div>
