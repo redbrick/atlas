@@ -1,0 +1,14 @@
+<section class="relative hero min-h-50%">
+  <img class="absolute inset-0" src="https://cdn.redbrick.dcu.ie/atlas/static/img/spotlight-bg.webp" alt="" />
+  <div class="absolute inset-0 -z-50 bg-base-200"></div>
+  <div class="hero-content px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row" id="about">
+    <div class="max-w-md lg:max-w-2xl text-center md:text-start">
+      <h1 class="text-3xl lg:text-5xl font-bold">
+        About Us
+      </h1>
+      <div class="mt-4 text-md prose whitespace-normal">
+        {{ includeMarkdown("./src/_includes/home/sections/about.md") | safe }}
+      </div>
+    </div>
+  </div>
+</section>
