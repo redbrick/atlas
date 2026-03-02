@@ -1,0 +1,39 @@
+<section class="relative hero min-h-50%">
+  <div class="hero-content px-5 py-5 lg:py-10 w-full flex-col md:flex-row" id="events">
+    <div class="max-w-md lg:max-w-2xl text-center md:text-start">
+      <h1 class="text-3xl lg:text-5xl font-bold">
+        Events
+      </h1>
+      <p class="mt-4 text-md/relaxed">
+        Redbrick hosts a variety of events throughout the year, from LAN parties to workshops and talks...
+      </p>
+    </div>
+    <div class="relative -z-20 perspective-1600 w-full md:w-1/2 aspect-square">
+      <img class="hero-card absolute bottom-[62%] left-[12%] h-[32%] object-contain"
+        src="{{ site.home.hero.graphic.image1.image }}"
+        alt="{{ site.home.hero.graphic.image1.alt }}" data-events-card />
+      <img class="hero-card absolute bottom-[30%] left-[35%] h-[50%] object-contain"
+        src="{{ site.home.hero.graphic.image2.image }}"
+        alt="{{ site.home.hero.graphic.image2.alt }}" data-events-card />
+      <img class="hero-card absolute bottom-[10%] left-[10%] h-[26%] object-contain"
+        src="{{ site.home.hero.graphic.image3.image }}"
+        alt="{{ site.home.hero.graphic.image3.alt }}" data-events-card />
+      <img class="hero-card absolute bottom-[10%] left-[50%] h-[22%] object-contain"
+        src="{{ site.home.hero.graphic.image4.image }}"
+        alt="{{ site.home.hero.graphic.image4.alt }}" data-events-card />
+    </div>
+  </div>
+</section>
+{% include "home/sections/events-carousel.njk" %}
+
+<script>
+  gsap.from("[data-events-card]", {
+    opacity: 0,
+    scale: 0,
+    y: 50,
+    delay: 0.8,
+    ease: "elastic(1,1)",
+    duration: 1.25,
+    stagger: 0.2
+  })
+</script>
