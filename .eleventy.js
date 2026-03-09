@@ -26,6 +26,13 @@ module.exports = function (eleventyConfig) {
     path.join(
       pkg.eleventy.dir.input,
       'assets',
+      'birthday.js'
+    )
+  )
+  eleventyConfig.addPassthroughCopy(
+    path.join(
+      pkg.eleventy.dir.input,
+      'assets',
       '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
     )
   )
