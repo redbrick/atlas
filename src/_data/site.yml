@@ -57,20 +57,20 @@ home:
         link: https://discord.redbrick.dcu.ie
     graphic:
       image1:
-        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
-        alt: Baxter, Browner and Magma
+        image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
+        alt: Wizzdom Hackerclub
       image2:
         image: https://media.discordapp.net/stickers/1170064614973788270.png
         alt: Distro Bopping
       image3:
-        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-banner.webp
-        alt: SISTEM
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
+        alt: Susquehanna Event
       image4:
         image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
         alt: SISTEM crew
       image5:
-        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/mail-broke.webp
-        alt: Mail Broke
+        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/hackergroup.jpg
+        alt: Hackerclub crew
       image6:
         alt: Discord emote
       image7:
@@ -82,15 +82,15 @@ home:
       text: Signup
       link: https://join.redbrick.dcu.ie
     gallery:
-      r1c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/tagging-24.jpg
-      r1c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/newsletter-snap.webp
-      r1c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hacker.jpg
-      r2c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/browner-explains.jpg
+      r1c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hackersmovie.jpg
+      r1c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/rbadmintalk.jpg
+      r1c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/kamildeskrb.jpg
+      r2c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/minecraft.jpg
       r2c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
-      r2c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/working.jpg
+      r2c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/jamestalk.jpg
       r3c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
-      r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/cmt-24-25.jpg
-      r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBallCmt24.jpg
+      r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/EGM2025.jpg
+      r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBall26.jpg
   committee:
     imageURL: https://img.redbrick.dcu.ie/150x275,fit/https://cdn.redbrick.dcu.ie/atlas/
     year: cmt25-26
