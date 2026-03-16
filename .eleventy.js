@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
     path.join(
       pkg.eleventy.dir.input,
       'assets',
-      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico}'
+      '/**/[!_]*.{png,jpg,jpeg,webp,svg,gif,bmp,ico,wav}'
     )
   )
 
