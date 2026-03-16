@@ -73,6 +73,12 @@ export function triggerBirthday() {
         user-select: none;
         height: 100%;
       }
+
+      .birthday-brick.popped {
+        opacity: 0;
+        pointer-events: none;
+        pointer-cursor: default;
+      }
     </style>
     <div id="birthday-brick-layer" style="position: fixed; inset: 0; overflow: hidden; z-index: 2;">
       ${bricks}
@@ -84,10 +90,20 @@ export function triggerBirthday() {
     </div>
   `
 
+
   const brickLayer = document.getElementById('birthday-brick-layer')
-  brickLayer?.addEventListener('click', (event) => {
+
+  brickLayer?.addEventListener('animationiteration', (event) => {
     const brick = event.target.closest('.birthday-brick')
     if (!brick) return
+
+    // Brick reached top again; make it visible/clickable for next fall
+    brick.classList.remove('popped')
+  })
+
+  brickLayer?.addEventListener('click', (event) => {
+    const brick = event.target.closest('.birthday-brick')
+    if (!brick || brick.classList.contains("popped")) return
 
     if (!triggeredGame) {
       triggeredGame = true
@@ -104,7 +120,7 @@ export function triggerBirthday() {
     }
 
     const rect = brick.getBoundingClientRect()
-    brick.remove()
+    brick.classList.add('popped')
 
     const boomFx = document.createElement('div')
     boomFx.className = 'birthday-boom'
