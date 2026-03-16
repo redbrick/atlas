@@ -1,5 +1,7 @@
 function gameStart() {
-  // Display bar with score
+  const gameDuration = 30
+  let timeLeft = gameDuration
+
   const bar = document.createElement('div')
   bar.id = 'score-bar'
   bar.style.position = 'fixed'
@@ -7,21 +9,46 @@ function gameStart() {
   bar.style.left = '0'
   bar.style.width = '100%'
   bar.style.height = '50px'
+  bar.style.padding = '0 16px'
+  bar.style.boxSizing = 'border-box'
   bar.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
   bar.style.color = 'white'
   bar.style.display = 'flex'
-  bar.style.justifyContent = 'center'
+  bar.style.justifyContent = 'space-between'
   bar.style.alignItems = 'center'
   bar.style.fontSize = '24px'
   bar.style.zIndex = '1000'
-  bar.textContent = 'Score: 1'
+
+  const scoreLabel = document.createElement('div')
+  scoreLabel.id = 'score-value'
+  scoreLabel.textContent = 'Score: 1'
+
+  const timerLabel = document.createElement('div')
+  timerLabel.id = 'timer-value'
+  timerLabel.textContent = `Time: ${timeLeft}s`
+
+  bar.appendChild(scoreLabel)
+  bar.appendChild(timerLabel)
   document.body.appendChild(bar)
 
-  // listen for custom event to update score
-  document.addEventListener('birthdayScore', (e) => {
+  const handleScore = (e) => {
     const score = e.detail.score
-    bar.textContent = `Score: ${score}`
-  })
+    scoreLabel.textContent = `Score: ${score}`
+  }
+
+  document.addEventListener('birthdayScore', handleScore)
+
+  const countdown = setInterval(() => {
+    timeLeft -= 1
+    timerLabel.textContent = `Time: ${timeLeft}s`
+
+    if (timeLeft <= 0) {
+      clearInterval(countdown)
+      document.removeEventListener('birthdayScore', handleScore)
+      timerLabel.textContent = 'Time: 0s'
+      scoreLabel.textContent = `Game Over! Final Score: ${scoreLabel.textContent.replace(/\D/g, '')}`
+    }
+  }, 1000)
 }
 
 
@@ -112,9 +139,7 @@ export function triggerBirthday() {
     else {
       // update score with custom event so it can be tracked in analytics
       // Get only integer from string
-      const count = document.getElementById("score-bar").innerText.replace(/\D/g, '') * 1 + 1
-
-
+      const count = document.getElementById("score-value").innerText.replace(/\D/g, '') * 1 + 1
       const scoreEvent = new CustomEvent('birthdayScore', { detail: { score: count } })
       document.dispatchEvent(scoreEvent)
     }
