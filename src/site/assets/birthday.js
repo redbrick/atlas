@@ -18,11 +18,14 @@ function gameStart() {
   const timerLabel = document.createElement('div')
   timerLabel.id = 'timer-value'
   timerLabel.className = 'font-semibold tracking-wide'
-  timerLabel.textContent = `Time: ${timeLeft}s`
+  timerLabel.textContent = `Click as many bricks as you can!!!`
 
   bar.appendChild(scoreLabel)
   bar.appendChild(timerLabel)
   document.body.appendChild(bar)
+
+  const birthdayLabel = document.getElementById("birthday-message")
+  birthdayLabel.textContent = `${timeLeft}s`
 
   const handleScore = (e) => {
     const score = e.detail.score
@@ -33,13 +36,14 @@ function gameStart() {
 
   const countdown = setInterval(() => {
     timeLeft -= 1
-    timerLabel.textContent = `Time: ${timeLeft}s`
+    birthdayLabel.textContent = `${timeLeft}s`
 
     if (timeLeft <= 0) {
       clearInterval(countdown)
       document.removeEventListener('birthdayScore', handleScore)
       timerLabel.textContent = 'Time: 0s'
       scoreLabel.textContent = `Game Over! Final Score: ${scoreLabel.textContent.replace(/\D/g, '')}`
+      birthdayLabel.textContent = '🎂 Happy 30th Birthday Redbrick! 🎉'
       winAudio.play()
     }
   }, 1000)
@@ -139,7 +143,7 @@ export function triggerBirthday() {
       ${bricks}
     </div>
     <div class="relative z-[1] flex h-screen items-center justify-center bg-gradient-to-br from-black to-red-700">
-      <h1 class="animate-[wiggle_0.5s_ease-in-out_infinite] px-6 text-center text-5xl font-black text-white md:text-6xl">
+      <h1 class="animate-[wiggle_0.5s_ease-in-out_infinite] px-6 text-center text-5xl font-black text-white md:text-6xl" id="birthday-message">
         🎂 Happy 30th Birthday Redbrick! 🎉
       </h1>
     </div>
