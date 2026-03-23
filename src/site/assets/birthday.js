@@ -25,20 +25,21 @@ function gameStart() {
   const gameDuration = 30
   let timeLeft = gameDuration
   const winAudio = preloadedWinAudio.cloneNode(true)
+  const isMobile = window.matchMedia('(max-width: 640px)').matches
 
   const bar = document.createElement('div')
   bar.id = 'score-bar'
-  bar.className = 'fixed bottom-0 left-0 z-[1000] flex h-[50px] w-full items-center justify-between bg-black/50 px-4 text-2xl text-white'
+  bar.className = 'fixed bottom-0 left-0 z-[1000] flex h-[44px] w-full items-center justify-between gap-2 bg-black/50 px-2 pb-[env(safe-area-inset-bottom)] text-sm text-white sm:text-lg md:h-[50px] md:px-4 md:text-2xl'
 
   const scoreLabel = document.createElement('div')
   scoreLabel.id = 'score-value'
-  scoreLabel.className = 'font-semibold tracking-wide'
+  scoreLabel.className = 'min-w-0 font-semibold tracking-wide'
   scoreLabel.textContent = 'Score: 1'
 
   const timerLabel = document.createElement('div')
   timerLabel.id = 'timer-value'
-  timerLabel.className = 'font-semibold tracking-wide'
-  timerLabel.textContent = `Click as many bricks as you can!!!`
+  timerLabel.className = 'min-w-0 truncate text-right font-semibold tracking-wide'
+  timerLabel.textContent = isMobile ? 'Tap bricks fast!' : 'Click as many bricks as you can!!!'
 
   bar.appendChild(scoreLabel)
   bar.appendChild(timerLabel)
@@ -132,14 +133,16 @@ function createBoomFx(boomImageTemplate, rect) {
   return boomFx
 }
 
-function generateBricksMarkup(brickSrc, count = 30) {
+function generateBricksMarkup(brickSrc, count = 30, isMobile = false) {
   let bricks = ''
 
   for (let i = 0; i < count; i++) {
     const left = Math.random() * 100
     const duration = 15 + Math.random() * 20
     const delay = Math.random() * -30
-    const size = 30 + Math.random() * 40
+    const minSize = isMobile ? 44 : 30
+    const sizeRange = isMobile ? 34 : 40
+    const size = minSize + Math.random() * sizeRange
 
     bricks += '<img class="birthday-brick absolute -top-[100px] cursor-pointer pointer-events-auto" ' +
       'src="' + brickSrc + '" data-base-duration="' + duration.toFixed(2) + '" style="' +
@@ -155,10 +158,12 @@ function generateBricksMarkup(brickSrc, count = 30) {
 
 export function triggerBirthday() {
   const brickSrc = ASSETS.brickImageSrc
+  const isMobile = window.matchMedia('(max-width: 640px)').matches
+  const brickCount = isMobile ? 20 : 30
   let triggeredGame = false
   const playBoom = createStackedAudioPlayer(preloadedBoomAudio)
 
-  const bricks = generateBricksMarkup(brickSrc)
+  const bricks = generateBricksMarkup(brickSrc, brickCount, isMobile)
 
   document.body.innerHTML = `
     <style>
@@ -170,8 +175,14 @@ export function triggerBirthday() {
         from { transform: translateY(0); }
         to { transform: translateY(110vh); }
       }
+      html, body {
+        touch-action: manipulation;
+        overscroll-behavior: none;
+      }
       .birthday-brick {
         user-select: none;
+        touch-action: manipulation;
+        -webkit-user-drag: none;
       }
 
       .birthday-brick.popped {
@@ -184,8 +195,8 @@ export function triggerBirthday() {
     <div id="birthday-brick-layer" class="fixed inset-0 z-[2] overflow-hidden">
       ${bricks}
     </div>
-    <div class="relative z-[1] flex h-screen items-center justify-center bg-gradient-to-br from-black to-red-700">
-      <h1 class="animate-[wiggle_0.5s_ease-in-out_infinite] px-6 text-center text-5xl font-black text-white md:text-6xl" id="birthday-message">
+    <div class="relative z-[1] flex h-[100dvh] items-center justify-center bg-gradient-to-br from-black to-red-700">
+      <h1 class="animate-[wiggle_0.5s_ease-in-out_infinite] px-4 text-center text-3xl font-black text-white sm:px-6 sm:text-5xl md:text-6xl" id="birthday-message">
         🎂 Happy 30th Birthday Redbrick! 🎉
       </h1>
     </div>
@@ -202,9 +213,10 @@ export function triggerBirthday() {
     brick.classList.remove('popped')
   })
 
-  brickLayer?.addEventListener('click', (event) => {
+  brickLayer?.addEventListener('pointerdown', (event) => {
     const brick = event.target.closest('.birthday-brick')
     if (!brick || brick.classList.contains("popped")) return
+    event.preventDefault()
 
     if (!triggeredGame) {
       triggeredGame = true
