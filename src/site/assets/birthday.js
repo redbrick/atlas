@@ -1,30 +1,10 @@
-const ASSETS = {
-  brickImageSrc: 'https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg',
-  boomImageSrc: '/assets/boom.svg',
-  boomSoundSrc: '/assets/boom.wav',
-  winSoundSrc: '/assets/win.wav'
-}
-
-const preloadedBrickImage = new Image()
-preloadedBrickImage.src = ASSETS.brickImageSrc
-preloadedBrickImage.decoding = 'async'
-
-const preloadedBoomImage = new Image()
-preloadedBoomImage.src = ASSETS.boomImageSrc
-preloadedBoomImage.decoding = 'async'
-
-const preloadedBoomAudio = new Audio(ASSETS.boomSoundSrc)
-preloadedBoomAudio.preload = 'auto'
-preloadedBoomAudio.load()
-
-const preloadedWinAudio = new Audio(ASSETS.winSoundSrc)
-preloadedWinAudio.preload = 'auto'
-preloadedWinAudio.load()
-
 function gameStart() {
   const gameDuration = 30
   let timeLeft = gameDuration
-  const winAudio = preloadedWinAudio.cloneNode(true)
+  // Win sound effect
+  const winSoundSrc = '/assets/win.wav'
+  const winAudio = new Audio(winSoundSrc)
+  winAudio.preload = 'auto'
   const isMobile = window.matchMedia('(max-width: 640px)').matches
 
   const bar = document.createElement('div')
@@ -90,7 +70,10 @@ function updateBrickSpeed(timeLeft, gameDuration, score = 0) {
   })
 }
 
-function createStackedAudioPlayer(baseAudio) {
+function createStackedAudioPlayer(src) {
+  const baseAudio = new Audio(src)
+  baseAudio.preload = 'auto'
+
   const activeSounds = new Set()
 
   return () => {
@@ -114,7 +97,7 @@ function getCurrentScore() {
   return Number(scoreEl.innerText.replace(/\D/g, '')) || 0
 }
 
-function createBoomFx(boomImageTemplate, rect) {
+function createBoomFx(boomSrc, rect) {
   const boomFx = document.createElement('div')
   boomFx.className = 'fixed z-[9999] -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none'
   boomFx.style.left = `${rect.left + rect.width / 2}px`
@@ -124,7 +107,8 @@ function createBoomFx(boomImageTemplate, rect) {
   boomFx.style.width = `${boomSize}px`
   boomFx.style.height = `${boomSize}px`
 
-  const boomImg = boomImageTemplate.cloneNode(false)
+  const boomImg = document.createElement('img')
+  boomImg.src = boomSrc
   boomImg.alt = ''
   boomImg.className = 'block h-full w-full select-none'
   boomImg.draggable = false
@@ -157,11 +141,12 @@ function generateBricksMarkup(brickSrc, count = 30, isMobile = false) {
 
 
 export function triggerBirthday() {
-  const brickSrc = ASSETS.brickImageSrc
+  const brickSrc = 'https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg'
+  const boom = '/assets/boom.svg'
   const isMobile = window.matchMedia('(max-width: 640px)').matches
   const brickCount = isMobile ? 20 : 30
   let triggeredGame = false
-  const playBoom = createStackedAudioPlayer(preloadedBoomAudio)
+  const playBoom = createStackedAudioPlayer('/assets/boom.wav')
 
   const bricks = generateBricksMarkup(brickSrc, brickCount, isMobile)
 
@@ -233,7 +218,7 @@ export function triggerBirthday() {
     const rect = brick.getBoundingClientRect()
     brick.classList.add('popped')
 
-    const boomFx = createBoomFx(preloadedBoomImage, rect)
+    const boomFx = createBoomFx(boom, rect)
 
     // append to body so it is not clipped by brick layer overflow
     document.body.appendChild(boomFx)
