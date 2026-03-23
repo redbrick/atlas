@@ -1,154 +1,198 @@
+const birthdayAudioSrc = "/assets/gr0za-birthday-happy-birthday-503371.wav";
+const birthdayAudio = new Audio(birthdayAudioSrc);
+birthdayAudio.preload = "auto";
+birthdayAudio.loop = true;
+
 function gameStart() {
-  const gameDuration = 30
-  let timeLeft = gameDuration
+  const gameDuration = 30;
+  let timeLeft = gameDuration;
   // Win sound effect
-  const winSoundSrc = '/assets/win.wav'
-  const winAudio = new Audio(winSoundSrc)
-  winAudio.preload = 'auto'
-  const isMobile = window.matchMedia('(max-width: 640px)').matches
+  const winSoundSrc = "/assets/win.wav";
+  const winAudio = new Audio(winSoundSrc);
+  winAudio.preload = "auto";
+  const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
-  const bar = document.createElement('div')
-  bar.id = 'score-bar'
-  bar.className = 'fixed bottom-0 left-0 z-[1000] flex h-[44px] w-full items-center justify-between gap-2 bg-black/50 px-2 pb-[env(safe-area-inset-bottom)] text-sm text-white sm:text-lg md:h-[50px] md:px-4 md:text-2xl'
+  const bar = document.createElement("div");
+  bar.id = "score-bar";
+  bar.className =
+    "fixed bottom-0 left-0 z-[1000] flex h-[44px] w-full items-center justify-between gap-2 bg-black/50 px-2 pb-[env(safe-area-inset-bottom)] text-sm text-white sm:text-lg md:h-[50px] md:px-4 md:text-2xl";
 
-  const scoreLabel = document.createElement('div')
-  scoreLabel.id = 'score-value'
-  scoreLabel.className = 'min-w-0 font-semibold tracking-wide'
-  scoreLabel.textContent = 'Score: 1'
+  const scoreLabel = document.createElement("div");
+  scoreLabel.id = "score-value";
+  scoreLabel.className = "min-w-0 font-semibold tracking-wide";
+  scoreLabel.textContent = "Score: 1";
 
-  const timerLabel = document.createElement('div')
-  timerLabel.id = 'timer-value'
-  timerLabel.className = 'min-w-0 truncate text-right font-semibold tracking-wide'
-  timerLabel.textContent = isMobile ? 'Tap bricks fast!' : 'Click as many bricks as you can!!!'
+  const timerLabel = document.createElement("div");
+  timerLabel.id = "timer-value";
+  timerLabel.className =
+    "min-w-0 truncate text-right font-semibold tracking-wide";
+  timerLabel.textContent = isMobile
+    ? "Tap bricks fast!"
+    : "Click as many bricks as you can!!!";
 
-  bar.appendChild(scoreLabel)
-  bar.appendChild(timerLabel)
-  document.body.appendChild(bar)
+  bar.appendChild(scoreLabel);
+  bar.appendChild(timerLabel);
+  document.body.appendChild(bar);
 
-  const birthdayLabel = document.getElementById("birthday-message")
-  birthdayLabel.textContent = `${timeLeft}s`
+  const birthdayLabel = document.getElementById("birthday-message");
+  birthdayLabel.textContent = `${timeLeft}s`;
 
   const handleScore = (e) => {
-    const score = e.detail.score
-    scoreLabel.textContent = `Score: ${score}`
-    updateBrickSpeed(timeLeft, gameDuration, score)
-  }
+    const score = e.detail.score;
+    scoreLabel.textContent = `Score: ${score}`;
+    updateBrickSpeed(timeLeft, gameDuration, score);
+  };
 
-  document.addEventListener('birthdayScore', handleScore)
-  
-  updateBrickSpeed(timeLeft, gameDuration, getCurrentScore())
+  document.addEventListener("birthdayScore", handleScore);
+
+  updateBrickSpeed(timeLeft, gameDuration, getCurrentScore());
 
   const countdown = setInterval(() => {
-    timeLeft -= 1
-    birthdayLabel.textContent = `${timeLeft}s`
-    updateBrickSpeed(timeLeft, gameDuration, getCurrentScore())
+    timeLeft -= 1;
+    birthdayLabel.textContent = `${timeLeft}s`;
+    updateBrickSpeed(timeLeft, gameDuration, getCurrentScore());
     if (timeLeft <= 0) {
-      clearInterval(countdown)
-      document.removeEventListener('birthdayScore', handleScore)
-      timerLabel.textContent = 'Time: 0s'
-      scoreLabel.textContent = `Game Over! Final Score: ${scoreLabel.textContent.replace(/\D/g, '')}`
-      birthdayLabel.textContent = '🎂 Happy 30th Birthday Redbrick! 🎉'
-      winAudio.play()
-      updateBrickSpeed(gameDuration, gameDuration, 0) // reset speed to normal
+      clearInterval(countdown);
+      document.removeEventListener("birthdayScore", handleScore);
+      timerLabel.textContent = "Time: 0s";
+      scoreLabel.textContent = `Game Over! Final Score: ${scoreLabel.textContent.replace(/\D/g, "")}`;
+      birthdayLabel.textContent = "🎂 Happy 30th Birthday Redbrick! 🎉";
+      // Pause birthdayAudio and play win sound
+      birthdayAudio.pause();
+      winAudio.play();
+      updateBrickSpeed(gameDuration, gameDuration, 0); // reset speed to normal
+
+      // Wait for win sound to finish before starting birthday audio again
+      winAudio.addEventListener(
+        "ended",
+        () => {
+          birthdayAudio.currentTime = 0;
+          birthdayAudio.play().catch(() => {
+            // Autoplay might be blocked; ignore error
+          });
+        },
+        { once: true },
+      );
     }
-  }, 1000)
+  }, 1000);
 }
 
 function updateBrickSpeed(timeLeft, gameDuration, score = 0) {
-  const elapsedRatio = Math.min(1, Math.max(0, (gameDuration - timeLeft) / gameDuration))
-  const scoreBoost = Math.min(5, score * 0.36)
-  const speedMultiplier = 1 + (elapsedRatio * 1.8) + scoreBoost // time + score scaling
+  const elapsedRatio = Math.min(
+    1,
+    Math.max(0, (gameDuration - timeLeft) / gameDuration),
+  );
+  const scoreBoost = Math.min(5, score * 0.36);
+  const speedMultiplier = 1 + elapsedRatio * 1.8 + scoreBoost; // time + score scaling
 
-  document.querySelectorAll('.birthday-brick').forEach((brick) => {
+  document.querySelectorAll(".birthday-brick").forEach((brick) => {
     const animation = brick.getAnimations().find((anim) => {
-      return anim instanceof CSSAnimation && anim.animationName === 'fall'
-    })
+      return anim instanceof CSSAnimation && anim.animationName === "fall";
+    });
 
     if (animation) {
-      animation.playbackRate = speedMultiplier
+      animation.playbackRate = speedMultiplier;
     }
-  })
+  });
 }
 
 function createStackedAudioPlayer(src) {
-  const baseAudio = new Audio(src)
-  baseAudio.preload = 'auto'
+  const baseAudio = new Audio(src);
+  baseAudio.preload = "auto";
 
-  const activeSounds = new Set()
+  const activeSounds = new Set();
 
   return () => {
-    const instance = baseAudio.cloneNode(true)
-    activeSounds.add(instance)
+    const instance = baseAudio.cloneNode(true);
+    activeSounds.add(instance);
 
-    instance.addEventListener('ended', () => {
-      activeSounds.delete(instance)
-    }, { once: true })
+    instance.addEventListener(
+      "ended",
+      () => {
+        activeSounds.delete(instance);
+      },
+      { once: true },
+    );
 
     instance.play().catch(() => {
-      activeSounds.delete(instance)
-    })
-  }
+      activeSounds.delete(instance);
+    });
+  };
 }
 
 function getCurrentScore() {
-  const scoreEl = document.getElementById('score-value')
-  if (!scoreEl) return 0
+  const scoreEl = document.getElementById("score-value");
+  if (!scoreEl) return 0;
 
-  return Number(scoreEl.innerText.replace(/\D/g, '')) || 0
+  return Number(scoreEl.innerText.replace(/\D/g, "")) || 0;
 }
 
 function createBoomFx(boomSrc, rect) {
-  const boomFx = document.createElement('div')
-  boomFx.className = 'fixed z-[9999] -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none'
-  boomFx.style.left = `${rect.left + rect.width / 2}px`
-  boomFx.style.top = `${rect.top + rect.height / 2}px`
+  const boomFx = document.createElement("div");
+  boomFx.className =
+    "fixed z-[9999] -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none";
+  boomFx.style.left = `${rect.left + rect.width / 2}px`;
+  boomFx.style.top = `${rect.top + rect.height / 2}px`;
 
-  const boomSize = Math.max(90, rect.width * 2)
-  boomFx.style.width = `${boomSize}px`
-  boomFx.style.height = `${boomSize}px`
+  const boomSize = Math.max(90, rect.width * 2);
+  boomFx.style.width = `${boomSize}px`;
+  boomFx.style.height = `${boomSize}px`;
 
-  const boomImg = document.createElement('img')
-  boomImg.src = boomSrc
-  boomImg.alt = ''
-  boomImg.className = 'block h-full w-full select-none'
-  boomImg.draggable = false
-  boomFx.appendChild(boomImg)
+  const boomImg = document.createElement("img");
+  boomImg.src = boomSrc;
+  boomImg.alt = "";
+  boomImg.className = "block h-full w-full select-none";
+  boomImg.draggable = false;
+  boomFx.appendChild(boomImg);
 
-  return boomFx
+  return boomFx;
 }
 
 function generateBricksMarkup(brickSrc, count = 30, isMobile = false) {
-  let bricks = ''
+  let bricks = "";
 
   for (let i = 0; i < count; i++) {
-    const left = Math.random() * 100
-    const duration = 15 + Math.random() * 20
-    const delay = Math.random() * -30
-    const minSize = isMobile ? 44 : 30
-    const sizeRange = isMobile ? 34 : 40
-    const size = minSize + Math.random() * sizeRange
+    const left = Math.random() * 100;
+    const duration = 15 + Math.random() * 20;
+    const delay = Math.random() * -30;
+    const minSize = isMobile ? 44 : 30;
+    const sizeRange = isMobile ? 34 : 40;
+    const size = minSize + Math.random() * sizeRange;
 
-    bricks += '<img class="birthday-brick absolute -top-[100px] cursor-pointer pointer-events-auto" ' +
-      'src="' + brickSrc + '" data-base-duration="' + duration.toFixed(2) + '" style="' +
-      'left: ' + left + 'vw;' +
-      'width: ' + size + 'px;' +
-      'animation: fall ' + duration + 's linear ' + delay + 's infinite;' +
-      '" />'
+    bricks +=
+      '<img class="birthday-brick absolute -top-[100px] cursor-pointer pointer-events-auto" ' +
+      'src="' +
+      brickSrc +
+      '" data-base-duration="' +
+      duration.toFixed(2) +
+      '" style="' +
+      "left: " +
+      left +
+      "vw;" +
+      "width: " +
+      size +
+      "px;" +
+      "animation: fall " +
+      duration +
+      "s linear " +
+      delay +
+      "s infinite;" +
+      '" />';
   }
 
-  return bricks
+  return bricks;
 }
 
-
 export function triggerBirthday() {
-  const brickSrc = 'https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg'
-  const boom = '/assets/boom.svg'
-  const isMobile = window.matchMedia('(max-width: 640px)').matches
-  const brickCount = isMobile ? 20 : 30
-  let triggeredGame = false
-  const playBoom = createStackedAudioPlayer('/assets/boom.wav')
+  const brickSrc =
+    "https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg";
+  const boom = "/assets/boom.svg";
+  const isMobile = window.matchMedia("(max-width: 640px)").matches;
+  const brickCount = isMobile ? 20 : 30;
+  let triggeredGame = false;
+  const playBoom = createStackedAudioPlayer("/assets/boom.wav");
 
-  const bricks = generateBricksMarkup(brickSrc, brickCount, isMobile)
+  const bricks = generateBricksMarkup(brickSrc, brickCount, isMobile);
 
   document.body.innerHTML = `
     <style>
@@ -185,44 +229,47 @@ export function triggerBirthday() {
         🎂 Happy 30th Birthday Redbrick! 🎉
       </h1>
     </div>
-  `
+  `;
+  birthdayAudio.play().catch(() => {
+    // Autoplay might be blocked; ignore error
+  });
 
+  const brickLayer = document.getElementById("birthday-brick-layer");
 
-  const brickLayer = document.getElementById('birthday-brick-layer')
-
-  brickLayer?.addEventListener('animationiteration', (event) => {
-    const brick = event.target.closest('.birthday-brick')
-    if (!brick) return
+  brickLayer?.addEventListener("animationiteration", (event) => {
+    const brick = event.target.closest(".birthday-brick");
+    if (!brick) return;
 
     // Brick reached top again; make it visible/clickable for next fall
-    brick.classList.remove('popped')
-  })
+    brick.classList.remove("popped");
+  });
 
-  brickLayer?.addEventListener('pointerdown', (event) => {
-    const brick = event.target.closest('.birthday-brick')
-    if (!brick || brick.classList.contains("popped")) return
-    event.preventDefault()
+  brickLayer?.addEventListener("pointerdown", (event) => {
+    const brick = event.target.closest(".birthday-brick");
+    if (!brick || brick.classList.contains("popped")) return;
+    event.preventDefault();
 
     if (!triggeredGame) {
-      triggeredGame = true
-      gameStart()
-    }
-    else {
+      triggeredGame = true;
+      gameStart();
+    } else {
       // update score with custom event so it can be tracked in analytics
-      const count = getCurrentScore() + 1
-      const scoreEvent = new CustomEvent('birthdayScore', { detail: { score: count } })
-      document.dispatchEvent(scoreEvent)
+      const count = getCurrentScore() + 1;
+      const scoreEvent = new CustomEvent("birthdayScore", {
+        detail: { score: count },
+      });
+      document.dispatchEvent(scoreEvent);
     }
-    playBoom()
+    playBoom();
 
-    const rect = brick.getBoundingClientRect()
-    brick.classList.add('popped')
+    const rect = brick.getBoundingClientRect();
+    brick.classList.add("popped");
 
-    const boomFx = createBoomFx(boom, rect)
+    const boomFx = createBoomFx(boom, rect);
 
     // append to body so it is not clipped by brick layer overflow
-    document.body.appendChild(boomFx)
+    document.body.appendChild(boomFx);
 
-    setTimeout(() => boomFx.remove(), 250)
-  })
+    setTimeout(() => boomFx.remove(), 250);
+  });
 }
