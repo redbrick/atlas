@@ -1,16 +1,33 @@
-const birthdayAudioSrc = "/assets/gr0za-birthday-happy-birthday-503371.wav";
-const birthdayAudio = new Audio(birthdayAudioSrc);
+const GAME_DURATION_SECONDS = 30;
+const MOBILE_QUERY = "(max-width: 640px)";
+const BIRTHDAY_MESSAGE = "🎂 Happy 30th Birthday Redbrick! 🎉";
+const BIRTHDAY_AUDIO_SRC = "/assets/gr0za-birthday-happy-birthday-503371.wav";
+const WIN_AUDIO_SRC = "/assets/win.wav";
+const BOOM_AUDIO_SRC = "/assets/boom.wav";
+const BOOM_SVG_SRC = "/assets/boom.svg";
+const BRICK_SRC =
+  "https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg";
+
+const birthdayAudio = new Audio(BIRTHDAY_AUDIO_SRC);
 birthdayAudio.preload = "auto";
 birthdayAudio.loop = true;
 
-function gameStart() {
-  const gameDuration = 30;
-  let timeLeft = gameDuration;
-  // Win sound effect
-  const winSoundSrc = "/assets/win.wav";
-  const winAudio = new Audio(winSoundSrc);
-  winAudio.preload = "auto";
-  const isMobile = window.matchMedia("(max-width: 640px)").matches;
+function isMobileViewport() {
+  return window.matchMedia(MOBILE_QUERY).matches;
+}
+
+function extractDigits(text) {
+  return Number(String(text).replace(/\D/g, "")) || 0;
+}
+
+function playAudioSafely(audio) {
+  audio.play().catch(() => {
+    // Autoplay might be blocked; ignore error.
+  });
+}
+
+function createScoreBar() {
+  const isMobile = isMobileViewport();
 
   const bar = document.createElement("div");
   bar.id = "score-bar";
@@ -34,7 +51,19 @@ function gameStart() {
   bar.appendChild(timerLabel);
   document.body.appendChild(bar);
 
+  return { scoreLabel, timerLabel };
+}
+
+function gameStart() {
+  const gameDuration = GAME_DURATION_SECONDS;
+  let timeLeft = gameDuration;
+  const winAudio = new Audio(WIN_AUDIO_SRC);
+  winAudio.preload = "auto";
+  const { scoreLabel, timerLabel } = createScoreBar();
+
   const birthdayLabel = document.getElementById("birthday-message");
+  if (!birthdayLabel) return;
+
   birthdayLabel.textContent = `${timeLeft}s`;
 
   const handleScore = (e) => {
@@ -55,21 +84,17 @@ function gameStart() {
       clearInterval(countdown);
       document.removeEventListener("birthdayScore", handleScore);
       timerLabel.textContent = "Time: 0s";
-      scoreLabel.textContent = `Game Over! Final Score: ${scoreLabel.textContent.replace(/\D/g, "")}`;
-      birthdayLabel.textContent = "🎂 Happy 30th Birthday Redbrick! 🎉";
-      // Pause birthdayAudio and play win sound
+      scoreLabel.textContent = `Game Over! Final Score: ${extractDigits(scoreLabel.textContent)}`;
+      birthdayLabel.textContent = BIRTHDAY_MESSAGE;
       birthdayAudio.pause();
-      winAudio.play();
-      updateBrickSpeed(gameDuration, gameDuration, 0); // reset speed to normal
+      playAudioSafely(winAudio);
+      updateBrickSpeed(gameDuration, gameDuration, 0);
 
-      // Wait for win sound to finish before starting birthday audio again
       winAudio.addEventListener(
         "ended",
         () => {
           birthdayAudio.currentTime = 0;
-          birthdayAudio.play().catch(() => {
-            // Autoplay might be blocked; ignore error
-          });
+          playAudioSafely(birthdayAudio);
         },
         { once: true },
       );
@@ -124,7 +149,7 @@ function getCurrentScore() {
   const scoreEl = document.getElementById("score-value");
   if (!scoreEl) return 0;
 
-  return Number(scoreEl.innerText.replace(/\D/g, "")) || 0;
+  return extractDigits(scoreEl.textContent);
 }
 
 function createBoomFx(boomSrc, rect) {
@@ -149,7 +174,7 @@ function createBoomFx(boomSrc, rect) {
 }
 
 function generateBricksMarkup(brickSrc, count = 30, isMobile = false) {
-  let bricks = "";
+  const bricks = [];
 
   for (let i = 0; i < count; i++) {
     const left = Math.random() * 100;
@@ -159,40 +184,26 @@ function generateBricksMarkup(brickSrc, count = 30, isMobile = false) {
     const sizeRange = isMobile ? 34 : 40;
     const size = minSize + Math.random() * sizeRange;
 
-    bricks +=
-      '<img class="birthday-brick absolute -top-[100px] cursor-pointer pointer-events-auto" ' +
-      'src="' +
-      brickSrc +
-      '" data-base-duration="' +
-      duration.toFixed(2) +
-      '" style="' +
-      "left: " +
-      left +
-      "vw;" +
-      "width: " +
-      size +
-      "px;" +
-      "animation: fall " +
-      duration +
-      "s linear " +
-      delay +
-      "s infinite;" +
-      '" />';
+    bricks.push(`
+      <img
+        class="birthday-brick absolute -top-[100px] cursor-pointer pointer-events-auto"
+        src="${brickSrc}"
+        data-base-duration="${duration.toFixed(2)}"
+        style="left: ${left}vw; width: ${size}px; animation: fall ${duration}s linear ${delay}s infinite;"
+      />
+    `);
   }
 
-  return bricks;
+  return bricks.join("");
 }
 
 export function triggerBirthday() {
-  const brickSrc =
-    "https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/redbrick.svg";
-  const boom = "/assets/boom.svg";
-  const isMobile = window.matchMedia("(max-width: 640px)").matches;
+  const isMobile = isMobileViewport();
   const brickCount = isMobile ? 20 : 30;
   let triggeredGame = false;
-  const playBoom = createStackedAudioPlayer("/assets/boom.wav");
+  const playBoom = createStackedAudioPlayer(BOOM_AUDIO_SRC);
 
-  const bricks = generateBricksMarkup(brickSrc, brickCount, isMobile);
+  const bricks = generateBricksMarkup(BRICK_SRC, brickCount, isMobile);
 
   document.body.innerHTML = `
     <style>
@@ -217,7 +228,7 @@ export function triggerBirthday() {
       .birthday-brick.popped {
         opacity: 0;
         pointer-events: none;
-        pointer-cursor: default;
+        cursor: default;
         user-select: none;
       }
     </style>
@@ -226,13 +237,11 @@ export function triggerBirthday() {
     </div>
     <div class="relative z-[1] flex h-[100dvh] items-center justify-center bg-gradient-to-br from-black to-red-700">
       <h1 class="animate-[wiggle_0.5s_ease-in-out_infinite] px-4 text-center text-3xl font-black text-white sm:px-6 sm:text-5xl md:text-6xl" id="birthday-message">
-        🎂 Happy 30th Birthday Redbrick! 🎉
+        ${BIRTHDAY_MESSAGE}
       </h1>
     </div>
   `;
-  birthdayAudio.play().catch(() => {
-    // Autoplay might be blocked; ignore error
-  });
+  playAudioSafely(birthdayAudio);
 
   const brickLayer = document.getElementById("birthday-brick-layer");
 
@@ -265,7 +274,7 @@ export function triggerBirthday() {
     const rect = brick.getBoundingClientRect();
     brick.classList.add("popped");
 
-    const boomFx = createBoomFx(boom, rect);
+    const boomFx = createBoomFx(BOOM_SVG_SRC, rect);
 
     // append to body so it is not clipped by brick layer overflow
     document.body.appendChild(boomFx);
