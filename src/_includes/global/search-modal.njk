@@ -1,6 +1,9 @@
 <script type="module">
   window.pf = await import("/_pagefind/pagefind.js")
   pf.init()
+
+  const { triggerBirthday } = await import("/assets/birthday.js")
+  window.triggerBirthday = triggerBirthday
 </script>
 
 <dialog id="searchModal" class="modal">
@@ -11,6 +14,9 @@
       async search(event) {
         const search = await pf.debouncedSearch(event.target.value, {}, 500)
         if (search === null) return
+        if (event.target.value === 'redbrick_birthday') {
+          return triggerBirthday()
+        }
 
         this.results = []
         this.results = await Promise.all(
