@@ -32,7 +32,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-navigation": "^0.3.5",
-    "@redbrick/design-system": "https://github.com/redbrick/design-system",
+    "@redbrick/design-system": "https://github.com/redbrick/design-system.git#b268adacc67c8c8a64428a08528a03ac16103e77",
     "@types/markdown-it": "^13.0.7",
     "@xpd/tailwind-3dtransforms": "^1.0.3",
     "autoprefixer": "^10.4.17",
