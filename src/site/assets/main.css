@@ -32,6 +32,29 @@
   .gallery-card {
     @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
   }
+
+  /* Contribution portal (homepage only) */
+
+  .contribution-portal {
+    display: none;
+    @apply items-center justify-center bg-base-200;
+  }
+
+  .contribution-portal__card {
+    @apply w-full max-w-md px-5 py-4 text-center;
+  }
+
+  .contribution-portal__label {
+    @apply text-xs uppercase tracking-[0.2em] text-base-content/50;
+  }
+
+  .contribution-portal__title {
+    @apply mt-1 text-lg font-semibold;
+  }
+
+  .contribution-portal__link {
+    @apply btn btn-primary btn-sm mt-3 no-underline;
+  }
 }
 
 /* reset some black theme defaults */
