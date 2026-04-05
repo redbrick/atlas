@@ -6,3 +6,4 @@ layout: default.njk
   {% include "home/sections/committee.njk" %}
   {% include "home/sections/cta.njk" %}
 </main>
+{% include "home/sections/contribution-portal.njk" %}

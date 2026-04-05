@@ -1,0 +1,168 @@
+<div
+  id="contribution-portal"
+  class="contribution-portal"
+  aria-label="Website contribution portal"
+>
+  <div class="contribution-portal__card">
+    <p class="contribution-portal__label">Website contribution</p>
+    <p class="contribution-portal__title">Redbrick Webgroup</p>
+    <a
+      class="contribution-portal__link"
+      href="https://docs.redbrick.dcu.ie/webgroup/"
+      rel="noreferrer"
+      target="_blank"
+    >
+      See how to join us
+    </a>
+  </div>
+</div>
+
+<script>
+  (() => {
+    const portal = document.getElementById("contribution-portal")
+    if (!portal) return
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const maxReveal = 120
+    const resetDelayMs = 900
+    const settleMs = 300
+
+    const drawerContent = document.querySelector(".drawer-content")
+    if (!drawerContent) return
+
+    document.body.appendChild(portal)
+    portal.style.position = "fixed"
+    portal.style.bottom = "0"
+    portal.style.left = "0"
+    portal.style.right = "0"
+    portal.style.zIndex = "0"
+    portal.style.height = maxReveal + "px"
+    portal.style.display = "flex"
+    portal.style.opacity = "0"
+    portal.style.pointerEvents = "none"
+
+    drawerContent.style.position = "relative"
+    drawerContent.style.zIndex = "1"
+
+    let revealTarget = 0
+    let revealCurrent = 0
+    let touchStartY = null
+    let resetTimer = null
+    let raf = null
+    let settled = false
+    let settleTimer = null
+    let lastScrollY = window.scrollY
+
+    if (reducedMotion) {
+      drawerContent.style.transform = `translateY(-${maxReveal}px)`
+      portal.style.opacity = "1"
+      portal.style.pointerEvents = "auto"
+      return
+    }
+
+    const atPageEnd = () =>
+      (window.scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 2)
+
+    const apply = () => {
+      const progress = Math.min(1, revealCurrent / maxReveal)
+      drawerContent.style.transform = `translateY(-${Math.round(revealCurrent)}px)`
+      portal.style.opacity = progress.toFixed(3)
+      portal.style.pointerEvents = progress > 0.3 ? "auto" : "none"
+    }
+
+    const animate = () => {
+      if (raf) return
+      const step = () => {
+        revealCurrent += (revealTarget - revealCurrent) * 0.22
+        if (Math.abs(revealCurrent - revealTarget) < 0.4) revealCurrent = revealTarget
+        apply()
+        if (Math.abs(revealCurrent - revealTarget) >= 0.4) {
+          raf = requestAnimationFrame(step)
+        } else {
+          raf = null
+        }
+      }
+      raf = requestAnimationFrame(step)
+    }
+
+    const scheduleReset = () => {
+      clearTimeout(resetTimer)
+      resetTimer = setTimeout(() => {
+        revealTarget = 0
+        animate()
+      }, resetDelayMs)
+    }
+
+    const push = (delta) => {
+      revealTarget = Math.max(0, Math.min(maxReveal, revealTarget + delta))
+      animate()
+      scheduleReset()
+    }
+
+    window.addEventListener("wheel", (e) => {
+      const down = e.deltaY > 0
+      const up = e.deltaY < 0
+      const open = revealTarget > 0.5 || revealCurrent > 0.5
+
+      if (down && settled && atPageEnd()) {
+        e.preventDefault()
+        push(e.deltaY * 0.45)
+        return
+      }
+      if (up && open) {
+        e.preventDefault()
+        push(e.deltaY * 0.45)
+      }
+    }, { passive: false })
+
+    window.addEventListener("touchstart", (e) => {
+      const t = e.touches?.[0]
+      if (t) touchStartY = t.clientY
+    }, { passive: true })
+
+    window.addEventListener("touchmove", (e) => {
+      const t = e.touches?.[0]
+      if (!t || touchStartY === null) return
+      const dy = touchStartY - t.clientY
+      const open = revealTarget > 0.5 || revealCurrent > 0.5
+
+      if (dy > 0 && settled && atPageEnd()) {
+        e.preventDefault()
+        push(dy * 0.45)
+      } else if (dy < 0 && open) {
+        e.preventDefault()
+        push(dy * 0.5)
+      }
+      touchStartY = t.clientY
+    }, { passive: false })
+
+    window.addEventListener("touchend", () => {
+      touchStartY = null
+      scheduleReset()
+    }, { passive: true })
+
+    window.addEventListener("scroll", () => {
+      const scrollingDown = window.scrollY > lastScrollY
+      lastScrollY = window.scrollY
+
+      if (!atPageEnd()) {
+        settled = false
+        clearTimeout(settleTimer)
+        if (revealTarget > 0 || revealCurrent > 0) {
+          revealTarget = 0
+          animate()
+        }
+        return
+      }
+
+      if (scrollingDown && !settled) {
+        clearTimeout(settleTimer)
+        settleTimer = setTimeout(() => {
+          if (atPageEnd()) settled = true
+        }, settleMs)
+      }
+    }, { passive: true })
+
+    apply()
+  })()
+</script>
