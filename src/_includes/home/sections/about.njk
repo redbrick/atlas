@@ -1,14 +1,49 @@
 <section class="relative hero min-h-50%">
-  <img class="absolute inset-0" src="https://cdn.redbrick.dcu.ie/atlas/static/img/spotlight-bg.webp" alt="" />
+  <img class="absolute inset-0 object-cover w-full h-full -z-30" src="https://cdn.redbrick.dcu.ie/atlas/static/img/spotlight-bg.webp" alt="" />
+  <div class="absolute inset-0 -z-40 bg-base-content [mask-image:url(https://cdn.redbrick.dcu.ie/atlas/static/svg/grid-bg.svg)]"></div>
   <div class="absolute inset-0 -z-50 bg-base-200"></div>
-  <div class="hero-content px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row" id="about">
-    <div class="max-w-md lg:max-w-2xl text-center md:text-start">
+  <div class="hero-content px-5 py-10 lg:py-20 h-full w-full flex-col md:flex-row gap-10 lg:gap-20 items-center justify-between" id="about">
+    <div class="max-w-md lg:max-w-2xl text-center md:text-start z-10">
       <h1 class="text-3xl lg:text-5xl font-bold">
-        About Us
+        {{ site.home.about.heading }}
       </h1>
       <div class="mt-4 text-md prose whitespace-normal">
         {{ includeMarkdown("./src/_includes/home/sections/about.md") | safe }}
       </div>
     </div>
+    <div class="relative z-10 perspective-1600 w-full md:w-1/2 aspect-square">
+      <img class="hero-card absolute bottom-[62%] left-[12%] h-[32%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        src="{{ site.home.about.graphic.image1.image }}"
+        alt="{{ site.home.about.graphic.image1.alt }}" data-about-img />
+      <img class="hero-card absolute bottom-[30%] left-[35%] h-[50%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        src="{{ site.home.about.graphic.image2.image }}"
+        alt="{{ site.home.about.graphic.image2.alt }}" data-about-img />
+      <img class="hero-card absolute bottom-[10%] left-[10%] h-[26%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        src="{{ site.home.about.graphic.image3.image }}"
+        alt="{{ site.home.about.graphic.image3.alt }}" data-about-img />
+      <img class="hero-card absolute bottom-[10%] left-[50%] h-[22%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        src="{{ site.home.about.graphic.image4.image }}"
+        alt="{{ site.home.about.graphic.image4.alt }}" data-about-img />
+    </div>
   </div>
 </section>
+<script>
+  gsap.registerPlugin(ScrollTrigger)
+  gsap.from("[data-about-img]", {
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 75%",
+    },
+    opacity: 0,
+    scale: 0,
+    y: 50,
+    delay: 0.2,
+    ease: "elastic(1,1)",
+    duration: 1.25,
+    stagger: 0.2,
+    clearProps: "transform",
+    onComplete: function() {
+      this.targets().forEach(el => el.classList.add("transition-transform", "duration-300"));
+    }
+  })
+</script>

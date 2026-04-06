@@ -155,3 +155,45 @@ home:
        username: pearse
   about:
     heading: About Us!
+    graphic:
+      image1:
+        image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
+        alt: Wizzdom Hackerclub
+      image2:
+        image: https://media.discordapp.net/stickers/1170064614973788270.png
+        alt: Distro Bopping
+      image3:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
+        alt: Susquehanna Event
+      image4:
+        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
+        alt: SISTEM crew
+      image5:
+        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/hackergroup.jpg
+        alt: Hackerclub crew
+      image6:
+        alt: Discord emote
+      image7:
+        alt: Redbrick logo
+  events:
+    heading: Events
+    graphic:
+      image1:
+        image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
+        alt: Wizzdom Hackerclub
+      image2:
+        image: https://media.discordapp.net/stickers/1170064614973788270.png
+        alt: Distro Bopping
+      image3:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
+        alt: Susquehanna Event
+      image4:
+        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
+        alt: SISTEM crew
+      image5:
+        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/hackergroup.jpg
+        alt: Hackerclub crew
+      image6:
+        alt: Discord emote
+      image7:
+        alt: Redbrick logo
