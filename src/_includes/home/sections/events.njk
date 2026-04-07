@@ -1,7 +1,4 @@
 <section class="relative hero min-h-50%">
-  <div
-    class="absolute inset-0 -z-40 bg-base-content [mask-image:url(https://cdn.redbrick.dcu.ie/atlas/static/svg/grid-bg.svg)]">
-  </div>
   <div class="absolute inset-0 -z-50 bg-base-200"></div>
   <div
     class="hero-content px-5 py-5 lg:py-10 w-full flex-col md:flex-row-reverse gap-10 lg:gap-20 items-center justify-between"
@@ -49,7 +46,7 @@
     duration: 1.25,
     stagger: 0.2,
     clearProps: "transform",
-    onComplete: function() {
+    onComplete: function () {
       this.targets().forEach(el => el.classList.add("transition-transform", "duration-300"));
     }
   })
