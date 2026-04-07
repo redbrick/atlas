@@ -20,7 +20,7 @@
         src="{{ site.home.events.graphic.image1.image }}" alt="{{ site.home.events.graphic.image1.alt }}"
         data-events-img />
       <img
-        class="hero-card absolute bottom-[30%] left-[35%] h-[50%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        class="hero-card absolute bottom-[30%] left-[35%] h-[32%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
         src="{{ site.home.events.graphic.image2.image }}" alt="{{ site.home.events.graphic.image2.alt }}"
         data-events-img />
       <img
@@ -49,7 +49,7 @@
     duration: 1.25,
     stagger: 0.2,
     clearProps: "transform",
-    onComplete: function() {
+    onComplete: function () {
       this.targets().forEach(el => el.classList.add("transition-transform", "duration-300"));
     }
   })
