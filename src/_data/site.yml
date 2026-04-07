@@ -42,6 +42,7 @@ navigation:
       text: Discord
       link: https://discord.redbrick.dcu.ie
 drawer: navigation
+
 home:
   hero:
     title:
@@ -55,6 +56,11 @@ home:
       secondary:
         text: Discord
         link: https://discord.redbrick.dcu.ie
+      tertiary:
+        text: Learn More!
+        link: "#about"
+    events:
+      api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
     graphic:
       image1:
         image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
@@ -75,6 +81,7 @@ home:
         alt: Discord emote
       image7:
         alt: Redbrick logo
+
   cta:
     title: Don't Miss Out
     body: Redbrick hosts events for everything tech related - from computer programming tutorials to workshops with multinational tech companies.
@@ -146,3 +153,39 @@ home:
      - name: Pearse Cope
        position: 🥇 First Year Rep.
        username: pearse
+  about:
+    heading: About Us!
+    graphic:
+      image1:
+        image: https://img.redbrick.dcu.ie/2048x1536/https://cdn.redbrick.dcu.ie/atlas/static/img/agm2026.jpg
+        alt: AGM 2026
+      image2:
+        image: https://img.redbrick.dcu.ie/100x20/https://cdn.redbrick.dcu.ie/atlas/static/img/banner.png
+        alt: Rebrick Banner
+      image3:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/handover-25.jpg
+        alt: Committee handover 2025
+      image4:
+        image: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/logo.png
+        alt: Redbrick Logo
+      image5:
+        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/open-day.jpg
+        alt: Ayden and Hypnoant at DCU Open Day
+  events:
+    heading: Events
+    graphic:
+      image1:
+        image: https://img.redbrick.dcu.ie/400x400/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerclub-homelab.png
+        alt: Homelab Hackerclub poster
+      image2:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/valen-event.jpg
+        alt: Talk with Valen
+      image3:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
+        alt: Susquehanna Event
+      image4:
+        image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/susq-event.png
+        alt: SISTEM crew
+      image5:
+        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/tarma-workshop.jpg
+        alt: Susquehanna Workshop
