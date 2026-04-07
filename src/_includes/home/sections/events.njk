@@ -10,9 +10,9 @@
       <h1 class="text-3xl lg:text-5xl font-bold">
         {{ site.home.events.heading }}
       </h1>
-      <p class="mt-4 text-md/relaxed">
-        Redbrick hosts a variety of events throughout the year, from LAN parties to workshops and talks...
-      </p>
+      <div class="mt-4 text-md prose whitespace-normal">
+        {{ includeMarkdown("./src/_includes/home/sections/events.md") | safe }}
+      </div>
     </div>
     <div class="relative z-10 perspective-1600 w-full md:w-1/2 aspect-square">
       <img
@@ -30,6 +30,10 @@
       <img
         class="hero-card absolute bottom-[10%] left-[50%] h-[22%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
         src="{{ site.home.events.graphic.image4.image }}" alt="{{ site.home.events.graphic.image4.alt }}"
+        data-events-img />
+      <img
+        class="hero-card absolute bottom-[67%] left-[50%] h-[27%] object-contain drop-shadow-2xl hover:-translate-y-2 hover:scale-105"
+        src="{{ site.home.events.graphic.image5.image }}" alt="{{ site.home.events.graphic.image5.alt }}"
         data-events-img />
     </div>
   </div>
