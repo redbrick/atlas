@@ -54,12 +54,6 @@ home:
         text: Sign Up!
         link: https://join.redbrick.dcu.ie
       secondary:
-        text: Discord
-        link: https://discord.redbrick.dcu.ie
-      tertiary:
-        text: Instagram
-        link: "https://instagram.redbrick.dcu.ie"
-      quaternary:
         text: Learn More!
         link: "#about"
     graphic:
