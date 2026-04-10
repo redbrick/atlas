@@ -1,28 +1,30 @@
 {% set targetDate = "2026-04-10T18:00:00Z" %}
-<div class="mt-8 text-center md:text-left">
-    <div class="mb-2 flex items-center justify-center md:justify-start gap-2">
-        <span class="text-2xl md:text-3xl font-bold text-primary">🎉</span>
-        <span class="font-semibold text-lg md:text-xl text-base-content">Redbrick's 30th Anniversary Party</span>
-    </div>
-    <div class="inline-flex gap-2 items-end justify-center md:justify-start" id="countdown">
-        <div class="flex flex-col items-center">
-            <span id="days" class="text-3xl md:text-4xl font-mono font-bold text-primary">--</span>
-            <span class="text-xs text-base-content/60">days</span>
+<div class="mt-8 text-center md:text-left hover:-translate-y-2 hover:scale-105 transition-transform duration-300">
+    <div class="w-full max-w-xl rounded-2xl border border-base-content/15 bg-base-100/80 p-6 shadow-xl backdrop-blur">
+        <div class="mb-2 flex items-center justify-center md:justify-start gap-2">
+            <span class="text-2xl md:text-3xl font-bold text-primary">🎉</span>
+            <span class="font-semibold text-lg md:text-xl text-base-content">Redbrick's 30th Anniversary Party</span>
         </div>
-        <span class="text-2xl font-bold text-base-content/40">:</span>
-        <div class="flex flex-col items-center">
-            <span id="hours" class="text-3xl md:text-4xl font-mono font-bold text-secondary">--</span>
-            <span class="text-xs text-base-content/60">hours</span>
-        </div>
-        <span class="text-2xl font-bold text-base-content/40">:</span>
-        <div class="flex flex-col items-center">
-            <span id="minutes" class="text-3xl md:text-4xl font-mono font-bold text-accent">--</span>
-            <span class="text-xs text-base-content/60">mins</span>
-        </div>
-        <span class="text-2xl font-bold text-base-content/40">:</span>
-        <div class="flex flex-col items-center">
-            <span id="seconds" class="text-3xl md:text-4xl font-mono font-bold text-base-content">--</span>
-            <span class="text-xs text-base-content/60">secs</span>
+        <div class="inline-flex gap-2 items-end justify-center md:justify-start" id="countdown">
+            <div class="flex flex-col items-center">
+                <span id="days" class="text-3xl md:text-4xl font-mono font-bold text-primary">--</span>
+                <span class="text-xs text-base-content/60">days</span>
+            </div>
+            <span class="text-2xl font-bold text-base-content/40">:</span>
+            <div class="flex flex-col items-center">
+                <span id="hours" class="text-3xl md:text-4xl font-mono font-bold text-secondary">--</span>
+                <span class="text-xs text-base-content/60">hours</span>
+            </div>
+            <span class="text-2xl font-bold text-base-content/40">:</span>
+            <div class="flex flex-col items-center">
+                <span id="minutes" class="text-3xl md:text-4xl font-mono font-bold text-accent">--</span>
+                <span class="text-xs text-base-content/60">mins</span>
+            </div>
+            <span class="text-2xl font-bold text-base-content/40">:</span>
+            <div class="flex flex-col items-center">
+                <span id="seconds" class="text-3xl md:text-4xl font-mono font-bold text-base-content">--</span>
+                <span class="text-xs text-base-content/60">secs</span>
+            </div>
         </div>
     </div>
 </div>

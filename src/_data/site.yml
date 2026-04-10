@@ -36,7 +36,7 @@ navigation:
       tag: newsletter
   buttons:
     primary:
-      text: Signup
+      text: Sign Up!
       link: https://join.redbrick.dcu.ie
     secondary:
       text: Discord
@@ -51,16 +51,11 @@ home:
     body: Redbrick was formed from a battered 386 PC (dubbed Nurse) and bits of borrowed memory - these days we spend our time running tech events for our members and deploying services. We’re open to everyone, regardless of computing level, who want to come and learn!
     buttons:
       primary:
-        text: Signup
+        text: Sign Up!
         link: https://join.redbrick.dcu.ie
       secondary:
-        text: Discord
-        link: https://discord.redbrick.dcu.ie
-      tertiary:
         text: Learn More!
         link: "#about"
-    events:
-      api: https://clubsandsocs.jakefarrell.ie/dcuclubsandsocs.ie/society/redbrick
     graphic:
       image1:
         image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
