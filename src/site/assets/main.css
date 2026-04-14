@@ -55,6 +55,29 @@
   .contribution-portal__link {
     @apply btn btn-primary btn-sm mt-3 no-underline;
   }
+
+  .contribution-portal__hint {
+    @apply fixed left-1/2 bottom-3 z-30 flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-base-content/10 bg-base-200/70 px-2.5 py-1 text-[11px] text-base-content/55 backdrop-blur-sm;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .contribution-portal__hint-arrow {
+    @apply inline-block text-[10px] text-base-content/50;
+    animation: portal-hint-bob 1.4s ease-in-out infinite;
+  }
+
+  @keyframes portal-hint-bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(2px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contribution-portal__hint-arrow {
+      animation: none;
+    }
+  }
 }
 
 /* reset some black theme defaults */

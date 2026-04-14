@@ -16,6 +16,10 @@
     </a>
   </div>
 </div>
+<div id="contribution-portal-hint" class="contribution-portal__hint" aria-live="polite">
+  <span class="contribution-portal__hint-arrow" aria-hidden="true">↓</span>
+  <span id="contribution-portal-hint-text">Scroll down to reveal</span>
+</div>
 
 <script>
   (() => {
@@ -28,9 +32,12 @@
     const settleMs = 300
 
     const drawerContent = document.querySelector(".drawer-content")
-    if (!drawerContent) return
+    const hint = document.getElementById("contribution-portal-hint")
+    const hintText = document.getElementById("contribution-portal-hint-text")
+    if (!drawerContent || !hint || !hintText) return
 
     document.body.appendChild(portal)
+    document.body.appendChild(hint)
     portal.style.position = "fixed"
     portal.style.bottom = "0"
     portal.style.left = "0"
@@ -57,6 +64,7 @@
       drawerContent.style.transform = `translateY(-${maxReveal}px)`
       portal.style.opacity = "1"
       portal.style.pointerEvents = "auto"
+      hint.style.opacity = "0"
       return
     }
 
@@ -65,9 +73,19 @@
 
     const apply = () => {
       const progress = Math.min(1, revealCurrent / maxReveal)
+      const open = revealCurrent > 4
       drawerContent.style.transform = `translateY(-${Math.round(revealCurrent)}px)`
       portal.style.opacity = progress.toFixed(3)
       portal.style.pointerEvents = progress > 0.3 ? "auto" : "none"
+
+      if (open) {
+        hint.style.opacity = "0"
+      } else if (atPageEnd()) {
+        hintText.textContent = "Scroll down to reveal"
+        hint.style.opacity = settled ? "0.62" : "0.35"
+      } else {
+        hint.style.opacity = "0"
+      }
     }
 
     const animate = () => {
@@ -151,6 +169,9 @@
         if (revealTarget > 0 || revealCurrent > 0) {
           revealTarget = 0
           animate()
+        } else {
+          // Refresh hint state immediately when leaving page-end context.
+          apply()
         }
         return
       }
@@ -158,7 +179,10 @@
       if (scrollingDown && !settled) {
         clearTimeout(settleTimer)
         settleTimer = setTimeout(() => {
-          if (atPageEnd()) settled = true
+          if (atPageEnd()) {
+            settled = true
+            apply()
+          }
         }, settleMs)
       }
     }, { passive: true })
