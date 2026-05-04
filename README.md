@@ -1,6 +1,6 @@
 # Redbrick Website
-![Status](https://status.redbrick.dcu.ie/api/badge/1/status)
-![Uptime](https://status.redbrick.dcu.ie/api/badge/1/uptime)
+![Status](https://status.redbrick.dcu.ie/api/v1/endpoints/services_atlas/health/badge.svg)
+![Uptime](https://status.redbrick.dcu.ie/api/v1/endpoints/services_atlas/uptimes/7d/badge.svg)
 
 ## Access it [here!](https://redbrick.dcu.ie)
 
