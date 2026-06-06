@@ -58,19 +58,19 @@ home:
         link: "#about"
     graphic:
       image1:
-        image: https://img.redbrick.dcu.ie/250x175/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
+        image: https://img.redbrick.dcu.ie/230x170/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerdom.jpg
         alt: Wizzdom Hackerclub
       image2:
         image: https://media.discordapp.net/stickers/1170064614973788270.png
         alt: Distro Bopping
       image3:
-        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
+        image: https://img.redbrick.dcu.ie/250x140/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
         alt: Susquehanna Event
       image4:
         image: https://img.redbrick.dcu.ie/150x150/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.webp
         alt: SISTEM crew
       image5:
-        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/hackergroup.jpg
+        image: https://img.redbrick.dcu.ie/220x160/https://cdn.redbrick.dcu.ie/atlas/static/img/hackergroup.jpg
         alt: Hackerclub crew
       image6:
         alt: Discord emote
@@ -84,15 +84,15 @@ home:
       text: Signup
       link: https://join.redbrick.dcu.ie
     gallery:
-      r1c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hackersmovie.jpg
-      r1c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/rbadmintalk.jpg
-      r1c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/kamildeskrb.jpg
-      r2c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/minecraft.jpg
-      r2c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
-      r2c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/jamestalk.jpg
-      r3c1: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
-      r3c2: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/EGM2025.jpg
-      r3c3: https://img.redbrick.dcu.ie/1000x500/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBall26.jpg
+      r1c1: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/hackersmovie.jpg
+      r1c2: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/rbadmintalk.jpg
+      r1c3: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/kamildeskrb.jpg
+      r2c1: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/minecraft.jpg
+      r2c2: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/sistem-mag1c.jpg
+      r2c3: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/jamestalk.jpg
+      r3c1: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/hecker.jpg
+      r3c2: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/EGM2025.jpg
+      r3c3: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBall26.jpg
   committee:
     imageURL: https://img.redbrick.dcu.ie/150x275,fit/https://cdn.redbrick.dcu.ie/atlas/
     year: cmt25-26
@@ -152,28 +152,28 @@ home:
     heading: About Us!
     graphic:
       image1:
-        image: https://img.redbrick.dcu.ie/2048x1536/https://cdn.redbrick.dcu.ie/atlas/static/img/agm2026.jpg
+        image: https://img.redbrick.dcu.ie/410x310/https://cdn.redbrick.dcu.ie/atlas/static/img/agm2026.jpg
         alt: AGM 2026
       image2:
-        image: https://img.redbrick.dcu.ie/100x20/https://cdn.redbrick.dcu.ie/atlas/static/img/banner.png
+        image: https://img.redbrick.dcu.ie/480x160/https://cdn.redbrick.dcu.ie/atlas/static/img/banner-medium.png
         alt: Rebrick Banner
       image3:
-        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/handover-25.jpg
+        image: https://img.redbrick.dcu.ie/400x200/https://cdn.redbrick.dcu.ie/atlas/static/img/handover-25.jpg
         alt: Committee handover 2025
       image4:
         image: https://raw.githubusercontent.com/redbrick/design-system/main/assets/logos/logo.png
         alt: Redbrick Logo
       image5:
-        image: https://img.redbrick.dcu.ie/150x200/https://cdn.redbrick.dcu.ie/atlas/static/img/open-day.jpg
+        image: https://img.redbrick.dcu.ie/150x190/https://cdn.redbrick.dcu.ie/atlas/static/img/open-day.jpg
         alt: Ayden and Hypnoant at DCU Open Day
   events:
     heading: Events
     graphic:
       image1:
-        image: https://img.redbrick.dcu.ie/400x400/https://cdn.redbrick.dcu.ie/atlas/static/img/hackerclub-homelab.png
+        image: https://cdn.redbrick.dcu.ie/atlas/static/img/hackerclub-homelab.png
         alt: Homelab Hackerclub poster
       image2:
-        image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/valen-event.jpg
+        image: https://img.redbrick.dcu.ie/400x200/https://cdn.redbrick.dcu.ie/atlas/static/img/valen-event-16-9.jpg
         alt: Talk with Valen
       image3:
         image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/groupbanner.jpg
