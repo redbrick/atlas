@@ -94,60 +94,60 @@ home:
       r3c2: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/EGM2025.jpg
       r3c3: https://img.redbrick.dcu.ie/500x250/https://cdn.redbrick.dcu.ie/atlas/static/img/CSBall26.jpg
   committee:
-    imageURL: https://img.redbrick.dcu.ie/150x275,fit/https://cdn.redbrick.dcu.ie/atlas/
-    year: cmt25-26
+    imageURL: https://img.redbrick.dcu.ie/150x275/https://cdn.redbrick.dcu.ie/atlas/
+    year: cmt26-27
     members:
-     - name: Dominic Connor
+     - name: Adam Wilkinson
        position: 🪑 Chair
-       username: wizzdom
-     - name: Shane Whelan
+       username: wilko
+     - name: Gavin Holahan
        position: 🪑 Vice-Chair
-       username: pluto
-     - name: Aoife Guanzon
+       username: hypnoant
+     - name: Joshua Farrell
        position: 💌 Secretary
-       username: aoife
+       username: joshfarr
      - name: Jonathan Groult
        position: 💸 Treasurer
        username: nova
-     - name: Harry Greenwood
+     - name: Edvard Tome
        position: 📢 PRO
-       username: mad
+       username: tome
      - name: Kamil Kasza
        position: 🎨 GDO
        username: jstkamil
-     - name: Ayden Jahola
+     - name: Aris Sokianos
        position: 🚀 SysAdmin
-       username: ayden
-     - name: Gavin Holahan
+       username: aris
+     - name: Liam Kelly
        position: 🚀 SysAdmin
-       username: hypnoant
+       username: graggle
      - name: Conor Sludds
        position: 🚀 SysAdmin
        username: cj2364
-     - name: Aris Sokianos
+     - name: Chris Geng
        position: 👾 Webmaster
-       username: aris
-     - name: Pavel Ivanov
+       username: cg_5228
+     - name: Niall Carrick
        position: 🙌 Helpdesk
-       username: regaus
+       username: nibbles
+     - name: Eoghan Hughes
+       position: 🙌 Helpdesk
+       username: s_rogue
      - name: Milan Tamang
-       position: 🙌 Helpdesk
+       position: 📅 Events Officer
        username: milan
-     - name: Edvard Tome
+     - name: Ben Adams
        position: 📅 Events Officer
-       username: tome
-     - name: Adam Wilkinson
-       position: 📅 Events Officer
-       username: wilko
-     - name: Michal Wasiak
+       username: ben15
+     - name: Aoife Guanzon
        position: 💎 Ordinary Member
-       username: mehow
-     - name: Eva Thunder
-       position: 💎 Ordinary Member
-       username: 3va
+       username: aoife
      - name: Pearse Cope
-       position: 🥇 First Year Rep.
+       position: 💎 Ordinary Member
        username: pearse
+    #  - name: Pearse Cope
+    #    position: 🥇 First Year Rep.
+    #    username: pearse
   about:
     heading: About Us!
     graphic:
