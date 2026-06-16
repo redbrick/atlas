@@ -184,3 +184,17 @@ home:
       image5:
         image: https://img.redbrick.dcu.ie/300x150/https://cdn.redbrick.dcu.ie/atlas/static/img/tarma-workshop.jpg
         alt: Susquehanna Workshop
+  timeline:
+    heading: Redbrick History
+    intro: some yap goes here
+    items:
+      - title: Pre-history
+        date: October 1995
+        body: In October of 1995 a group of friends started the ball rolling on the idea of a computer network in DCU, run by students for the students. Starting out with a battered 386 PC with 8 MB of RAM(dubbed Nurse), bits of borrowed memory, their own cash, and a lot of luck, they went about organising the D.C.U Networking society. The initial build of the Nurse was performed on an 800MB hard drive (the first RB disk) in DrJolt's home computer on February 4th, 1996. Once recognised as a society, they were allowed to setup a temporary home for the server in the Computer Applications facility, going online in the postgrad area on March 5th, 1996 as dcuns.compapp.dcu.ie. Later, the society received its own subnet and subdomain of dcu.ie from the Computer Services Department.
+        image: https://img.redbrick.dcu.ie/400x400/https://cdn.redbrick.dcu.ie/atlas/static/img/handover-25.jpg
+        alt: idk
+      - title: The Name
+        date: 1996
+        body: Having decided to try for an alternative to 'dcuns' as the domain name, 'RedBrick' was selected, DrJolt's suggestion being inspired by the diverse and exciting architecture of DCU (at that time, most permanent structures in DCU were built of red brick). They were also able to find physical accomodation (the CA department being unwilling to extend the temporary arrangements) in which to store Nurse, under a desk in QG07. Nurse went online as Nurse.RedBrick.dcu.ie on April 9th, 1996.
+        image: https://img.redbrick.dcu.ie/400x400/https://cdn.redbrick.dcu.ie/atlas/static/img/handover-25.jpg
+        alt: idk
