@@ -31,7 +31,7 @@ home:
   hero:
     title:
       secondary: TU Dublin's Computer Science Society.
-      primary: Join us today!
+      primary: Up for grabs!
     body: CS++ got its name in 2022, and traces its history back to 1998 with one goal; to aid its members - today, we help our members with their coursework, and give them access to invaluable experiences and skills!
     buttons:
       primary:
@@ -51,54 +51,46 @@ home:
       text: Sign Up Today!
       link: https://join.cspp.ie/
   committee:
-    - name: Lívia Guimarães
+    - name: Helena Garcia
       position: 🪑 Chair
-      username: livguimaraes
-      image: ./assets/img/committee/liv.webp
-    - name: Faith Omotayo
-      position: 🪑 Vice-Chair
-      username: faithomotayo
-      image: ./assets/img/committee/faith.webp
+      username: lehgarciafhs
+      image: ./assets/img/committee/helena.webp
     - name: Anmool Shah
-      position: 💌 Secretary
+      position: 🪑 Vice-Chair
       username: anmool
       image: ./assets/img/committee/anmool.webp
-    - name: Aidan McPhee
+    - name: Clara Rosell
+      position: 💌 Secretary
+      username: cr5706
+      image: ./assets/img/committee/clara.webp
+    - name: Arturo Lopez Lozada
       position: 💸 Treasurer
-      username: amcp
-      image: ./assets/img/committee/aidan.webp
-    - name: Zartashia Saleem
+      username: iwatani
+      image: ./assets/img/committee/arturo.webp
+    - name: Lívia Guimarães
       position: 📢 PRO
       username: zartashia
-      image: ./assets/img/committee/zartashia.webp
-    - name: Eman Abdelatti
+      image: ./assets/img/committee/liv.webp
+    - name: Georgin Jobin
       position: 👩‍⚕️ HSO
-      username: Emmy24
-      image: ./assets/img/committee/eman.webp
-    - name: Nathan Kupracz
+      username: gj07
+      image: ./assets/img/committee/georgin.webp
+    - name: Up for grabs!
       position: 💻 Tech Events Officer
-      username: nathan06
-      image: ./assets/img/committee/nathan.webp
-    - name: Daria Nikiporets
+      username: bitflip
+      image: ./assets/img/committee/unknown.webp
+    - name: Up for grabs!
       position: 🥳 Social Events Officer
-      username: dari
-      image: ./assets/img/committee/daria.webp
+      username: bitflip
+      image: ./assets/img/committee/unknown.webp
     - name: Daniel Smyth
       position: 🚀 SysAdmin
       username: rockerkemm
       image: ./assets/img/committee/dan.webp
-    - name: D O'Flynn
-      position: 🚀 SysAdmin
-      username: BigCheese
-      image: ./assets/img/committee/doflynn.webp
     - name: MJ
       position: 🚀 SysAdmin
       username: mjm
       image: ./assets/img/committee/mj.webp
-    - name: Ruán Murgatroyd
-      position: 🚀 SysAdmin
-      username: rjm
-      image: ./assets/img/committee/ruan.webp
     - name: Tyler Brady
       position: 🚀 SysAdmin
       username: relyT
@@ -111,18 +103,18 @@ home:
       position: 🚀 SysAdmin
       username: to60
       image: ./assets/img/committee/teodor.webp
-    - name: Samuel Goldstein
+    - name: Tan Winnie
       position: 🗓️ Events Rep
-      username: 1_scream
-      image: ./assets/img/committee/samuel.webp
-    - name: Helena Garcia
+      username: ???
+      image: ./assets/img/committee/unknown.webp
+    - name: Up for grabs!
       position: 👼 First Year Rep
-      username: lehgarciafhs
-      image: ./assets/img/committee/helena.webp
-    - name: Arturo Lopez Lozada
+      username: bitflip
+      image: ./assets/img/committee/unknown.webp
+    - name: Up for grabs!
       position: 😅 Second Year Rep
-      username: iwatani
-      image: ./assets/img/committee/arturo.webp
+      username: bitflip
+      image: ./assets/img/committee/unknown.webp
   sponsorSection:
     enquiryStart: Want to be part of something great?
     enquiryEnd: Get in touch!
