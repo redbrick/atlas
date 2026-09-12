@@ -7,7 +7,21 @@
         <header class="menu-title">Redbrick</header>
         <ul>
         {% for entry in site.navigation.global %}
+        {% if entry.submenu %}
+        <li>
+          <details>
+            <summary>{{ entry.text }}</summary>
+            <ul>
+              {% if entry.link %}<li><a href="{{ entry.link }}">Overview</a></li>{% endif %}
+              {% for sub in entry.submenu %}
+              <li><a href="{{ sub.link }}">{{ sub.text }}</a></li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+        {% else %}
         <li><a href="{{ entry.link }}">{{ entry.text }}</a></li>
+        {% endif %}
         {% endfor %}
         </ul>
       </li>
@@ -18,6 +32,9 @@
       {% elif page.url and "/blog/" in page.url %}
       <header class="menu-title">Blog</header>
       {{ collections['blog'] | eleventyNavigation | renderTree | safe }}
+      {% elif page.url and "/services/" in page.url %}
+      <header class="menu-title">Services</header>
+      {{ collections['services'] | eleventyNavigation | renderTree | safe }}
       {% endif %}
     </nav>
   </aside>

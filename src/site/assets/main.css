@@ -32,6 +32,41 @@
   .gallery-card {
     @apply shadow-xl shadow-slate-800/30 rounded bg-cover bg-center;
   }
+
+  /* Code blocks */
+  pre {
+    @apply relative;
+  }
+
+  pre:has(.copy-code-button) {
+    @apply pr-28;
+  }
+
+  .copy-code-button {
+    @apply absolute top-1/2 right-3 z-10
+      -translate-y-1/2
+      flex items-center gap-1.5
+      rounded px-2 py-1
+      border-0
+      bg-transparent
+      font-sans text-sm font-medium
+      text-white/60
+      cursor-pointer
+      transition-colors duration-150
+      hover:bg-white/10
+      hover:text-white
+      focus:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-white/30;
+  }
+
+  .copy-code-button svg {
+    @apply h-4 w-4 fill-current;
+  }
+
+  .copy-code-button.copied {
+    @apply text-green-300;
+  }
 }
 
 /* reset some black theme defaults */

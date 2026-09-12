@@ -23,6 +23,11 @@ navigation:
       link: https://wiki.redbrick.dcu.ie
     - text: Links
       link: /links
+    - text: Services
+      link: /services/readme
+      submenu:
+        - text: System Status
+          link: https://status.redbrick.dcu.ie
   blog:
     - text: Events
       tag: events
