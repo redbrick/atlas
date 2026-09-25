@@ -145,9 +145,9 @@ home:
      - name: Pearse Cope
        position: 💎 Ordinary Member
        username: pearse
-    #  - name: Pearse Cope
-    #    position: 🥇 First Year Rep.
-    #    username: pearse
+     - name: Luna
+       position: 🥇 First Year Rep.
+       username: beastie
   about:
     heading: About Us!
     graphic:
