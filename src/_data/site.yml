@@ -24,10 +24,7 @@ navigation:
     - text: Links
       link: /links
     - text: Services
-      link: /services/readme
-      submenu:
-        - text: System Status
-          link: https://status.redbrick.dcu.ie
+      link: /services/
   blog:
     - text: Events
       tag: events
@@ -150,9 +147,9 @@ home:
      - name: Pearse Cope
        position: 💎 Ordinary Member
        username: pearse
-    #  - name: Pearse Cope
-    #    position: 🥇 First Year Rep.
-    #    username: pearse
+     - name: Luna
+       position: 🥇 First Year Rep.
+       username: beastie
   about:
     heading: About Us!
     graphic:

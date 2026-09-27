@@ -38,14 +38,6 @@ module.exports = function (eleventyConfig) {
     )
   )
 
-  eleventyConfig.addPassthroughCopy(
-    path.join(
-      pkg.eleventy.dir.input,
-      'assets',
-      'copy-code.js'
-    )
-  )
-
   function includeMarkdown(filePath) {
     filePath = String(filePath)
     const fullPath = path.resolve(process.cwd(), filePath)
