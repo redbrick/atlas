@@ -5,7 +5,7 @@ permalink: /services/index.html
 services:
   - name: Webmail
     icon: M3 5h18v14H3Zm0 0 9 8 9-8
-    description: Read and send your Redbrick email in a web browser.
+    description: Read and send messages from your Redbrick email in your web browser.
     access: Sign in with your Redbrick username and password.
     link: https://webmail.redbrick.dcu.ie/
     action: Open Webmail
@@ -35,10 +35,16 @@ services:
     action: View the live map
   - name: Personal Webspace
     icon: M3 4h18v16H3ZM3 8h18m-14 5 2 2-2 2m5 0h4
-    description: Host a personal website or portfolio with Redbrick's Webtree hosting, included in your account.
+    description: Host a personal website, portfolio, or WordPress site with Redbrick's Webtree hosting, included in your account.
     access: Upload files to <code>public_html</code> through the login boxes. Your site is available at <code>your_username.redbrick.dcu.ie</code>.
     link: https://docs.redbrick.dcu.ie/services/exposed/#aperture
     action: Read the Webtree docs
+  - name: Git Hosting
+    icon: M6 8v8M18 8a10 10 0 0 1-9 10M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9 19a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM21 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z
+    description: Host your Git repositories on Redbrick's Forgejo instance.
+    access: Open Redbrick Git and sign in to manage your repositories.
+    link: https://git.redbrick.dcu.ie/
+    action: Open Redbrick Git
   - name: HedgeDoc
     icon: M5 3h9l5 5v13H5ZM14 3v6h5M8 13h8m-8 4h6
     description: Write Markdown notes and documents together in real time.
@@ -64,21 +70,15 @@ services:
     link: https://paste.redbrick.dcu.ie/
     action: Open PrivateBin
 requestedServices:
-  - name: Databases
-    icon: M3 6c0-5 18-5 18 0S3 11 3 6Zm0 0v12c0 5 18 5 18 0V6M3 12c0 5 18 5 18 0
-    description: MySQL and PostgreSQL databases for projects that need persistent storage.
   - name: Password Manager
     icon: M14 10a6 6 0 1 0-6 6l4-4h5v-3h4V5h-5l-2 5ZM6 7h.01
-    description: Access to Redbrick's password manager for managing shared credentials.
+    description: Manage shared credentials with Redbrick's password manager. Available only to other societies' committees, not individuals.
   - name: Virtual Machines
     icon: M3 3h18v12H3Zm9 12v6m-5 0h10M7 7h10m-10 4h6
     description: A dedicated environment for your project, with resources agreed with the sysadmins.
-  - name: WordPress Hosting
-    icon: M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0ZM5 7l4 11 3-8 3 8 4-11
-    description: WordPress websites for DCU clubs, societies, and other projects.
-  - name: Discord Bot Hosting
-    icon: M4 7h16v13H4Zm8-4v4M10 3h4M8 12h.01M16 12h.01M8 16h8M1 11v5m22-5v5
-    description: Hosting for your Discord bot and its supporting services.
+  - name: Project Hosting
+    icon: m8 5-7 7 7 7m8-14 7 7-7 7M14 3l-4 18
+    description: Host your projects, such as Discord bots, on Redbrick's servers.
 ---
 {% macro arrow() %}
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
@@ -197,7 +197,7 @@ requestedServices:
         <a class="mt-auto inline-flex items-center justify-between gap-3 border-t border-base-content/10 pt-4 font-semibold text-primary hover:underline" href="{{ service.link }}">{{ service.action }} <span class="shrink-0">{{ arrow() }}</span></a>
       </article>
       {% endfor %}
-      <aside class="flex flex-col justify-center rounded-xl bg-base-200 p-6 lg:col-span-2" aria-labelledby="services-help-heading">
+      <aside class="flex flex-col justify-center rounded-xl bg-base-200 p-6" aria-labelledby="services-help-heading">
         <h3 id="services-help-heading" class="text-xl font-bold">Need help getting connected?</h3>
         <p class="mt-3 max-w-lg leading-relaxed text-base-content/75">Find setup guides in the documentation, or ask the sysadmins on Discord if you need help with your account or a service.</p>
         <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3">
@@ -213,6 +213,8 @@ requestedServices:
       <div class="mb-6 max-w-2xl">
         <h2 id="requests-heading" class="text-3xl font-bold">Services on request</h2>
         <p class="mt-3 leading-relaxed text-base-content/75">The sysadmins arrange access and hosting for these services. Open a ticket on Discord with what you need and any resource requirements. Requests are subject to available resources.</p>
+        <p class="mt-3 leading-relaxed text-base-content/75">Redbrick reserves the right to refuse or cease hosting at any time, for any reason.</p>
+        {# Add the published hosting guidelines link after https://github.com/redbrick/open-governance/pull/36 is merged. #}
       </div>
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {% for service in requestedServices %}
@@ -225,7 +227,7 @@ requestedServices:
           <a class="mt-auto inline-flex items-center justify-between gap-3 border-t border-base-content/10 pt-4 font-semibold text-primary hover:underline" href="{{ site.navigation.buttons.secondary.link }}" aria-label="Request on Discord: {{ service.name }}">Request on Discord <span class="shrink-0">{{ arrow() }}</span></a>
         </article>
         {% endfor %}
-        <div class="flex flex-col items-start justify-center p-6">
+        <div class="flex flex-col items-start justify-center p-6 lg:col-span-3">
           <h3 class="text-xl font-bold">Need something else?</h3>
           <p class="mt-3 leading-relaxed text-base-content/75">Talk to the sysadmins about what you need.</p>
           <a class="btn btn-neutral mt-5" href="{{ site.navigation.buttons.secondary.link }}">Ask on Discord {{ arrow() }}</a>
