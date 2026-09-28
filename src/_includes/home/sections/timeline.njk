@@ -1,0 +1,100 @@
+{% if site.home.timeline %}
+  <section class="relative hero min-h-50%">
+    <div
+      class="absolute inset-0 -z-40 bg-base-content [mask-image:url(https://cdn.redbrick.dcu.ie/atlas/static/svg/grid-bg.svg)]">
+    </div>
+    <div class="absolute inset-0 -z-50 bg-base-200"></div>
+    <div class="hero-content px-5 py-10 lg:py-16 w-full flex-col" id="timeline">
+      <div class="max-w-3xl text-center z-10">
+        {% if site.home.timeline.heading %}
+          <h1 class="text-3xl lg:text-5xl font-bold">
+            {{ site.home.timeline.heading }}
+          </h1>
+        {% endif %}
+        {% if site.home.timeline.intro %}
+          <p class="mt-4 text-md/relaxed">
+            {{ site.home.timeline.intro }}
+          </p>
+        {% endif %}
+      </div>
+
+      {% if site.home.timeline.items %}
+        <div class="relative w-full mt-10 lg:mt-16">
+          <div class="pointer-events-none absolute inset-0 flex justify-center">
+            <svg class="h-full w-6 md:w-10 text-primary/30" viewBox="0 0 40 1000" preserveAspectRatio="none" aria-hidden="true">
+              <rect x="18" y="0" width="4" height="1000" rx="2" fill="currentColor" />
+              <rect x="19" y="0" width="2" height="1000" rx="1" class="text-primary" fill="currentColor" />
+            </svg>
+          </div>
+
+          <ol class="grid gap-10 lg:gap-14 list-none p-0 m-0">
+            {% for item in site.home.timeline.items -%}
+              {% set hasText = item.date or item.title or item.body %}
+              <li data-timeline-item class="timeline-item relative grid items-center gap-6 md:gap-8 md:grid-cols-[1fr_auto_1fr]">
+                <div class="flex md:justify-end md:col-start-1 md:col-end-2 timeline-left">
+                  {% if hasText %}
+                    <div
+                      class="w-full max-w-xl rounded-2xl border border-base-content/15 bg-base-100/80 p-6 shadow-xl backdrop-blur">
+                      {% if item.date %}
+                        <div class="text-sm uppercase tracking-[0.2em] text-primary/80">
+                          {{ item.date }}
+                        </div>
+                      {% endif %}
+                      {% if item.title %}
+                        <h2 class="mt-2 text-2xl font-bold">
+                          {{ item.title }}
+                        </h2>
+                      {% endif %}
+                      {% if item.body %}
+                        <p class="mt-3 text-sm/relaxed opacity-80">
+                          {{ item.body }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="relative flex items-center justify-center md:col-start-2 md:col-end-3">
+                  <svg class="h-16 w-16" viewBox="0 0 120 120" aria-hidden="true">
+                    <circle cx="60" cy="60" r="34" class="text-primary/25" fill="currentColor" />
+                    <circle cx="60" cy="60" r="24" class="text-primary/50" fill="currentColor" />
+                    <circle cx="60" cy="60" r="11" class="text-primary" fill="currentColor" />
+                    <circle cx="60" cy="60" r="6" class="text-primary-content" fill="currentColor" />
+                  </svg>
+                </div>
+
+                <div class="flex md:justify-start md:col-start-3 md:col-end-4 timeline-right">
+                  {% if item.image %}
+                    <div
+                      class="w-full max-w-xl overflow-hidden rounded-2xl border border-base-content/10 bg-base-100/80 shadow-xl">
+                      <div class="relative aspect-[4/3]">
+                        <img class="h-full w-full object-cover" src="{{ item.image }}" alt="{{ item.alt or '' }}" loading="lazy" />
+                        <div class="absolute inset-0 bg-gradient-to-tr from-base-content/60 via-transparent to-transparent"></div>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              </li>
+            {%- endfor %}
+          </ol>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+  {% if site.home.timeline.items %}
+    <script>
+      gsap.registerPlugin(ScrollTrigger)
+      ScrollTrigger.batch("[data-timeline-item]", {
+        start: "top 80%",
+        onEnter: (batch) =>
+          gsap.from(batch, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: "power2.out",
+            stagger: 0.15,
+          }),
+      })
+    </script>
+  {% endif %}
+{% endif %}
