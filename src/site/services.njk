@@ -74,9 +74,6 @@ services:
     link: https://paste.redbrick.dcu.ie/
     action: Open PrivateBin
 requestedServices:
-  - name: Password Manager
-    icon: M14 10a6 6 0 1 0-6 6l4-4h5v-3h4V5h-5l-2 5ZM6 7h.01
-    description: Manage shared credentials with Redbrick's password manager. Available only to other societies' committees, not individuals.
   - name: Virtual Machines
     icon: M3 3h18v12H3Zm9 12v6m-5 0h10M7 7h10m-10 4h6
     description: A dedicated environment for your project, with resources agreed with the Systems Administrators.
@@ -231,7 +228,7 @@ requestedServices:
           <a class="mt-auto inline-flex items-center justify-between gap-3 border-t border-base-content/10 pt-4 font-semibold text-primary hover:underline" href="{{ site.navigation.buttons.secondary.link }}" aria-label="Request on Discord: {{ service.name }}">Request on Discord <span class="shrink-0">{{ arrow() }}</span></a>
         </article>
         {% endfor %}
-        <div class="flex flex-col items-start justify-center p-6 lg:col-span-3">
+        <div class="flex flex-col items-start justify-center p-6 md:col-span-2 lg:col-span-1">
           <h3 class="text-xl font-bold">Need something else?</h3>
           <p class="mt-3 leading-relaxed text-base-content/75">Talk to the Systems Administrators about what you need.</p>
           <a class="btn btn-neutral mt-5" href="{{ site.navigation.buttons.secondary.link }}">Ask on Discord {{ arrow() }}</a>
