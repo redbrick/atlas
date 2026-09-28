@@ -1,0 +1,239 @@
+---
+layout: default.njk
+title: Services | Redbrick
+permalink: /services/index.html
+services:
+  - name: Webmail
+    icon: M3 5h18v14H3Zm0 0 9 8 9-8
+    description: Read and send messages from your Redbrick email in your web browser.
+    access: Sign in with your Redbrick account.
+    link: https://webmail.redbrick.dcu.ie/
+    action: Open Webmail
+  - name: Matrix
+    icon: M4 3H2v18h2M20 3h2v18h-2M7 16V9h3v7m0-7h3v7m0-7h3v7
+    description: Chat with the Redbrick community on Matrix, bridged with our Discord server.
+    access: >-
+      Sign in with your Redbrick account using
+      <a class="link" href="https://element.redbrick.dcu.ie/">Element</a>,
+      <a class="link" href="https://cinny.redbrick.dcu.ie/">Cinny</a>,
+      <a class="link" href="https://hydrogen.redbrick.dcu.ie/">Hydrogen</a>, or another Matrix client.
+    link: https://matrix.redbrick.dcu.ie/#/room/#redbrick:redbrick.dcu.ie
+    action: Join Redbrick on Matrix
+  - name: AI
+    icon: M12 3 9 9 3 12l6 3 3 6 3-6 6-3-6-3-3-6ZM20 2v4m-2-2h4
+    description: Use Redbrick's self-hosted AI models for programming, study, and general questions.
+    access: Sign in with your Redbrick account.
+    link: https://ai.rb.dcu.ie/
+    action: Open Redbrick AI
+  - name: Linux Shell Access
+    icon: m5 7 5 5-5 5m8 0h6M3 3h18v18H3Z
+    description: Connect to Redbrick's servers over SSH for development, file management, and command-line tools.
+    access: Follow the SSH login guide to add an SSH key and connect with your Redbrick account.
+    link: https://docs.redbrick.dcu.ie/services/servers/
+    action: Read the SSH login guide
+  - name: Minecraft
+    icon: m12 2 9 5v10l-9 5-9-5V7l9-5ZM3 7l9 5 9-5M12 12v10
+    description: Play Minecraft with other members on Redbrick's server. Dedicated servers can be requested from the Systems Administrators.
+    access: Link your Minecraft account through Blockbot on Discord, then connect to vanilla-mc.rb.dcu.ie.
+    link: https://vanilla-mc.rb.dcu.ie/
+    action: View the live map
+  - name: Personal Webspace
+    icon: M3 4h18v16H3ZM3 8h18m-14 5 2 2-2 2m5 0h4
+    description: Host a personal website, portfolio, or WordPress site with Redbrick's Webtree hosting, included in your account.
+    access: "Upload your files to the login boxes. Your site is available at: your_username.redbrick.dcu.ie."
+    link: https://docs.redbrick.dcu.ie/services/exposed/#aperture
+    action: Read the Webtree docs
+  - name: Git Hosting
+    icon: M6 8v8M18 8a10 10 0 0 1-9 10M9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9 19a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM21 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z
+    description: Host your Git repositories on Redbrick's Forgejo instance.
+    access: Open Redbrick Git and sign in to manage your repositories.
+    link: https://git.redbrick.dcu.ie/
+    action: Open Redbrick Git
+  - name: HedgeDoc
+    icon: M5 3h9l5 5v13H5ZM14 3v6h5M8 13h8m-8 4h6
+    description: Write Markdown notes and documents together in real time.
+    access: Sign in with your Redbrick account to get started.
+    link: https://md.redbrick.dcu.ie/
+    action: Open HedgeDoc
+  - name: Wiki
+    icon: M12 5v16M3 3c4 0 7 0 9 2 2-2 5-2 9-2v16c-4 0-7 0-9 2-2-2-5-2-9-2V3Z
+    description: Browse Redbrick guides, history, and community knowledge.
+    access: Read the Wiki or sign in to edit and contribute.
+    link: https://wiki.redbrick.dcu.ie/
+    action: Browse the Wiki
+  - name: Search
+    icon: M16 16l5 5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z
+    description: Search the web using Redbrick's SearXNG instance.
+    access: Open Search and enter your query.
+    link: https://search.redbrick.dcu.ie/
+    action: Open Redbrick Search
+  - name: PrivateBin
+    icon: M7 10V7a5 5 0 0 1 10 0v3M5 10h14v11H5Zm7 4v3
+    description: Create and share encrypted text pastes with Redbrick's PrivateBin instance.
+    access: Create a paste, then share its link.
+    link: https://paste.redbrick.dcu.ie/
+    action: Open PrivateBin
+requestedServices:
+  - name: Virtual Machines
+    icon: M3 3h18v12H3Zm9 12v6m-5 0h10M7 7h10m-10 4h6
+    description: A dedicated environment for your project, with resources agreed with the Systems Administrators.
+  - name: Project Hosting
+    icon: m8 5-7 7 7 7m8-14 7 7-7 7M14 3l-4 18
+    description: Host your projects, such as Discord bots, on Redbrick's servers.
+---
+{% macro arrow() %}
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+{% endmacro %}
+{% macro icon(path) %}
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ path }}" /></svg>
+{% endmacro %}
+
+<style>
+  /* Match the homepage background while keeping the artwork in its own layout space. */
+  #services-page .services-hero { background-image: url(https://cdn.redbrick.dcu.ie/atlas/static/img/spotlight-bg.webp); background-position: top center; background-size: cover; }
+  #services-page .services-hero::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: oklch(var(--bc)); mask-image: url(https://cdn.redbrick.dcu.ie/atlas/static/svg/grid-bg.svg); }
+  #services-page .services-art { width: 100%; max-width: 480px; }
+  #services-page .services-card { transition: border-color .2s, box-shadow .2s; }
+  #services-page .services-card:hover { border-color: oklch(var(--p) / .45); box-shadow: 0 8px 24px oklch(var(--bc) / .08); }
+  #services-page .services-access { overflow-wrap: anywhere; }
+  #services-page a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+  @media (max-width: 767px) {
+    #services-page .services-art { max-width: 320px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #services-page .services-card { transition: none; }
+  }
+</style>
+
+<main id="services-page">
+  <header class="services-hero relative isolate overflow-hidden border-b border-base-content/10 bg-base-200">
+    <div class="hero-content relative mx-auto w-full max-w-7xl flex-col gap-4 px-5 py-10 md:flex-row md:gap-10 md:px-10 lg:py-12">
+      <div class="services-hero-copy w-full text-center md:w-1/2 md:text-start">
+        <h1 class="text-3xl font-bold lg:text-5xl">
+          Services for
+          <strong class="block text-primary">Redbrick members.</strong>
+        </h1>
+        <p class="mx-auto mt-4 max-w-lg leading-relaxed md:mx-0">
+          Email, chat, game servers, web hosting, and more, hosted by Redbrick.
+          Explore our services and find out how to use them.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+          <a class="btn btn-primary" href="#catalogue">Browse services {{ arrow() }}</a>
+          <a class="btn btn-neutral" href="#hosting">Services on request</a>
+        </div>
+      </div>
+      <div class="services-art md:w-1/2" aria-hidden="true">
+        <svg class="block h-auto w-full" viewBox="0 0 560 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="services-paper-shadow" x="-30%" y="-30%" width="160%" height="180%" color-interpolation-filters="sRGB">
+              <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#0f172a" flood-opacity=".14"/>
+            </filter>
+            <filter id="services-logo-shadow" x="-30%" y="-30%" width="160%" height="180%" color-interpolation-filters="sRGB">
+              <feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#0f172a" flood-opacity=".18"/>
+            </filter>
+          </defs>
+
+          <!-- A loose collage of the things members use, like the homepage's floating graphics. -->
+          <g transform="rotate(-7 134 88)" filter="url(#services-paper-shadow)">
+            <rect x="36" y="30" width="196" height="120" rx="9" fill="oklch(var(--n))"/>
+            <path d="M36 60h196" stroke="oklch(var(--nc) / .15)"/>
+            <g fill="oklch(var(--nc) / .35)"><circle cx="51" cy="45" r="3"/><circle cx="63" cy="45" r="3"/><circle cx="75" cy="45" r="3"/></g>
+            <text x="216" y="49" text-anchor="end" fill="oklch(var(--nc) / .8)" font-family="ui-monospace, monospace" font-size="11">ssh</text>
+            <path d="m55 80 10 7-10 7" stroke="#fa7d83" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M79 88h49" stroke="oklch(var(--nc) / .85)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M55 108h76m-76 12h105" stroke="oklch(var(--nc) / .2)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M145 83v11" stroke="#fa7d83" stroke-width="3"/>
+          </g>
+
+          <g transform="rotate(10 436 92)" filter="url(#services-paper-shadow)" stroke-linejoin="round">
+            <path d="m377 75 59-39 59 39v65H377V75Z" fill="oklch(var(--p) / .15)" stroke="oklch(var(--p) / .5)"/>
+            <rect x="391" y="47" width="90" height="77" rx="5" fill="oklch(var(--b1))" stroke="oklch(var(--bc) / .2)"/>
+            <path d="M407 64h30" stroke="oklch(var(--p))" stroke-width="3" stroke-linecap="round"/>
+            <path d="M407 78h57m-57 11h42" stroke="oklch(var(--bc) / .2)" stroke-width="3" stroke-linecap="round"/>
+            <path d="m377 75 59 37 59-37v65H377V75Z" fill="oklch(var(--b1))" stroke="oklch(var(--p) / .5)"/>
+            <path d="m378 139 43-36m30 0 43 36" stroke="oklch(var(--p) / .3)"/>
+          </g>
+
+          <g transform="rotate(-5 113 292)" filter="url(#services-paper-shadow)" stroke-linejoin="round">
+            <path d="M56 247h84a15 15 0 0 1 15 15v34a15 15 0 0 1-15 15h-48l-24 18v-18H56a15 15 0 0 1-15-15v-34a15 15 0 0 1 15-15Z" fill="oklch(var(--p))"/>
+            <path d="M62 268h57m-57 13h39" stroke="oklch(var(--pc) / .9)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M116 290h60a13 13 0 0 1 13 13v24a13 13 0 0 1-13 13h-5v16l-23-16h-32a13 13 0 0 1-13-13v-24a13 13 0 0 1 13-13Z" fill="oklch(var(--b1))" stroke="oklch(var(--bc) / .2)"/>
+            <g fill="oklch(var(--p))"><circle cx="130" cy="315" r="3"/><circle cx="146" cy="315" r="3"/><circle cx="162" cy="315" r="3"/></g>
+          </g>
+
+          <g transform="rotate(6 421 307)" filter="url(#services-paper-shadow)">
+            <rect x="320" y="253" width="198" height="117" rx="9" fill="oklch(var(--b1))" stroke="oklch(var(--bc) / .2)"/>
+            <path d="M320 280h198" stroke="oklch(var(--bc) / .15)"/>
+            <path d="m334 263-4 4 4 4m7-8 4 4-4 4" stroke="oklch(var(--bc) / .45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="357" y="271" fill="oklch(var(--bc) / .7)" font-family="'Myriad Pro', sans-serif" font-size="12">Webspace</text>
+            <rect x="336" y="295" width="42" height="42" rx="7" fill="oklch(var(--p) / .1)"/>
+            <path d="m353 308-7 8 7 8m9-16 7 8-7 8" stroke="oklch(var(--p))" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M392 303h75" stroke="oklch(var(--bc) / .6)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M392 316h107m-107 11h87m-156 22h66" stroke="oklch(var(--bc) / .15)" stroke-width="3" stroke-linecap="round"/>
+          </g>
+
+          <image href="{{ site.images.brick.src }}" x="230" y="145" width="135" height="108" filter="url(#services-logo-shadow)"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <section id="catalogue" class="mx-auto max-w-7xl px-5 py-10 md:px-10 lg:py-14" aria-labelledby="services-heading">
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 id="services-heading" class="text-3xl font-bold">Our services</h2>
+        <p class="mt-2 text-base-content/75">Find a service and see how to access it.</p>
+      </div>
+      <a class="link text-sm" href="https://status.redbrick.dcu.ie/">Check service status ↗</a>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {% for service in services %}
+      <article class="services-card flex min-w-0 flex-col rounded-xl border border-base-content/20 bg-base-100 p-6 shadow-sm">
+        <div class="mb-4 flex items-center gap-3">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">{{ icon(service.icon) }}</span>
+          <h3 class="text-xl font-bold">{{ service.name }}</h3>
+        </div>
+        <p class="leading-relaxed">{{ service.description }}</p>
+        <p class="services-access mb-6 mt-3 text-sm leading-relaxed text-base-content/75"><strong class="font-semibold">Access:</strong> {{ service.access }}</p>
+        <a class="mt-auto inline-flex items-center justify-between gap-3 border-t border-base-content/10 pt-4 font-semibold text-primary hover:underline" href="{{ service.link }}">{{ service.action }} <span class="shrink-0">{{ arrow() }}</span></a>
+      </article>
+      {% endfor %}
+      <aside class="flex flex-col justify-center rounded-xl bg-base-200 p-6" aria-labelledby="services-help-heading">
+        <h3 id="services-help-heading" class="text-xl font-bold">Need help getting connected?</h3>
+        <p class="mt-3 max-w-lg leading-relaxed text-base-content/75">Find setup guides in the documentation, or ask the Systems Administrators on Discord if you need help with your account or a service.</p>
+        <div class="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+          <a class="link font-semibold" href="https://docs.redbrick.dcu.ie/">Read the documentation ↗</a>
+          <a class="link font-semibold" href="{{ site.navigation.buttons.secondary.link }}">Ask on Discord ↗</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="hosting" class="border-t border-base-content/10 bg-base-200" aria-labelledby="requests-heading">
+    <div class="mx-auto max-w-7xl px-5 py-10 md:px-10 lg:py-14">
+      <div class="mb-6 max-w-2xl">
+        <h2 id="requests-heading" class="text-3xl font-bold">Services on request</h2>
+        <p class="mt-3 leading-relaxed text-base-content/75">The Systems Administrators arrange access and hosting for these services. Open a ticket on Discord with what you need and any resource requirements. Requests are subject to available resources.</p>
+        <p class="mt-3 leading-relaxed text-base-content/75">Redbrick reserves the right to refuse or cease hosting at any time, for any reason.</p>
+        {# Add the published hosting guidelines link after https://github.com/redbrick/open-governance/pull/36 is merged. #}
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {% for service in requestedServices %}
+        <article class="services-card flex min-w-0 flex-col rounded-xl border border-base-content/20 bg-base-100 p-6 shadow-sm">
+          <div class="mb-4 flex items-center gap-3">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">{{ icon(service.icon) }}</span>
+            <h3 class="text-xl font-bold">{{ service.name }}</h3>
+          </div>
+          <p class="mb-6 leading-relaxed">{{ service.description }}</p>
+          <a class="mt-auto inline-flex items-center justify-between gap-3 border-t border-base-content/10 pt-4 font-semibold text-primary hover:underline" href="{{ site.navigation.buttons.secondary.link }}" aria-label="Request on Discord: {{ service.name }}">Request on Discord <span class="shrink-0">{{ arrow() }}</span></a>
+        </article>
+        {% endfor %}
+        <div class="flex flex-col items-start justify-center p-6 md:col-span-2 lg:col-span-1">
+          <h3 class="text-xl font-bold">Need something else?</h3>
+          <p class="mt-3 leading-relaxed text-base-content/75">Talk to the Systems Administrators about what you need.</p>
+          <a class="btn btn-neutral mt-5" href="{{ site.navigation.buttons.secondary.link }}">Ask on Discord {{ arrow() }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
