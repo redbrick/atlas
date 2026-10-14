@@ -23,6 +23,8 @@ navigation:
       link: https://wiki.redbrick.dcu.ie
     - text: Links
       link: /links
+    - text: Services
+      link: /services/
   blog:
     - text: Events
       tag: events
