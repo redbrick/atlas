@@ -1,0 +1,36 @@
+<section class="bg-base-100">
+  <div class="mx-auto max-w-6xl px-5 py-12 md:px-10 md:py-16">
+    <div class="max-w-2xl">
+      <h1 class="text-3xl font-bold">
+        {{ site.home.getInvolved.title }}
+      </h1>
+      <p class="mt-3 text-base-content/80 md:text-lg/relaxed">
+        {{ site.home.getInvolved.body }}
+      </p>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+      {% for item in site.home.getInvolved.actions -%}
+        <article class="rounded-box border border-base-content/10 bg-base-200 p-5 shadow-md shadow-slate-950/10">
+          <span class="badge badge-primary badge-outline">
+            {{ item.badge }}
+          </span>
+          <h2 class="mt-3 text-xl font-semibold">
+            {{ item.title }}
+          </h2>
+          <p class="mt-2 text-sm text-base-content/80 md:text-base">
+            {{ item.description }}
+          </p>
+          <a
+            class="btn btn-primary btn-sm mt-4"
+            href="{{ item.link }}"
+            rel="noreferrer"
+            target="_blank"
+          >
+            {{ item.buttonText }}
+          </a>
+        </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
