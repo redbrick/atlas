@@ -1,6 +1,6 @@
-FROM node:20-alpine AS build
+FROM node:22.23.4-alpine3.24 AS build
 
-RUN apk update && apk add git
+RUN apk add --no-cache git
 
 COPY . /app/
 
@@ -12,7 +12,7 @@ RUN yarn
 
 RUN yarn build
 
-FROM nginx:1.29-alpine AS production
+FROM nginx:1.31.8-alpine AS production
 
 COPY --from=build /app/dist /usr/share/nginx/html
 
