@@ -8,6 +8,8 @@ WORKDIR /app
 
 RUN corepack enable
 
+ENV YARN_NODE_LINKER=node-modules
+
 RUN yarn
 
 RUN yarn build

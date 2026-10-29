@@ -4,7 +4,9 @@ const yaml = require('js-yaml')
 const { DateTime } = require('luxon')
 const readingTime = require('reading-time')
 const tocPlugin = require('eleventy-plugin-toc')
-const postcssPlugin = require('eleventy-plugin-postcss')
+const postcssPluginModule = require('eleventy-plugin-postcss')
+const postcssPlugin =
+  postcssPluginModule.default || postcssPluginModule
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 
 const gitBuildPlugin = require('./eleventy/plugins/git-build')
