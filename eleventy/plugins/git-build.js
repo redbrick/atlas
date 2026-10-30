@@ -3,7 +3,7 @@ const { writeFile, readFile, readdir, stat } = require('fs/promises')
 
 const debug = require('debug')
 const { rimraf } = require('rimraf')
-const simpleGit = require('simple-git')
+const { simpleGit } = require('simple-git')
 const matter = require('gray-matter')
 const yaml = require('js-yaml')
 
