@@ -14,7 +14,9 @@ RUN yarn
 
 RUN yarn build
 
-FROM nginx:1.31.8-alpine AS production
+FROM nginx:1.31.9-alpine AS production
+
+RUN apk update && apk upgrade --no-cache
 
 COPY --from=build /app/dist /usr/share/nginx/html
 
